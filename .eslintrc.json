@@ -37,9 +37,25 @@
                 "extensions": [".tsx"]
             }
         ],
+        "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
         "no-nested-ternary": 0,
         "jsx-a11y/click-events-have-key-events": 0,
-        "jsx-a11y/interactive-supports-focus": 0
+        "jsx-a11y/interactive-supports-focus": 0,
+        "react/jsx-props-no-spreading": 0,
+        "import/no-extraneous-dependencies": [
+            "off",
+            {
+                "devDependencies": ["stories/*/*"]
+            }
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
+            }
+        }
     }
 }
