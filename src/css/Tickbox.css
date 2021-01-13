@@ -1,0 +1,7 @@
+.tick-box {
+    height: 18px;
+}
+
+.tick-box:hover {
+    cursor: pointer;
+}

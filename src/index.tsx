@@ -1,9 +1,5 @@
 /** @format */
 
-import * as React from 'react';
-
-const Index = () => {
-    return <div>test comp</div>;
-};
-
-export default Index;
+export { default as Button } from './components/Button';
+export { default as Tickbox } from './components/Tickbox';
+export { default as TabList } from './components/TabList';

@@ -48,7 +48,8 @@
             {
                 "devDependencies": ["stories/*/*"]
             }
-        ]
+        ],
+        "react/jsx-curly-brace-presence": 0
     },
     "settings": {
         "import/resolver": {
