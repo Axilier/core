@@ -27,7 +27,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          BRANCH: build
+          BRANCH: storybook
           FOLDER: storybook-static
           CLEAN: true
           CLEAN_EXCLUDE: '["CNAME"]'
