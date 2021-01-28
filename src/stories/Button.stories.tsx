@@ -26,3 +26,10 @@ export const Text = Template.bind({});
 Text.args = {
     variant: 'text',
 };
+
+export const Styled = Template.bind({});
+Styled.args = {
+    style: {
+        width: '320px',
+    },
+};
