@@ -1,7 +1,11 @@
 {
     "env": {
+        "node": true,
         "browser": true,
         "es2021": true
+    },
+    "globals": {
+        "JSX": "readonly"
     },
     "extends": [
         "plugin:react/recommended",
@@ -49,7 +53,13 @@
                 "devDependencies": ["stories/*/*"]
             }
         ],
-        "react/jsx-curly-brace-presence": 0
+        "react/jsx-curly-brace-presence": 0,
+        "react/jsx-no-undef": [
+            "error",
+            {
+                "allowGlobals": true
+            }
+        ]
     },
     "settings": {
         "import/resolver": {

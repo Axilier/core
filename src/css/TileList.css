@@ -1,0 +1,32 @@
+.tile-list-tile {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.tile-list-tile:hover {
+    cursor: pointer;
+}
+
+.tile-list-tile div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tile-list-tile-segment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.lock:hover {
+    cursor: pointer;
+}

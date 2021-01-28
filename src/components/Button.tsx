@@ -5,7 +5,7 @@ import * as React from 'react';
 import { ButtonProps } from '../Types';
 import '../css/Button.css';
 
-const Button = ({ label, type, variant, onClick }: ButtonProps) => {
+const Button = ({ label, type, variant, onClick, style }: ButtonProps) => {
     const primaryColour = (): string => {
         switch (type) {
             case 'primary':
@@ -46,6 +46,7 @@ const Button = ({ label, type, variant, onClick }: ButtonProps) => {
                     variant === 'contained'
                         ? secondaryColour()
                         : primaryColour(),
+                ...style,
             }}
             onClick={() => {
                 if (!onClick) return;

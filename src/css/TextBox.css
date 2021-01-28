@@ -1,0 +1,41 @@
+.text-box {
+    justify-content: flex-start;
+    margin: 10px;
+    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;
+    display: flex;
+    font-size: 13px;
+    flex-wrap: wrap;
+    text-transform: capitalize;
+}
+
+.text-box-label {
+    display: flex;
+    flex-direction: row;
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+.text-box-input-units {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 5px;
+}
+
+.text-box-input {
+    padding-left: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: center;
+    border: none;
+    font-size: 13px;
+}
+
+.text-box-input:focus {
+    outline: none;
+}
+
+.required-icon {
+    color: #FF0000;
+    margin-left: 3px;
+}
