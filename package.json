@@ -2,10 +2,11 @@
     "name": "core",
     "author": "Kieran Lewin <kieran.lewin2000@gmail.com>",
     "main": "dist/index.js",
-    "version": "0.1.0",
+    "module": "dist/index.esm",
+    "version": "1.0.0",
     "license": "MIT",
     "scripts": {
-        "start": "rollup -c --watch --exports default",
+        "start": "rollup -c --watch",
         "build": "rollup -c",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
@@ -15,10 +16,12 @@
         "@rollup/plugin-commonjs": "^17.0.0",
         "@rollup/plugin-image": "^2.0.6",
         "@rollup/plugin-node-resolve": "^11.0.1",
-        "@storybook/addon-actions": "^6.1.14",
-        "@storybook/addon-essentials": "^6.1.14",
-        "@storybook/addon-links": "^6.1.14",
-        "@storybook/react": "^6.1.14",
+        "@storybook/addon-actions": "^6.1.15",
+        "@storybook/addon-controls": "^6.1.15",
+        "@storybook/addon-essentials": "^6.1.15",
+        "@storybook/addon-links": "^6.1.15",
+        "@storybook/react": "^6.1.15",
+        "@types/react": "^17.0.0",
         "@typescript-eslint/eslint-plugin": "^4.13.0",
         "@typescript-eslint/parser": "^4.13.0",
         "babel-loader": "^8.2.2",
@@ -30,6 +33,7 @@
         "eslint-plugin-prettier": "^3.3.1",
         "eslint-plugin-react": "^7.22.0",
         "eslint-plugin-react-hooks": "^4.2.0",
+        "postcss": "^8.2.4",
         "prettier": "^2.2.1",
         "prettier-eslint": "^12.0.0",
         "react": "^17.0.1",
@@ -38,8 +42,7 @@
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-postcss": "^4.0.0",
         "rollup-plugin-typescript2": "^0.29.0",
-        "typescript": "^4.1.3",
-        "@types/react": "^17.0.0"
+        "typescript": "^4.1.3"
     },
     "peerDependencies": {
         "react": "^17.0.1",
@@ -47,5 +50,6 @@
     },
     "files": [
         "dist"
-    ]
+    ],
+    "dependencies": {}
 }

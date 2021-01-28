@@ -1,27 +1,31 @@
 /** @format */
 import React from 'react';
-import { Meta, Story } from '@storybook/react/types-6-0';
+import { Story } from '@storybook/react/types-6-0';
 
-import { TabList } from '../index';
-import { TabListProps } from '../Types';
+import { TileList } from '../index';
+import { TileListProps } from '../Types';
 import Tile from '../components/TileList/Tile';
 import Room from '../components/Icons/Room';
 
 export default {
-    title: 'Example/TabList',
-    component: TabList,
-} as Meta;
+    title: 'Example/TileList',
+    component: TileList,
+};
 
-const Template: Story<TabListProps> = (args) => (
+export const Single: Story<TileListProps> = (args) => (
     <div style={{ width: '500px' }}>
-        <TabList {...args}>
-            <Tile label={'tile'} icon={<Room />} />
-            <Tile label={'tile'} icon={<Room />} />
-        </TabList>
+        <TileList {...args}>
+            <Tile label={'tile1'} icon={<Room />} />
+        </TileList>
     </div>
 );
 
-export const Basic = Template.bind({});
-// Basic.args = {
-//     // children: <Tile label={'test'} />,
-// };
+export const Multiple: Story<TileListProps> = (args) => (
+    <div style={{ width: '500px' }}>
+        <TileList {...args}>
+            <Tile label={'tile1'} icon={<Room />} />
+            <Tile label={'tile2'} icon={<Room />} />
+            <Tile label={'tile3'} icon={<Room />} />
+        </TileList>
+    </div>
+);

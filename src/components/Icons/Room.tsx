@@ -2,8 +2,9 @@
 
 // @flow
 import * as React from 'react';
+import { CSSProperties } from 'react';
 
-const Room = () => {
+const Room = ({ style }: { style?: CSSProperties }) => {
     return (
         <svg
             viewBox="0 0 19 19"
@@ -12,7 +13,7 @@ const Room = () => {
             clipRule="evenodd"
             strokeLinejoin="round"
             strokeMiterlimit={2}
-            style={{ height: '22px', marginRight: '8px' }}
+            style={{ height: '22px', marginRight: '8px', ...style }}
         >
             <path
                 d="M17.491 5.468a.538.538 0 00-.203.039l-.092.046-6.89 3.574-.156.08s-.002 0-.002.002a1.017 1.017 0 00-.504.86v7.468c0 .257.227.464.51.464.084 0 .168-.02.244-.056l.02-.012 7.021-3.724.01-.006c.332-.18.553-.512.553-.888V5.93c0-.255-.23-.462-.51-.462z"
@@ -31,6 +32,10 @@ const Room = () => {
             />
         </svg>
     );
+};
+
+Room.defaultProps = {
+    style: {},
 };
 
 export default Room;

@@ -1,20 +1,21 @@
 /** @format */
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, Dispatch, SetStateAction } from 'react';
 
 export type ButtonProps = {
-    label: string;
-    type?: 'primary' | 'secondary' | 'tertiary';
-    variant?: 'contained' | 'text' | 'outlined';
-    onClick?: () => void;
+    label: string; // DOC the label/name for the button
+    type?: 'primary' | 'secondary' | 'tertiary'; // DOC the three different types of button for different times (dark/light mode)
+    variant?: 'contained' | 'text' | 'outlined'; // DOC reads as is
+    onClick?: () => void; // DOC ran when the button is clicked
+    style?: CSSProperties;
 };
 
 export type TickboxProps = {
-    ticked: boolean;
-    onChange?: () => void;
+    ticked: boolean; // DOC the tickbox's status, can be updated from the parent
+    onChange?: () => void; // DOC ran when the status of the tickbox changes
 };
 
-export type TabListProps = {
-    children: React.ReactNode;
+export type TileListProps = {
+    children: { props: TileType } | Array<{ props: TileType }>;
 };
 
 export type TileType = {
@@ -22,7 +23,8 @@ export type TileType = {
     shown?: boolean;
     locked?: boolean;
     icon?: JSX.Element;
-    children?: boolean;
+    children?: React.ReactNode;
+    index?: number;
 };
 
 export type DropdownProps = {
@@ -32,6 +34,32 @@ export type DropdownProps = {
 
 export type LockProps = {
     locked: boolean;
-    disabled: boolean;
+    disabled?: boolean;
+    onChange?: (state: boolean) => void;
+    style?: CSSProperties;
+} & IconProps;
+
+export type TilesContextType = {
+    selectedTile: number;
+    setSelectedTile: Dispatch<SetStateAction<number>> | (() => void);
+};
+
+export type TextBoxProps = {
+    label?: string; // DOC the label that is before the input, background does not extend to cover it
+    size?: 'small' | 'large';
+    disabled?: boolean;
+    variant?: 'filled' | 'outlined'; // DOC the type of input that will be shown, filled has sharp corners, outlined has rounded corners
+    prefixComponent?: JSX.Element; // DOC component usually an icon that comes before the input box
+    suffixComponent?: JSX.Element; // DOC component usually an icon that comes after the input box
+    units?: string;
+    onChange?: (value: string) => void; // DOC ran when the text in the input box is changed
+    maxLength?: number;
+    required?: boolean;
+    placeholder?: string;
+    filter?: (value: string) => boolean; // DOC checks if the current string passes the filter, TRUE - PASS, FALSE - FAIL
+};
+
+export type IconProps = {
+    iconColor?: string;
     style?: CSSProperties;
 };
