@@ -6,6 +6,7 @@
     "license": "MIT",
     "scripts": {
         "start": "rollup -c --watch --exports default",
+        "prebuild": "cp package_build.json dist/package.json",
         "build": "rollup -c",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
