@@ -19,6 +19,8 @@ const TextBox = ({
     maxLength,
     units,
     onChange,
+    className,
+    style,
 }: TextBoxProps) => {
     const [value, setValue] = useState('');
 
@@ -39,10 +41,11 @@ const TextBox = ({
 
     return (
         <div
-            className={'text-box'}
+            className={`text-box ${className}`}
             style={{
                 flexDirection: variant === 'filled' ? 'row' : 'column',
                 alignItems: variant === 'filled' ? 'center' : 'start',
+                ...style,
             }}
         >
             {label !== '' ? (

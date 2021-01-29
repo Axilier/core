@@ -7,11 +7,14 @@ export type ButtonProps = {
     variant?: 'contained' | 'text' | 'outlined'; // DOC reads as is
     onClick?: () => void; // DOC ran when the button is clicked
     style?: CSSProperties;
+    className?: string;
 };
 
 export type TickboxProps = {
     ticked: boolean; // DOC the tickbox's status, can be updated from the parent
     onChange?: () => void; // DOC ran when the status of the tickbox changes
+    style?: CSSProperties;
+    className?: string;
 };
 
 export type TileListProps = {
@@ -30,6 +33,8 @@ export type TileType = {
 export type DropdownProps = {
     open: boolean;
     onChange?: () => void;
+    style?: CSSProperties;
+    className?: string;
 };
 
 export type LockProps = {
@@ -57,9 +62,15 @@ export type TextBoxProps = {
     required?: boolean;
     placeholder?: string;
     filter?: (value: string) => boolean; // DOC checks if the current string passes the filter, TRUE - PASS, FALSE - FAIL
+    style?: CSSProperties;
+    className?: string;
 };
 
 export type IconProps = {
     iconColor?: string;
+} & BasicComponent;
+
+export type BasicComponent = {
     style?: CSSProperties;
+    className?: string;
 };

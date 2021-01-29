@@ -6,26 +6,26 @@ import { useEffect, useState } from 'react';
 import { TickboxProps } from '../Types';
 import '../css/Tickbox.css';
 
-const Tickbox = ({ ticked, onChange }: TickboxProps) => {
+const Tickbox = ({ ticked, onChange, className, style }: TickboxProps) => {
     const [isTicked, setIsTicked] = useState(ticked);
 
     useEffect(() => setIsTicked(ticked), [ticked]);
 
     return (
         <svg
-            className={'tick-box'}
+            className={`tick-box ${className}`}
             onClick={() => {
                 setIsTicked(!isTicked);
                 if (!onChange) return;
                 onChange();
             }}
-            style={{}}
             viewBox="0 0 64 64"
             xmlns="http://www.w3.org/2000/svg"
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLinejoin="round"
             strokeMiterlimit={2}
+            style={style}
         >
             <path
                 d="M63.994 0h-64v64h64V0zM2.552 2.545v58.914h58.884V2.544H2.552z"

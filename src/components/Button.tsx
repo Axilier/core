@@ -5,7 +5,14 @@ import * as React from 'react';
 import { ButtonProps } from '../Types';
 import '../css/Button.css';
 
-const Button = ({ label, type, variant, onClick, style }: ButtonProps) => {
+const Button = ({
+    label,
+    type,
+    variant,
+    onClick,
+    style,
+    className,
+}: ButtonProps) => {
     const primaryColour = (): string => {
         switch (type) {
             case 'primary':
@@ -34,7 +41,7 @@ const Button = ({ label, type, variant, onClick, style }: ButtonProps) => {
     return (
         <button
             type="button"
-            className="button"
+            className={`button ${className}`}
             style={{
                 border:
                     variant === 'outlined'

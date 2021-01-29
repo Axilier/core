@@ -3,9 +3,16 @@
 // @flow
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { IconProps, LockProps } from '../../Types';
+import { LockProps } from '../../Types';
 
-const Lock = ({ locked, style, disabled, iconColor, onChange }: LockProps) => {
+const Lock = ({
+    locked,
+    style,
+    disabled,
+    iconColor,
+    onChange,
+    className,
+}: LockProps) => {
     const [isLocked, setIsLocked] = useState(locked);
 
     useEffect(() => setIsLocked(locked), [locked]);
@@ -22,7 +29,7 @@ const Lock = ({ locked, style, disabled, iconColor, onChange }: LockProps) => {
             clipRule="evenodd"
             strokeLinejoin="round"
             strokeMiterlimit={2}
-            className={'lock'}
+            className={`lock ${className}`}
             onClick={() => {
                 setIsLocked(!isLocked);
                 if (!onChange) return;

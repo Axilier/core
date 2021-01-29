@@ -5,7 +5,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { DropdownProps } from '../Types';
 
-const Dropdown = ({ open, onChange }: DropdownProps) => {
+const Dropdown = ({ open, onChange, style, className }: DropdownProps) => {
     const [isOpen, setIsOpen] = useState(open);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const Dropdown = ({ open, onChange }: DropdownProps) => {
     return (
         <svg
             transform={isOpen ? 'rotate(90)' : 'none'}
-            className={'drop-down-icon'}
+            className={`drop-down-icon ${className}`}
             onClick={() => {
                 if (!onChange) return;
                 onChange();
@@ -26,6 +26,7 @@ const Dropdown = ({ open, onChange }: DropdownProps) => {
             clipRule="evenodd"
             strokeLinejoin="round"
             strokeMiterlimit={2}
+            style={style}
         >
             <g transform="matrix(2.90892 0 0 2.9091 -4174.32 -1000.725)">
                 <circle cx={1446} cy={355} r={11} fill="#ebebeb" />
