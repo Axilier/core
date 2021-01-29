@@ -6,10 +6,13 @@ export declare type ButtonProps = {
     variant?: 'contained' | 'text' | 'outlined';
     onClick?: () => void;
     style?: CSSProperties;
+    className?: string;
 };
 export declare type TickboxProps = {
     ticked: boolean;
     onChange?: () => void;
+    style?: CSSProperties;
+    className?: string;
 };
 export declare type TileListProps = {
     children: {
@@ -29,6 +32,8 @@ export declare type TileType = {
 export declare type DropdownProps = {
     open: boolean;
     onChange?: () => void;
+    style?: CSSProperties;
+    className?: string;
 };
 export declare type LockProps = {
     locked: boolean;
@@ -53,8 +58,13 @@ export declare type TextBoxProps = {
     required?: boolean;
     placeholder?: string;
     filter?: (value: string) => boolean;
+    style?: CSSProperties;
+    className?: string;
 };
 export declare type IconProps = {
     iconColor?: string;
+} & BasicComponent;
+export declare type BasicComponent = {
     style?: CSSProperties;
+    className?: string;
 };

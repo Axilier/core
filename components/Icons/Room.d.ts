@@ -1,10 +1,8 @@
 /** @format */
-import * as React from 'react';
-import { CSSProperties } from 'react';
+/// <reference types="react" />
+import { BasicComponent } from '../../Types';
 declare const Room: {
-    ({ style }: {
-        style?: React.CSSProperties | undefined;
-    }): JSX.Element;
+    ({ style, className }: BasicComponent): JSX.Element;
     defaultProps: {
         style: {};
     };
