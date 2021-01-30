@@ -31,11 +31,12 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght500;700&display=swap');\n\n.button {\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    padding: 5px 25px;\n    font-size: 16px;\n    font-weight: 400;\n}\n\n.button:hover {\n    cursor: pointer;\n}\n";
+var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght500;700&display=swap');\n\n.button {\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    padding: 5px 25px;\n    font-size: 16px;\n    font-weight: 400;\n}\n\n.button:hover {\n    cursor: pointer;\n}\n\n.button-filter {\n    position: absolute;\n    z-index: 20;\n    background-color: black;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n}\n";
 styleInject(css_248z);
 
 /** @format */
-const Button = ({ label, type, variant, onClick, style, className, }) => {
+const Button = ({ label, type, variant, onClick, style, className, disabled, }) => {
+    const [clicked, setClicked] = React.useState(false);
     const primaryColour = () => {
         switch (type) {
             case 'primary':
@@ -60,21 +61,28 @@ const Button = ({ label, type, variant, onClick, style, className, }) => {
                 return 'white';
         }
     };
-    return (React.createElement("button", { type: "button", className: `button ${className}`, style: Object.assign({ border: variant === 'outlined'
-                ? `solid 2px ${primaryColour()}`
-                : 'none', backgroundColor: variant === 'contained' ? primaryColour() : 'transparent', color: variant === 'contained'
-                ? secondaryColour()
-                : primaryColour() }, style), onClick: () => {
-            if (!onClick)
-                return;
-            onClick();
-        } }, label));
+    return (React.createElement(React.Fragment, null,
+        React.createElement("button", { onMouseDown: () => setClicked(true), onMouseUp: () => setClicked(false), type: 'button', className: `button ${className}`, style: Object.assign({ border: variant === 'outlined'
+                    ? `solid 2px ${primaryColour()}`
+                    : 'none', backgroundColor: variant === 'contained'
+                    ? primaryColour()
+                    : 'transparent', color: variant === 'contained'
+                    ? secondaryColour()
+                    : primaryColour() }, style), onClick: () => {
+                if (!onClick)
+                    return;
+                onClick();
+            } }, label),
+        React.createElement("div", { className: 'button-filter', style: {
+                opacity: disabled ? 0.1 : clicked ? 0.1 : 0,
+            } })));
 };
 Button.defaultProps = {
     variant: 'outlined',
     type: 'primary',
     label: 'test',
     onClick: () => { },
+    disabled: false,
 };
 
 var css_248z$1 = ".tick-box {\n    height: 18px;\n}\n\n.tick-box:hover {\n    cursor: pointer;\n}\n";
@@ -187,8 +195,9 @@ var css_248z$3 = ".text-box {\n    justify-content: flex-start;\n    margin: 10p
 styleInject(css_248z$3);
 
 /** @format */
-const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, }) => {
-    const [value, setValue] = React.useState('');
+const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, value: newValue, }) => {
+    const [value, setValue] = React.useState(newValue);
+    React.useEffect(() => setValue(newValue), [newValue]);
     function handleChange(evt) {
         const isFiltered = filter ? filter(evt.target.value) : true;
         if (!isFiltered)
@@ -204,7 +213,7 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
         width: size === 'small' ? '12x' : '20px',
         marginLeft: '10px',
     });
-    return (React.createElement("div", { className: `text-box ${className}`, style: Object.assign({ flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start' }, style) },
+    return (React.createElement("div", { className: `text-box ${className || ''}`, style: Object.assign({ flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start' }, style) },
         label !== '' ? (React.createElement("div", { className: 'text-box-label' },
             label,
             required ? React.createElement("div", { className: 'required-icon' }, "*") : null)) : null,
@@ -222,10 +231,9 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
                     backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent',
                 }, onChange: (evt) => handleChange(evt), maxLength: maxLength || -1, disabled: disabled }),
             React.createElement("div", { style: iconStyles(suffixComponent) }, suffixComponent),
-            React.createElement("div", { style: {
-                    display: !units ? 'none' : 'block',
+            units ? (React.createElement("div", { style: {
                     marginLeft: '5px',
-                } }, units))));
+                } }, units)) : null)));
 };
 TextBox.defaultProps = {
     units: '',

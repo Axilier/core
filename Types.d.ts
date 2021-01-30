@@ -7,6 +7,7 @@ export declare type ButtonProps = {
     onClick?: () => void;
     style?: CSSProperties;
     className?: string;
+    disabled?: boolean;
 };
 export declare type TickboxProps = {
     ticked: boolean;
@@ -60,6 +61,7 @@ export declare type TextBoxProps = {
     filter?: (value: string) => boolean;
     style?: CSSProperties;
     className?: string;
+    value: string;
 };
 export declare type IconProps = {
     iconColor?: string;
