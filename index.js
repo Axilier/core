@@ -105,9 +105,6 @@ Tickbox.defaultProps = {
     onChange: () => { },
 };
 
-var css_248z$2 = ".tile-list-tile {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.tile-list-tile:hover {\n    cursor: pointer;\n}\n\n.tile-list-tile div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.tile-list-tile-segment {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.lock:hover {\n    cursor: pointer;\n}\n";
-styleInject(css_248z$2);
-
 /** @format */
 const Lock = ({ locked, style, disabled, iconColor, onChange, className, }) => {
     const [isLocked, setIsLocked] = React.useState(locked);
@@ -174,6 +171,9 @@ const Tile = ({ label, icon, children, index }) => {
                 React.createElement(Lock, { disabled: false, locked: false }))),
         children))));
 };
+
+var css_248z$2 = ".tile-list-tile {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.tile-list-tile:hover {\n    cursor: pointer;\n}\n\n.tile-list-tile div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.tile-list-tile-segment {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.lock:hover {\n    cursor: pointer;\n}\n";
+styleInject(css_248z$2);
 
 /** @format */
 const TileList = ({ children }) => {
@@ -251,5 +251,6 @@ exports.Mail = Mail;
 exports.Room = Room;
 exports.TextBox = TextBox;
 exports.Tickbox = Tickbox;
+exports.Tile = Tile;
 exports.TileList = TileList;
 //# sourceMappingURL=index.js.map
