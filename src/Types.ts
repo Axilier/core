@@ -8,6 +8,7 @@ export type ButtonProps = {
     onClick?: () => void; // DOC ran when the button is clicked
     style?: CSSProperties;
     className?: string;
+    disabled?: boolean;
 };
 
 export type TickboxProps = {
@@ -64,6 +65,7 @@ export type TextBoxProps = {
     filter?: (value: string) => boolean; // DOC checks if the current string passes the filter, TRUE - PASS, FALSE - FAIL
     style?: CSSProperties;
     className?: string;
+    value: string;
 };
 
 export type IconProps = {

@@ -2,7 +2,7 @@
 
 // @flow
 import * as React from 'react';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { TextBoxProps } from '../Types';
 import '../css/TextBox.css';
 
@@ -21,8 +21,11 @@ const TextBox = ({
     onChange,
     className,
     style,
+    value: newValue,
 }: TextBoxProps) => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState(newValue);
+
+    useEffect(() => setValue(newValue), [newValue]);
 
     function handleChange(evt: ChangeEvent<HTMLInputElement>) {
         const isFiltered = filter ? filter(evt.target.value) : true;
@@ -41,7 +44,7 @@ const TextBox = ({
 
     return (
         <div
-            className={`text-box ${className}`}
+            className={`text-box ${className || ''}`}
             style={{
                 flexDirection: variant === 'filled' ? 'row' : 'column',
                 alignItems: variant === 'filled' ? 'center' : 'start',
@@ -81,14 +84,15 @@ const TextBox = ({
                     disabled={disabled}
                 />
                 <div style={iconStyles(suffixComponent)}>{suffixComponent}</div>
-                <div
-                    style={{
-                        display: !units ? 'none' : 'block',
-                        marginLeft: '5px',
-                    }}
-                >
-                    {units}
-                </div>
+                {units ? (
+                    <div
+                        style={{
+                            marginLeft: '5px',
+                        }}
+                    >
+                        {units}
+                    </div>
+                ) : null}
             </div>
         </div>
     );
