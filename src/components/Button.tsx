@@ -102,7 +102,7 @@ const Button = ({
 
     return (
         <div
-            className={'button-container'}
+            className={'core-button-container'}
             style={{ width: variant === 'text' ? '' : btnSize() }}
         >
             <button
@@ -111,12 +111,12 @@ const Button = ({
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 type={'button'}
-                className={`button ${className}`}
+                className={`core-button ${className}`}
                 style={{
                     border: border(),
                     backgroundColor: backgroundColor(),
                     color: color(),
-                    padding: variant === 'text' ? 'none' : '5px 35px',
+                    padding: variant === 'text' ? 'unset' : '5px 35px',
                     width: variant === 'text' ? '' : btnSize(),
                     ...style,
                 }}
@@ -138,7 +138,7 @@ const Button = ({
             </button>
             {disabled ? (
                 <div
-                    className={'button-filter'}
+                    className={'core-button-filter'}
                     style={{
                         opacity: 0.3,
                     }}

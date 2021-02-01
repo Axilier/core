@@ -1,4 +1,4 @@
-.text-box {
+.core-text-box {
     justify-content: flex-start;
     margin: 10px;
     font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;
@@ -9,21 +9,21 @@
 
 }
 
-.text-box-label {
+.core-text-box-label {
     display: flex;
     flex-direction: row;
     margin-right: 5px;
     font-size: 13px;
 }
 
-.text-box-input-units {
+.core-text-box-input-units {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0 10px;
 }
 
-.text-box-input {
+.core-text-box-input {
     padding-top: 0;
     padding-bottom: 0;
     align-items: center;
@@ -32,11 +32,11 @@
     margin-left: 10px;
 }
 
-.text-box-input:focus {
+.core-text-box-input:focus {
     outline: none;
 }
 
-.required-icon {
+.core-required-icon {
     color: #FF0000;
     margin-left: 3px;
 }

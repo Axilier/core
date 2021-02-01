@@ -44,7 +44,7 @@ const TextBox = ({
 
     return (
         <div
-            className={`text-box ${className || ''}`}
+            className={`core-text-box ${className || ''}`}
             style={{
                 flexDirection: variant === 'filled' ? 'row' : 'column',
                 alignItems: variant === 'filled' ? 'center' : 'start',
@@ -52,13 +52,15 @@ const TextBox = ({
             }}
         >
             {label !== '' ? (
-                <div className={'text-box-label'}>
+                <div className={'core-text-box-label'}>
                     {label}
-                    {required ? <div className={'required-icon'}>*</div> : null}
+                    {required ? (
+                        <div className={'core-required-icon'}>*</div>
+                    ) : null}
                 </div>
             ) : null}
             <div
-                className={'text-box-input-units'}
+                className={'core-text-box-input-units'}
                 style={{
                     color: disabled ? '#8C8C8C' : '#000000',
                     height: size === 'small' ? '34px' : '44px',
@@ -73,7 +75,7 @@ const TextBox = ({
                 <input
                     type={type}
                     value={value}
-                    className={'text-box-input'}
+                    className={'core-text-box-input'}
                     placeholder={placeholder}
                     style={{
                         width: size === 'small' ? '30px' : '320px',

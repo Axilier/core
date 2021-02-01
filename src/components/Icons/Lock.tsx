@@ -29,7 +29,7 @@ const Lock = ({
             clipRule={'evenodd'}
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
-            className={`lock ${className}`}
+            className={`core-lock ${className}`}
             onClick={() => {
                 setIsLocked(!isLocked);
                 if (!onChange) return;

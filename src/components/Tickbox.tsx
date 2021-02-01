@@ -13,7 +13,7 @@ const Tickbox = ({ ticked, onChange, className, style }: TickboxProps) => {
 
     return (
         <svg
-            className={`tick-box ${className}`}
+            className={`core-tick-box ${className}`}
             onClick={() => {
                 setIsTicked(!isTicked);
                 if (!onChange) return;
