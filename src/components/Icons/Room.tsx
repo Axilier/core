@@ -7,11 +7,11 @@ import { BasicComponent } from '../../Types';
 const Room = ({ style, className }: BasicComponent) => {
     return (
         <svg
-            viewBox=" 0 19 19"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            strokeLinejoin="round"
+            viewBox={' 0 19 19'}
+            xmlns={'http://www.w3.org/2000/svg'}
+            fillRule={'evenodd'}
+            clipRule={'evenodd'}
+            strokeLinejoin={'round'}
             strokeMiterlimit={2}
             className={className}
             style={{

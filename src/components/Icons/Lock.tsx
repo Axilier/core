@@ -23,11 +23,11 @@ const Lock = ({
                 height: '20px',
                 ...style,
             }}
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            strokeLinejoin="round"
+            viewBox={'0 0 16 16'}
+            xmlns={'http://www.w3.org/2000/svg'}
+            fillRule={'evenodd'}
+            clipRule={'evenodd'}
+            strokeLinejoin={'round'}
             strokeMiterlimit={2}
             className={`lock ${className}`}
             onClick={() => {

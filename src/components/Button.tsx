@@ -2,7 +2,7 @@
 
 // @flow
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ButtonProps } from '../Types';
 import '../css/Button.css';
 
@@ -14,54 +14,107 @@ const Button = ({
     style,
     className,
     disabled,
+    buttonColor,
+    altButtonColor,
+    buttonIcon,
+    iconBackgroundColor,
+    size,
 }: ButtonProps) => {
     const [clicked, setClicked] = useState(false);
+    const [hover, setHover] = useState(false);
+
+    useEffect(() => console.log(hover), [hover]);
 
     const primaryColour = (): string => {
         switch (type) {
             case 'primary':
-                return '#057AFF';
+                return buttonColor || '#057AFF';
             case 'secondary':
-                return 'white';
+                return buttonColor || 'white';
             case 'tertiary':
-                return 'black';
+                return buttonColor || 'black';
             default:
-                return 'black';
+                return buttonColor || 'black';
         }
     };
     const secondaryColour = (): string => {
         switch (type) {
             case 'primary':
-                return 'white';
+                return altButtonColor || 'white';
             case 'secondary':
-                return '#057AFF';
+                return altButtonColor || '#057AFF';
             case 'tertiary':
-                return 'white';
+                return altButtonColor || 'white';
             default:
-                return 'white';
+                return altButtonColor || 'white';
+        }
+    };
+
+    const border = () => {
+        switch (variant) {
+            case 'contained':
+                return hover
+                    ? `solid 2px ${primaryColour()}`
+                    : 'solid 2px transparent';
+            case 'outlined':
+                return `solid 2px ${primaryColour()}`;
+            case 'text':
+                return 'none';
+            default:
+                return 'none';
+        }
+    };
+    const backgroundColor = () => {
+        switch (variant) {
+            case 'contained':
+                return hover ? secondaryColour() : primaryColour();
+            case 'outlined':
+                return hover ? primaryColour() : 'transparent';
+            case 'text':
+                return 'transparent';
+            default:
+                return primaryColour();
+        }
+    };
+    const color = () => {
+        switch (variant) {
+            case 'contained':
+                return hover ? primaryColour() : secondaryColour();
+            case 'outlined':
+                return hover ? secondaryColour() : primaryColour();
+            case 'text':
+                return primaryColour();
+            default:
+                return primaryColour();
+        }
+    };
+
+    const btnSize = (): string => {
+        switch (size) {
+            case 'small':
+                return '150px';
+            case 'large':
+                return '320px';
+            default:
+                return size || '';
         }
     };
 
     return (
-        <>
+        <div className={'button-container'} style={{ width: btnSize() }}>
             <button
                 onMouseDown={() => setClicked(true)}
                 onMouseUp={() => setClicked(false)}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
                 type={'button'}
                 className={`button ${className}`}
                 style={{
-                    border:
-                        variant === 'outlined'
-                            ? `solid 2px ${primaryColour()}`
-                            : 'none',
-                    backgroundColor:
-                        variant === 'contained'
-                            ? primaryColour()
-                            : 'transparent',
-                    color:
-                        variant === 'contained'
-                            ? secondaryColour()
-                            : primaryColour(),
+                    border: border(),
+                    backgroundColor: backgroundColor(),
+                    color: color(),
+                    padding: variant === 'text' ? 'none' : '5px 35px',
+                    width: btnSize(),
                     ...style,
                 }}
                 onClick={() => {
@@ -69,15 +122,26 @@ const Button = ({
                     onClick();
                 }}
             >
+                {buttonIcon ? (
+                    <div
+                        style={{
+                            backgroundColor: iconBackgroundColor || 'white',
+                        }}
+                    >
+                        {buttonIcon}
+                    </div>
+                ) : null}
                 {label}
             </button>
-            <div
-                className={'button-filter'}
-                style={{
-                    opacity: disabled ? 0.1 : clicked ? 0.1 : 0,
-                }}
-            />
-        </>
+            {disabled ? (
+                <div
+                    className={'button-filter'}
+                    style={{
+                        opacity: 0.3,
+                    }}
+                />
+            ) : null}
+        </div>
     );
 };
 
@@ -87,6 +151,7 @@ Button.defaultProps = {
     label: 'test',
     onClick: () => {},
     disabled: false,
+    size: 'small',
 };
 
 export default Button;

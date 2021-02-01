@@ -22,6 +22,7 @@ const TextBox = ({
     className,
     style,
     value: newValue,
+    type,
 }: TextBoxProps) => {
     const [value, setValue] = useState(newValue);
 
@@ -39,7 +40,6 @@ const TextBox = ({
         display: !component ? 'none' : 'block',
         height: size === 'small' ? '10x' : '16px',
         width: size === 'small' ? '12x' : '20px',
-        marginLeft: '10px',
     });
 
     return (
@@ -65,10 +65,13 @@ const TextBox = ({
                     borderRadius: variant === 'outlined' ? '5px' : '0',
                     border:
                         variant === 'outlined' ? 'solid 2px #057EFF' : 'none',
+                    backgroundColor:
+                        variant === 'filled' ? '#F3F3F3' : 'transparent',
                 }}
             >
                 <div style={iconStyles(prefixComponent)}>{prefixComponent}</div>
                 <input
+                    type={type}
                     value={value}
                     className={'text-box-input'}
                     placeholder={placeholder}
@@ -83,7 +86,6 @@ const TextBox = ({
                     maxLength={maxLength || -1}
                     disabled={disabled}
                 />
-                <div style={iconStyles(suffixComponent)}>{suffixComponent}</div>
                 {units ? (
                     <div
                         style={{
@@ -93,6 +95,7 @@ const TextBox = ({
                         {units}
                     </div>
                 ) : null}
+                <div style={iconStyles(suffixComponent)}>{suffixComponent}</div>
             </div>
         </div>
     );
