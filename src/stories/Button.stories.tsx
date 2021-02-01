@@ -51,4 +51,5 @@ GoogleSignIn.args = {
         fontWeight: 'bold',
     },
     buttonIcon: <Google />,
+    size: 'large',
 };

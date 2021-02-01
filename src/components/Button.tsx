@@ -101,7 +101,10 @@ const Button = ({
     };
 
     return (
-        <div className={'button-container'} style={{ width: btnSize() }}>
+        <div
+            className={'button-container'}
+            style={{ width: variant === 'text' ? '' : btnSize() }}
+        >
             <button
                 onMouseDown={() => setClicked(true)}
                 onMouseUp={() => setClicked(false)}
@@ -114,7 +117,7 @@ const Button = ({
                     backgroundColor: backgroundColor(),
                     color: color(),
                     padding: variant === 'text' ? 'none' : '5px 35px',
-                    width: btnSize(),
+                    width: variant === 'text' ? '' : btnSize(),
                     ...style,
                 }}
                 onClick={() => {
