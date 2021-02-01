@@ -12,7 +12,7 @@ export type ButtonProps = {
     buttonColor?: string;
     altButtonColor?: string;
     buttonIcon?: JSX.Element;
-    iconBackgroundColor: string;
+    iconBackgroundColor?: string;
     size?: 'small' | 'large' | string;
 };
 
