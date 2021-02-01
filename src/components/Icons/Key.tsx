@@ -7,11 +7,11 @@ import { IconProps } from '../../Types';
 const Key = ({ iconColor, style, className }: IconProps) => {
     return (
         <svg
-            viewBox="0 0 21 21"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            strokeLinejoin="round"
+            viewBox={'0 0 21 21'}
+            xmlns={'http://www.w3.org/2000/svg'}
+            fillRule={'evenodd'}
+            clipRule={'evenodd'}
+            strokeLinejoin={'round'}
             strokeMiterlimit={2}
             style={{ height: '20px', ...style }}
             className={className}
