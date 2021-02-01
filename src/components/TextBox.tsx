@@ -108,6 +108,7 @@ TextBox.defaultProps = {
     size: 'small',
     variant: 'filled',
     onChange: () => null,
+    value: '',
 };
 
 export default TextBox;
