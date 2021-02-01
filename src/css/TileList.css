@@ -1,4 +1,4 @@
-.tile-list-tile {
+.core-tile-list-tile {
     height: 40px;
     display: flex;
     flex-direction: row;
@@ -11,22 +11,22 @@
     font-weight: 400;
 }
 
-.tile-list-tile:hover {
+.core-tile-list-tile:hover {
     cursor: pointer;
 }
 
-.tile-list-tile div {
+.core-tile-list-tile div {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.tile-list-tile-segment {
+.core-tile-list-tile-segment {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.lock:hover {
+.core-lock:hover {
     cursor: pointer;
 }

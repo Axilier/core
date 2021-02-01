@@ -13,7 +13,7 @@ const Tile = ({ label, icon, children, index }: TileType) => {
                 <>
                     <div
                         role={'row'}
-                        className={'tile-list-tile'}
+                        className={'core-tile-list-tile'}
                         style={{
                             backgroundColor:
                                 tilesInfo.selectedTile === index

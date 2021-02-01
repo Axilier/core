@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&display=swap');
 
-.button {
+.core-button {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -14,18 +14,18 @@
     justify-content: center;
 }
 
-.button-container {
+.core-button-container {
     position: relative;
 }
 
-.button div {
+.core-button div {
     padding: 4px;
     border-radius: 7px;
     display: flex;
     margin-right: 5px;
 }
 
-.button-filter {
+.core-button-filter {
     position: absolute;
     z-index: 20;
     background-color: black;
