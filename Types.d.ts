@@ -8,6 +8,11 @@ export declare type ButtonProps = {
     style?: CSSProperties;
     className?: string;
     disabled?: boolean;
+    buttonColor?: string;
+    altButtonColor?: string;
+    buttonIcon?: JSX.Element;
+    iconBackgroundColor: string;
+    size?: 'small' | 'large' | string;
 };
 export declare type TickboxProps = {
     ticked: boolean;
@@ -61,7 +66,8 @@ export declare type TextBoxProps = {
     filter?: (value: string) => boolean;
     style?: CSSProperties;
     className?: string;
-    value: string;
+    value?: string;
+    type?: string;
 };
 export declare type IconProps = {
     iconColor?: string;
