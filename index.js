@@ -31,7 +31,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&display=swap');\n\n.button {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    font-size: 18px;\n    font-weight: 400;\n    transition: color .5s, background-color .5s, border .5s;\n    cursor: pointer;\n    justify-content: center;\n}\n\n.button-container {\n    position: relative;\n}\n\n.button div {\n    padding: 4px;\n    border-radius: 7px;\n    display: flex;\n    margin-right: 5px;\n}\n\n.button-filter {\n    position: absolute;\n    z-index: 20;\n    background-color: black;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n}\n";
+var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&display=swap');\n\n.core-button {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    font-size: 18px;\n    font-weight: 400;\n    transition: color .5s, background-color .5s, border .5s;\n    cursor: pointer;\n    justify-content: center;\n}\n\n.core-button-container {\n    position: relative;\n}\n\n.core-button div {\n    padding: 4px;\n    border-radius: 7px;\n    display: flex;\n    margin-right: 5px;\n}\n\n.core-button-filter {\n    position: absolute;\n    z-index: 20;\n    background-color: black;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n}\n";
 styleInject(css_248z);
 
 /** @format */
@@ -111,8 +111,8 @@ const Button = ({ label, type, variant, onClick, style, className, disabled, but
                 return size || '';
         }
     };
-    return (React.createElement("div", { className: 'button-container', style: { width: variant === 'text' ? '' : btnSize() } },
-        React.createElement("button", { onMouseDown: () => setClicked(true), onMouseUp: () => setClicked(false), onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), type: 'button', className: `button ${className}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'none' : '5px 35px', width: variant === 'text' ? '' : btnSize() }, style), onClick: () => {
+    return (React.createElement("div", { className: 'core-button-container', style: { width: variant === 'text' ? '' : btnSize() } },
+        React.createElement("button", { onMouseDown: () => setClicked(true), onMouseUp: () => setClicked(false), onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), type: 'button', className: `core-button ${className}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 35px', width: variant === 'text' ? '' : btnSize() }, style), onClick: () => {
                 if (!onClick)
                     return;
                 onClick();
@@ -121,7 +121,7 @@ const Button = ({ label, type, variant, onClick, style, className, disabled, but
                     backgroundColor: iconBackgroundColor || 'white',
                 } }, buttonIcon)) : null,
             label),
-        disabled ? (React.createElement("div", { className: 'button-filter', style: {
+        disabled ? (React.createElement("div", { className: 'core-button-filter', style: {
                 opacity: 0.3,
             } })) : null));
 };
@@ -134,14 +134,14 @@ Button.defaultProps = {
     size: 'small',
 };
 
-var css_248z$1 = ".tick-box {\n    height: 18px;\n}\n\n.tick-box:hover {\n    cursor: pointer;\n}\n";
+var css_248z$1 = ".core-tick-box {\n    height: 18px;\n}\n\n.core-tick-box:hover {\n    cursor: pointer;\n}\n";
 styleInject(css_248z$1);
 
 /** @format */
 const Tickbox = ({ ticked, onChange, className, style }) => {
     const [isTicked, setIsTicked] = React.useState(ticked);
     React.useEffect(() => setIsTicked(ticked), [ticked]);
-    return (React.createElement("svg", { className: `tick-box ${className}`, onClick: () => {
+    return (React.createElement("svg", { className: `core-tick-box ${className}`, onClick: () => {
             setIsTicked(!isTicked);
             if (!onChange)
                 return;
@@ -158,7 +158,7 @@ Tickbox.defaultProps = {
 const Lock = ({ locked, style, disabled, iconColor, onChange, className, }) => {
     const [isLocked, setIsLocked] = React.useState(locked);
     React.useEffect(() => setIsLocked(locked), [locked]);
-    return (React.createElement("svg", { style: Object.assign({ height: '20px' }, style), viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, className: `lock ${className}`, onClick: () => {
+    return (React.createElement("svg", { style: Object.assign({ height: '20px' }, style), viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, className: `core-lock ${className}`, onClick: () => {
             setIsLocked(!isLocked);
             if (!onChange)
                 return;
@@ -218,7 +218,7 @@ const TilesContext = React.createContext({
 /** @format */
 const Tile = ({ label, icon, children, index }) => {
     return (React.createElement(TilesContext.Consumer, null, (tilesInfo) => (React.createElement(React.Fragment, null,
-        React.createElement("div", { role: 'row', className: 'tile-list-tile', style: {
+        React.createElement("div", { role: 'row', className: 'core-tile-list-tile', style: {
                 backgroundColor: tilesInfo.selectedTile === index
                     ? '#EDF3FD'
                     : '#F9F9F9',
@@ -231,7 +231,7 @@ const Tile = ({ label, icon, children, index }) => {
         children))));
 };
 
-var css_248z$2 = ".tile-list-tile {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.tile-list-tile:hover {\n    cursor: pointer;\n}\n\n.tile-list-tile div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.tile-list-tile-segment {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.lock:hover {\n    cursor: pointer;\n}\n";
+var css_248z$2 = ".core-tile-list-tile {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.core-tile-list-tile:hover {\n    cursor: pointer;\n}\n\n.core-tile-list-tile div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.core-tile-list-tile-segment {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.core-lock:hover {\n    cursor: pointer;\n}\n";
 styleInject(css_248z$2);
 
 /** @format */
@@ -250,7 +250,7 @@ const TileList = ({ children }) => {
         React.createElement("div", null, newChildren())));
 };
 
-var css_248z$3 = ".text-box {\n    justify-content: flex-start;\n    margin: 10px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n\n.text-box-label {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.text-box-input-units {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding: 0 10px;\n}\n\n.text-box-input {\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.text-box-input:focus {\n    outline: none;\n}\n\n.required-icon {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
+var css_248z$3 = ".core-text-box {\n    justify-content: flex-start;\n    margin: 10px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n\n.core-text-box-label {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.core-text-box-input-units {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding: 0 10px;\n}\n\n.core-text-box-input {\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.core-text-box-input:focus {\n    outline: none;\n}\n\n.core-required-icon {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
 styleInject(css_248z$3);
 
 /** @format */
@@ -271,11 +271,11 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
         height: size === 'small' ? '10x' : '16px',
         width: size === 'small' ? '12x' : '20px',
     });
-    return (React.createElement("div", { className: `text-box ${className || ''}`, style: Object.assign({ flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start' }, style) },
-        label !== '' ? (React.createElement("div", { className: 'text-box-label' },
+    return (React.createElement("div", { className: `core-text-box ${className || ''}`, style: Object.assign({ flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start' }, style) },
+        label !== '' ? (React.createElement("div", { className: 'core-text-box-label' },
             label,
-            required ? React.createElement("div", { className: 'required-icon' }, "*") : null)) : null,
-        React.createElement("div", { className: 'text-box-input-units', style: {
+            required ? (React.createElement("div", { className: 'core-required-icon' }, "*")) : null)) : null,
+        React.createElement("div", { className: 'core-text-box-input-units', style: {
                 color: disabled ? '#8C8C8C' : '#000000',
                 height: size === 'small' ? '34px' : '44px',
                 borderRadius: variant === 'outlined' ? '5px' : '0',
@@ -283,7 +283,7 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
                 backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent',
             } },
             React.createElement("div", { style: iconStyles(prefixComponent) }, prefixComponent),
-            React.createElement("input", { type: type, value: value, className: 'text-box-input', placeholder: placeholder, style: {
+            React.createElement("input", { type: type, value: value, className: 'core-text-box-input', placeholder: placeholder, style: {
                     width: size === 'small' ? '30px' : '320px',
                     height: size === 'small' ? '34px' : '44px',
                     cursor: disabled ? 'not-allowed' : 'text',
