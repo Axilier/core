@@ -188,10 +188,10 @@ Room.defaultProps = {
 };
 
 /** @format */
-function Mail({ iconColor, style, className }) {
+const Mail = ({ iconColor, style, className }) => {
     return (React.createElement("svg", { viewBox: '0 0 20 17', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ height: '20px' }, style), className: className },
         React.createElement("path", { d: "M.913.002H.909C.41.002 0 .41 0 .91v14.545c0 .5.41.91.91.91H19.09c.499 0 .909-.41.909-.91V.911c0-.5-.41-.91-.91-.91H.914zM3.268 1.82h13.487l-6.75 6.055L3.268 1.82zm-1.45 1.146l7.576 6.8c.343.309.87.309 1.214 0l7.575-6.782v11.563H1.817V2.966z", fill: iconColor || '#bebebe', fillRule: "nonzero" })));
-}
+};
 
 /** @format */
 const Key = ({ iconColor, style, className }) => {
@@ -222,6 +222,83 @@ const Warning = ({ style, className, iconColor }) => {
     return (React.createElement("svg", { viewBox: "0 0 16 16", xmlns: "http://www.w3.org/2000/svg", fillRule: "evenodd", clipRule: "evenodd", strokeLinejoin: "round", strokeMiterlimit: 2, className: className, style: Object.assign({ height: '20px', width: '20px' }, style) },
         React.createElement("path", { d: "M8 0c4.415 0 8 3.585 8 8s-3.585 8-8 8-8-3.585-8-8 3.585-8 8-8zm0 1.76A6.243 6.243 0 0114.24 8 6.243 6.243 0 018 14.24 6.243 6.243 0 011.76 8 6.243 6.243 0 018 1.76z", fill: iconColor || '#fff' }),
         React.createElement("path", { fill: iconColor || '#fff', d: "M7 3h2v7H7zM7 11h2v2H7z" })));
+};
+
+/** @format */
+const Tick = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("path", { d: "M11.623 5.37a.547.547 0 00-.78-.003l-4.408 4.44L4.96 8.336a.484.484 0 10-.684.684l1.811 1.812c.097.096.227.173.343.173.115 0 .242-.077.338-.17l4.852-4.876a.418.418 0 00.002-.587V5.37z", fill: iconColor || '#fff', fillRule: "nonzero" }),
+        React.createElement("path", { d: "M8 0c4.415 0 8 3.585 8 8s-3.585 8-8 8-8-3.585-8-8 3.585-8 8-8zm0 1.52A6.484 6.484 0 0114.48 8 6.484 6.484 0 018 14.48 6.484 6.484 0 011.52 8 6.484 6.484 0 018 1.52z", fill: iconColor || '#fff' })));
+};
+
+/** @format */
+const Cross = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("g", { fill: iconColor || '#fff' },
+            React.createElement("path", { d: "M8 0c4.415 0 8 3.585 8 8s-3.585 8-8 8-8-3.585-8-8 3.585-8 8-8zm0 1.52A6.484 6.484 0 0114.48 8 6.484 6.484 0 018 14.48 6.484 6.484 0 011.52 8 6.484 6.484 0 018 1.52z" }),
+            React.createElement("path", { d: "M8 6.586l2.121-2.122a1.002 1.002 0 011.415 0c.39.391.39 1.024 0 1.415L9.414 8l2.104 2.104a1.025 1.025 0 010 1.449l-.001.001a.974.974 0 01-1.377 0L8 9.414l-2.121 2.122c-.391.39-1.024.39-1.415 0a1.002 1.002 0 010-1.415L6.586 8l-2.14-2.14a.974.974 0 010-1.377l.001-.001a1.026 1.026 0 011.449 0L8 6.586z" }))));
+};
+
+/** @format */
+const Question = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("path", { d: "M8 0c4.415 0 8 3.585 8 8s-3.585 8-8 8-8-3.585-8-8 3.585-8 8-8zm0 1.76A6.243 6.243 0 0114.24 8 6.243 6.243 0 018 14.24 6.243 6.243 0 011.76 8 6.243 6.243 0 018 1.76z", fill: iconColor || '#fff' }),
+        React.createElement("path", { fill: iconColor || '#fff', d: "M7 3h2v7H7zM7 11h2v2H7z" })));
+};
+
+/** @format */
+const Issue = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("path", { d: "M2.316 13.629A7.937 7.937 0 01-.017 7.962c0-4.333 3.583-8 8-8 4.416 0 8 3.667 8 8 0 4.417-3.584 8-8 8-2.084 0-4.167-.833-5.667-2.333zM3.4 3.379a6.506 6.506 0 00-1.916 4.583c0 3.584 2.916 6.5 6.5 6.5 3.583 0 6.5-2.916 6.5-6.5 0-3.5-2.917-6.5-6.5-6.5-1.75 0-3.334.667-4.584 1.917zm3.584 9.083c-.167-.166-.25-.416-.25-.75a.9.9 0 01.25-.583c.166-.25.416-.333.666-.333.5 0 .917.416.917.916 0 .334-.083.584-.25.75-.167.167-.417.25-.667.25-.25 0-.5-.083-.666-.25zm.083-2.416a.9.9 0 01-.25-.584c0-.583.25-1.166.583-1.583l.75-.75c.25-.167.417-.333.584-.5.083-.083.166-.25.25-.417a.637.637 0 00.166-.416c0-.334-.166-.667-.416-.834-.25-.25-.584-.416-.917-.333-.333-.083-.75.083-1 .333s-.417.667-.583 1c-.084.5-.334.667-.75.667a.757.757 0 01-.584-.25c-.166-.083-.25-.333-.25-.5 0-.417.167-.833.417-1.167.25-.416.583-.75 1.083-1 .5-.333 1.084-.416 1.667-.416s1.083.083 1.583.333c.417.167.834.5 1.084.917.25.333.333.75.333 1.25 0 .333-.083.583-.167.916-.166.25-.333.5-.5.667-.25.167-.583.5-1.083 1-.083.083-.25.167-.333.333-.084.084-.167.167-.167.25-.083.084-.083.167-.083.25-.084.084-.084.167-.167.417 0 .333-.333.667-.75.667-.167 0-.333-.084-.5-.25z", fill: iconColor || '#fff', fillRule: "nonzero" })));
+};
+
+/** @format */
+const Copyright = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("path", { d: "M8 0c4.415 0 8 3.585 8 8s-3.585 8-8 8-8-3.585-8-8 3.585-8 8-8zm0 1.52A6.484 6.484 0 0114.48 8 6.484 6.484 0 018 14.48 6.484 6.484 0 011.52 8 6.484 6.484 0 018 1.52z", fill: iconColor || '#fff' }),
+        React.createElement("text", { x: 8.277, y: 8.234, fontFamily: "'ArialMT','Arial',sans-serif", fontSize: 12, fill: iconColor || '#fff', transform: "translate(-4.671 4.061)" }, 'C')));
+};
+
+/** @format */
+const SharedFiles = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("path", { d: "M12.145 0H4.691L1.296 3.394v10.047h10.849V0zM4.597 1.181v2.115H2.482l2.115-2.115zm6.785 11.493H2.064V3.812h3.045V.768h6.273v11.906z", fill: iconColor || '#fff', fillRule: "nonzero" }),
+        React.createElement("path", { d: "M13.424 1.663a.382.382 0 00-.383-.384.382.382 0 00-.384.384v12.29H2.959a.382.382 0 00-.383.384c0 .213.17.384.383.384h10.465V1.663z", fill: iconColor || '#fff', fillRule: "nonzero" }),
+        React.createElement("path", { d: "M14.32 2.559a.382.382 0 00-.384.383v12.29H4.239a.382.382 0 00-.384.384c0 .213.17.384.384.384h10.465V2.942a.382.382 0 00-.384-.383z", fill: iconColor || '#fff', fillRule: "nonzero" }),
+        React.createElement("path", { d: "M7.811 5.7a1.273 1.273 0 11.264.435L6.009 7.387a1.266 1.266 0 01.027.774l1.982 1.02a1.273 1.273 0 11-.233.452l-1.982-1.02a1.273 1.273 0 11-.057-1.66L7.81 5.7z", fill: iconColor || '#fff' })));
+};
+
+/** @format */
+const Favourites = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: "0 0 16 16", xmlns: "http://www.w3.org/2000/svg", fillRule: "evenodd", clipRule: "evenodd", strokeLinejoin: "round", strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("g", { fill: iconColor || '#fff' },
+            React.createElement("path", { d: "M9.904 16a.456.456 0 00.269-.087l1.885-1.37 1.885 1.37a.457.457 0 00.704-.511l-.718-2.21 1.874-1.3a.457.457 0 00-.26-.833h-2.327l-.722-2.283a.455.455 0 00-.151-.216V3.93l-.128-.133a206.58 206.58 0 01-2.036-2.17A175.311 175.311 0 008.787.141L8.652 0H0v16h9.904zm2.977-4.027h1.201l-.954.662a.457.457 0 00-.174.517l.388 1.194-1.015-.738a.458.458 0 00-.538 0l-1.015.738.388-1.194a.457.457 0 00-.175-.517l-.953-.662h1.201c.2 0 .376-.129.436-.319l.387-1.223.387 1.223c.06.19.236.32.436.32zm-2.06-8.316H8.915V1.61l.595.639c.429.46.891.958 1.313 1.407zM.915.914H8v3.657h3.429v4.818l-.529 1.67H8.573a.457.457 0 00-.26.833l1.874 1.3-.615 1.894H.914V.914z", fillRule: "nonzero" }),
+            React.createElement("path", { d: "M6.629 2.286H2.286V6.4h4.343V2.286zm-.915 3.2H3.2V3.2h2.514v2.286z", fillRule: "nonzero" }),
+            React.createElement("path", { d: "M2 7.771h8.114v.915H2zM2 10.057h6.514v.914H2zM2 12.343h5.333v.914H2z" }))));
+};
+
+/** @format */
+const Recent = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("g", { fill: iconColor || '#fff' },
+            React.createElement("path", { d: "M1.687 3.54C3.09 1.404 5.476 0 8.179 0 12.495 0 16 3.585 16 8s-3.505 8-7.821 8c-3.139 0-5.848-1.895-7.093-4.626a.794.794 0 01.372-1.044.762.762 0 011.021.38c1 2.195 3.178 3.718 5.7 3.718 3.468 0 6.284-2.88 6.284-6.428s-2.816-6.428-6.284-6.428c-2.145 0-4.04 1.102-5.175 2.781l.568.35c.249.154.392.44.369.736a.785.785 0 01-.478.666l-2.172.898a.754.754 0 01-.685-.056.788.788 0 01-.368-.594L.004 3.97a.793.793 0 01.354-.744.754.754 0 01.808-.008l.52.321z" }),
+            React.createElement("path", { d: "M7.468 8.741a.797.797 0 01-.058-.3V5.428c0-.434.344-.786.769-.786.424 0 .768.352.768.786v2.689l1.86 1.901c.3.307.3.805 0 1.112a.756.756 0 01-1.088 0L7.635 8.997a.784.784 0 01-.166-.254l-.001-.002z" }))));
+};
+
+/** @format */
+const AllFiles = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("g", { fill: iconColor || '#fff' },
+            React.createElement("path", { d: "M12.145 0H4.691L1.296 3.394v10.047h10.849V0zM4.597 1.181v2.115H2.482l2.115-2.115zm6.785 11.493H2.064V3.812h3.045V.768h6.273v11.906z", fillRule: "nonzero" }),
+            React.createElement("path", { d: "M3.475 5.979H9.97v.767H3.475zM3.475 7.974H9.97v.768H3.475zM3.475 9.966H9.97v.767H3.475z" }),
+            React.createElement("path", { d: "M13.424 1.663a.382.382 0 00-.383-.384.382.382 0 00-.384.384v12.29H2.959a.382.382 0 00-.383.384c0 .213.17.384.383.384h10.465V1.663z", fillRule: "nonzero" }),
+            React.createElement("path", { d: "M14.32 2.559a.382.382 0 00-.384.383v12.29H4.239a.382.382 0 00-.384.384c0 .213.17.384.384.384h10.465V2.942a.382.382 0 00-.384-.383z", fillRule: "nonzero" }))));
+};
+
+/** @format */
+const Search = ({ style, className, iconColor }) => {
+    return (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ width: '20px', height: '20px' }, style), className: className },
+        React.createElement("path", { d: "M10.054 11.131a6.196 6.196 0 01-3.83 1.318A6.228 6.228 0 010 6.225 6.227 6.227 0 016.225 0a6.228 6.228 0 016.224 6.225 6.196 6.196 0 01-1.318 3.829l4.646 4.646a.762.762 0 01-1.077 1.077l-4.646-4.646zm-3.83-9.607a4.703 4.703 0 014.702 4.7 4.703 4.703 0 01-4.701 4.702 4.703 4.703 0 01-4.701-4.701c0-2.595 2.106-4.701 4.7-4.701z", fill: iconColor || '#fff' })));
 };
 
 /** @format */
@@ -320,14 +397,24 @@ TextBox.defaultProps = {
     value: '',
 };
 
+exports.AllFiles = AllFiles;
 exports.Button = Button;
+exports.Copyright = Copyright;
+exports.Cross = Cross;
+exports.Favourites = Favourites;
 exports.Github = Github;
 exports.Google = Google;
+exports.Issue = Issue;
 exports.Key = Key;
 exports.Lock = Lock;
 exports.Mail = Mail;
+exports.Question = Question;
+exports.Recent = Recent;
 exports.Room = Room;
+exports.Search = Search;
+exports.SharedFiles = SharedFiles;
 exports.TextBox = TextBox;
+exports.Tick = Tick;
 exports.Tickbox = Tickbox;
 exports.Tile = Tile;
 exports.TileList = TileList;
