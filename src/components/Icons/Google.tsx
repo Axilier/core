@@ -3,6 +3,7 @@
 // @flow
 import * as React from 'react';
 import { BasicComponent } from '../../Types';
+import '../../css/Icons.css';
 
 export const Google = ({ style, className }: BasicComponent) => {
     return (
@@ -13,12 +14,8 @@ export const Google = ({ style, className }: BasicComponent) => {
             clipRule={'evenodd'}
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
-            style={{
-                width: '20px',
-                height: '20px',
-                ...style,
-            }}
-            className={className}
+            style={style}
+            className={`${className} icon`}
         >
             <path
                 d="M17.64 9.205c0-.639-.057-1.252-.164-1.841H9v3.481h4.844a4.141 4.141 0 01-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"

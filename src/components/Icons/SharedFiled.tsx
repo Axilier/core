@@ -3,6 +3,7 @@
 // @flow
 import * as React from 'react';
 import { IconProps } from '../../Types';
+import '../../css/Icons.css';
 
 export const SharedFiles = ({ style, className, iconColor }: IconProps) => {
     return (
@@ -13,12 +14,8 @@ export const SharedFiles = ({ style, className, iconColor }: IconProps) => {
             clipRule={'evenodd'}
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
-            style={{
-                width: '20px',
-                height: '20px',
-                ...style,
-            }}
-            className={className}
+            style={style}
+            className={`${className} icon`}
         >
             <path
                 d="M12.145 0H4.691L1.296 3.394v10.047h10.849V0zM4.597 1.181v2.115H2.482l2.115-2.115zm6.785 11.493H2.064V3.812h3.045V.768h6.273v11.906z"

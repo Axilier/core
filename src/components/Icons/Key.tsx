@@ -3,6 +3,7 @@
 // @flow
 import * as React from 'react';
 import { IconProps } from '../../Types';
+import '../../css/Icons.css';
 
 export const Key = ({ iconColor, style, className }: IconProps) => {
     return (
@@ -13,8 +14,8 @@ export const Key = ({ iconColor, style, className }: IconProps) => {
             clipRule={'evenodd'}
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
-            style={{ height: '20px', ...style }}
-            className={className}
+            style={style}
+            className={`${className} icon`}
         >
             <path
                 d="M20.024.36v3.575a.36.36 0 01-.358.358h-2.503v2.503a.36.36 0 01-.358.357h-2.503v2.504a.357.357 0 01-.103.253l-1.652 1.652c.216.653.326 1.337.326 2.025 0 3.53-2.905 6.436-6.436 6.436S.001 17.118.001 13.587s2.905-6.436 6.436-6.436c.69 0 1.375.11 2.03.328l7.37-7.373a.357.357 0 01.253-.104h3.576a.36.36 0 01.358.357zm-.716 3.218V.718h-3.071L8.813 8.143a.358.358 0 01-.379.082 5.724 5.724 0 00-1.996-.36c-3.139 0-5.722 2.583-5.722 5.722 0 3.138 2.583 5.72 5.722 5.72 3.138 0 5.721-2.582 5.721-5.72 0-.682-.122-1.358-.36-1.997a.358.358 0 01.083-.375l1.705-1.706V6.796a.36.36 0 01.358-.358h2.503V3.935a.36.36 0 01.357-.357h2.503z"

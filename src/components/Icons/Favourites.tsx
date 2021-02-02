@@ -3,6 +3,7 @@
 // @flow
 import * as React from 'react';
 import { IconProps } from '../../Types';
+import '../../css/Icons.css';
 
 export const Favourites = ({ style, className, iconColor }: IconProps) => {
     return (
@@ -13,12 +14,8 @@ export const Favourites = ({ style, className, iconColor }: IconProps) => {
             clipRule="evenodd"
             strokeLinejoin="round"
             strokeMiterlimit={2}
-            style={{
-                width: '20px',
-                height: '20px',
-                ...style,
-            }}
-            className={className}
+            style={style}
+            className={`${className} icon`}
         >
             <g fill={iconColor || '#fff'}>
                 <path
