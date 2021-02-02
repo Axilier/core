@@ -29,6 +29,14 @@ Text.args = {
     variant: 'text',
 };
 
+export const Event = Template.bind({});
+Event.args = {
+    label: 'Sign Up',
+    onClick: () => {
+        console.debug('I was clicked!');
+    },
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
     label: 'Sign Up',

@@ -2,7 +2,7 @@
 
 // @flow
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ButtonProps } from '../Types';
 import '../css/Button.css';
 
@@ -20,10 +20,8 @@ const Button = ({
     iconBackgroundColor,
     size,
 }: ButtonProps) => {
-    const [clicked, setClicked] = useState(false);
+    // const [clicked, setClicked] = useState(false);
     const [hover, setHover] = useState(false);
-
-    useEffect(() => console.log(hover), [hover]);
 
     const primaryColour = (): string => {
         switch (type) {
@@ -106,8 +104,8 @@ const Button = ({
             style={{ width: variant === 'text' ? '' : btnSize() }}
         >
             <button
-                onMouseDown={() => setClicked(true)}
-                onMouseUp={() => setClicked(false)}
+                // onMouseDown={() => setClicked(true)}
+                // onMouseUp={() => setClicked(false)}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 type={'button'}
