@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { IconProps } from '../../Types';
+import '../../css/Icons.css';
 
 export const Mail = ({ iconColor, style, className }: IconProps) => {
     return (
@@ -12,8 +13,8 @@ export const Mail = ({ iconColor, style, className }: IconProps) => {
             clipRule={'evenodd'}
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
-            style={{ height: '20px', ...style }}
-            className={className}
+            style={style}
+            className={`${className} icon`}
         >
             <path
                 d="M.913.002H.909C.41.002 0 .41 0 .91v14.545c0 .5.41.91.91.91H19.09c.499 0 .909-.41.909-.91V.911c0-.5-.41-.91-.91-.91H.914zM3.268 1.82h13.487l-6.75 6.055L3.268 1.82zm-1.45 1.146l7.576 6.8c.343.309.87.309 1.214 0l7.575-6.782v11.563H1.817V2.966z"

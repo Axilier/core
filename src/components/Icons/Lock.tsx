@@ -4,6 +4,7 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { LockProps } from '../../Types';
+import '../../css/Icons.css';
 
 export const Lock = ({
     locked,
@@ -19,17 +20,14 @@ export const Lock = ({
 
     return (
         <svg
-            style={{
-                height: '20px',
-                ...style,
-            }}
             viewBox={'0 0 16 16'}
             xmlns={'http://www.w3.org/2000/svg'}
             fillRule={'evenodd'}
             clipRule={'evenodd'}
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
-            className={`core-lock ${className}`}
+            style={style}
+            className={`${className} icon`}
             onClick={() => {
                 setIsLocked(!isLocked);
                 if (!onChange) return;
