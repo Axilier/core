@@ -5,7 +5,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { LockProps } from '../../Types';
 
-const Lock = ({
+export const Lock = ({
     locked,
     style,
     disabled,
@@ -59,5 +59,3 @@ const Lock = ({
 Lock.defaultProps = {
     style: {},
 };
-
-export default Lock;

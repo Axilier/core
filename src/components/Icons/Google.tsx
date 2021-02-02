@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { BasicComponent } from '../../Types';
 
-const Google = ({ style, className }: BasicComponent) => {
+export const Google = ({ style, className }: BasicComponent) => {
     return (
         <svg
             viewBox={'0 0 18 18'}
@@ -13,7 +13,11 @@ const Google = ({ style, className }: BasicComponent) => {
             clipRule={'evenodd'}
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
-            style={{ width: '20px', height: '20px', ...style }}
+            style={{
+                width: '20px',
+                height: '20px',
+                ...style,
+            }}
             className={className}
         >
             <path
@@ -36,5 +40,3 @@ const Google = ({ style, className }: BasicComponent) => {
         </svg>
     );
 };
-
-export default Google;
