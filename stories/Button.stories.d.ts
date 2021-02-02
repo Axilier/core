@@ -5,6 +5,7 @@ export default _default;
 export declare const Contained: Story<ButtonProps>;
 export declare const Outlined: Story<ButtonProps>;
 export declare const Text: Story<ButtonProps>;
+export declare const Event: Story<ButtonProps>;
 export declare const Disabled: Story<ButtonProps>;
 export declare const Styled: Story<ButtonProps>;
 export declare const GoogleSignIn: Story<ButtonProps>;
