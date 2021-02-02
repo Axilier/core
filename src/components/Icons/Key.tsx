@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { IconProps } from '../../Types';
 
-const Key = ({ iconColor, style, className }: IconProps) => {
+export const Key = ({ iconColor, style, className }: IconProps) => {
     return (
         <svg
             viewBox={'0 0 21 21'}
@@ -29,5 +29,3 @@ const Key = ({ iconColor, style, className }: IconProps) => {
         </svg>
     );
 };
-
-export default Key;

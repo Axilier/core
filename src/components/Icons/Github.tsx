@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { BasicComponent } from '../../Types';
 
-const Github = ({ style, className }: BasicComponent) => {
+export const Github = ({ style, className }: BasicComponent) => {
     return (
         <svg
             viewBox="0 0 19 18"
@@ -31,5 +31,3 @@ const Github = ({ style, className }: BasicComponent) => {
         </svg>
     );
 };
-
-export default Github;

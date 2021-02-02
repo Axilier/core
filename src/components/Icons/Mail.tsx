@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { IconProps } from '../../Types';
 
-function Mail({ iconColor, style, className }: IconProps) {
+export const Mail = ({ iconColor, style, className }: IconProps) => {
     return (
         <svg
             viewBox={'0 0 20 17'}
@@ -22,6 +22,4 @@ function Mail({ iconColor, style, className }: IconProps) {
             />
         </svg>
     );
-}
-
-export default Mail;
+};

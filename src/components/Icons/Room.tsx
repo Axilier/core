@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { BasicComponent } from '../../Types';
 
-const Room = ({ style, className }: BasicComponent) => {
+export const Room = ({ style, className }: BasicComponent) => {
     return (
         <svg
             viewBox={' 0 19 19'}
@@ -42,5 +42,3 @@ const Room = ({ style, className }: BasicComponent) => {
 Room.defaultProps = {
     style: {},
 };
-
-export default Room;
