@@ -1,4 +1,5 @@
 /** @format */
 /// <reference types="react" />
-import { TilesContextType } from './Types';
+import { TabMenuContextType, TilesContextType } from './Types';
 export declare const TilesContext: import("react").Context<TilesContextType>;
+export declare const TabMenuContext: import("react").Context<TabMenuContextType>;

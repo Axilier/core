@@ -1,5 +1,5 @@
 /** @format */
-import React, { CSSProperties, Dispatch, SetStateAction } from 'react';
+import React, { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
 export declare type ButtonProps = {
     label: string;
     type?: 'primary' | 'secondary' | 'tertiary';
@@ -76,3 +76,27 @@ export declare type BasicComponent = {
     style?: CSSProperties;
     className?: string;
 };
+declare type TabProps = {
+    direction?: 'horizontal' | 'vertical';
+    tabSelectedColor?: string;
+    tabNotSelectedColor?: string;
+};
+export declare type TabType = {
+    index?: number;
+    children: ReactNode;
+} & TabProps;
+export declare type TabMenuProps = {
+    children: {
+        props: TabType;
+    } | Array<{
+        props: TabType;
+    }>;
+    tabIndicatorColor?: string;
+    tabFontColor?: string;
+    onChange: (value: number) => void;
+} & TabProps;
+export declare type TabMenuContextType = {
+    selectedTab: number;
+    setSelectedTab: Dispatch<SetStateAction<number>> | (() => void);
+};
+export {};

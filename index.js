@@ -310,6 +310,10 @@ const TilesContext = React.createContext({
     selectedTile: 0,
     setSelectedTile: () => null,
 });
+const TabMenuContext = React.createContext({
+    selectedTab: 0,
+    setSelectedTab: () => null,
+});
 
 /** @format */
 const Tile = ({ label, icon, children, index }) => {
@@ -327,8 +331,114 @@ const Tile = ({ label, icon, children, index }) => {
         children))));
 };
 
-var css_248z$3 = ".core-tile-list-tile {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.core-tile-list-tile:hover {\n    cursor: pointer;\n}\n\n.core-tile-list-tile div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.core-tile-list-tile-segment {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.core-lock:hover {\n    cursor: pointer;\n}\n";
+var css_248z$3 = ".web-tab-menu {\n    overflow-x: hidden;\n    overflow-y: hidden;\n    position: relative;\n    font-size: 15px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    flex: 1 1 0;\n    vertical-align: center;\n}\n\n.web-tab {\n    position: relative;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    height: 40px;\n}\n\n.web-tab * {\n    margin-right: 5px;\n}\n\n.web-tab-horizontal {\n    flex-grow: 1;\n    flex-shrink: 1;\n    flex-basis: 0;\n}\n\n.web-tab:hover {\n    cursor: pointer;\n}\n\n.web-tab-selected-block {\n    position: absolute;\n    bottom: 0;\n    z-index: 2;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-selected-background {\n    position: absolute;\n    z-index: 0;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-selected-shadow {\n    position: absolute;\n    bottom: 0;\n    background-color: #E0E0E0;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-menu-component-container {\n    display: flex;\n    justify-content: center;\n    align-content: center;\n}\n";
 styleInject(css_248z$3);
+
+/** @format */
+const Tab = ({ children, index, direction, tabNotSelectedColor, tabSelectedColor, }) => {
+    const shadowStyles = () => {
+        switch (direction) {
+            case 'horizontal':
+                return {
+                    width: '200px',
+                    height: '2px',
+                    left: 2,
+                };
+            case 'vertical':
+                return {
+                    height: '40px',
+                    width: '2px',
+                    left: '0px',
+                    top: '2px',
+                };
+            default:
+                return {};
+        }
+    };
+    return (React.createElement(TabMenuContext.Consumer, null, (context) => (React.createElement("div", { role: 'tab', className: `${direction === 'horizontal'
+            ? 'web-tab web-tab-horizontal'
+            : 'web-tab'}`, style: {
+            justifyContent: direction === 'horizontal'
+                ? 'center'
+                : 'flex-start',
+            paddingLeft: direction === 'horizontal' ? 'unset' : '20px',
+        }, onClick: () => context.setSelectedTab(index || 0) },
+        children,
+        React.createElement("div", { className: 'web-tab-selected-shadow', style: shadowStyles() })))));
+};
+
+/** @format */
+const TabMenu = ({ children, direction, tabIndicatorColor, tabNotSelectedColor, tabSelectedColor, tabFontColor, onChange, }) => {
+    var _a;
+    const [selectedTab, setSelectedTab] = React.useState(0);
+    const [indicatorWidth, setIndicatorWidth] = React.useState(direction === 'horizontal' ? 0 : 2);
+    const [indicatorHeight, setIndicatorHeight] = React.useState(direction === 'horizontal' ? 2 : 0);
+    const [backgroundWidth, setBackgroundWidth] = React.useState(0);
+    const [backgroundHeight, setBackgroundHeight] = React.useState(0);
+    const menu = React.useRef(null);
+    React.useEffect(() => {
+        var _a, _b;
+        const firstChild = (_a = menu.current) === null || _a === void 0 ? void 0 : _a.children[0];
+        if (direction === 'horizontal') {
+            setIndicatorWidth((firstChild === null || firstChild === void 0 ? void 0 : firstChild.clientWidth) || 0);
+        }
+        else {
+            setIndicatorHeight(((_b = menu.current) === null || _b === void 0 ? void 0 : _b.children[0].clientHeight) || 0);
+        }
+        setBackgroundWidth((firstChild === null || firstChild === void 0 ? void 0 : firstChild.clientWidth) || 0);
+        setBackgroundHeight((firstChild === null || firstChild === void 0 ? void 0 : firstChild.clientHeight) || 0);
+    }, [(_a = menu.current) === null || _a === void 0 ? void 0 : _a.children]);
+    React.useEffect(() => {
+        if (!onChange)
+            return;
+        onChange(selectedTab);
+    }, [selectedTab]);
+    const newChildren = () => {
+        if (!Array.isArray(children)) {
+            return (React.createElement(Tab, Object.assign({ index: 0 }, children.props, { direction: direction, tabSelectedColor: tabSelectedColor, tabNotSelectedColor: tabNotSelectedColor }), children.props.children));
+        }
+        return children.map(({ props }, index) => (React.createElement(Tab, Object.assign({ index: index }, props, { direction: direction, tabSelectedColor: tabSelectedColor, tabNotSelectedColor: tabNotSelectedColor }), props.children)));
+    };
+    return (React.createElement(TabMenuContext.Provider, { value: {
+            selectedTab,
+            setSelectedTab,
+        } },
+        React.createElement("div", { className: 'web-tab-menu', ref: menu, style: {
+                height: direction === 'horizontal' ? '40px' : 'unset',
+                width: direction === 'horizontal' ? 'unset' : 'inherit',
+                flexDirection: direction === 'horizontal' ? 'row' : 'column',
+                color: tabFontColor || tabIndicatorColor || '#057AFF',
+            } },
+            newChildren(),
+            React.createElement("div", { className: 'web-tab-selected-block', style: {
+                    left: direction === 'horizontal'
+                        ? indicatorWidth * selectedTab
+                        : '0px',
+                    top: direction === 'vertical'
+                        ? indicatorHeight * selectedTab
+                        : 'unset',
+                    width: indicatorWidth,
+                    height: indicatorHeight,
+                    backgroundColor: tabIndicatorColor || '#057AFF',
+                } }),
+            React.createElement("div", { className: 'web-tab-selected-background', style: {
+                    left: direction === 'horizontal'
+                        ? indicatorWidth * selectedTab
+                        : '0px',
+                    top: direction === 'vertical'
+                        ? indicatorHeight * selectedTab
+                        : 'unset',
+                    width: backgroundWidth,
+                    height: backgroundHeight,
+                    backgroundColor: tabSelectedColor || '#F4F4F4',
+                } }))));
+};
+TabMenu.defaultProps = {
+    direction: 'horizontal',
+};
+
+var css_248z$4 = ".core-tile-list-tile {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.core-tile-list-tile:hover {\n    cursor: pointer;\n}\n\n.core-tile-list-tile div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.core-tile-list-tile-segment {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.core-lock:hover {\n    cursor: pointer;\n}\n";
+styleInject(css_248z$4);
 
 /** @format */
 const TileList = ({ children }) => {
@@ -346,8 +456,8 @@ const TileList = ({ children }) => {
         React.createElement("div", null, newChildren())));
 };
 
-var css_248z$4 = ".core-text-box {\n    justify-content: flex-start;\n    margin: 10px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n\n.core-text-box-label {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.core-text-box-input-units {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding: 0 10px;\n}\n\n.core-text-box-input {\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.core-text-box-input:focus {\n    outline: none;\n}\n\n.core-required-icon {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
-styleInject(css_248z$4);
+var css_248z$5 = ".core-text-box {\n    justify-content: flex-start;\n    margin: 10px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n\n.core-text-box-label {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.core-text-box-input-units {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding: 0 10px;\n}\n\n.core-text-box-input {\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.core-text-box-input:focus {\n    outline: none;\n}\n\n.core-required-icon {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
+styleInject(css_248z$5);
 
 /** @format */
 const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, value: newValue, type, }) => {
@@ -416,6 +526,8 @@ exports.Recent = Recent;
 exports.Room = Room;
 exports.Search = Search;
 exports.SharedFiles = SharedFiles;
+exports.Tab = Tab;
+exports.TabMenu = TabMenu;
 exports.TextBox = TextBox;
 exports.Tick = Tick;
 exports.Tickbox = Tickbox;
