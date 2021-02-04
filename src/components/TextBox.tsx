@@ -23,6 +23,8 @@ const TextBox = ({
     style,
     value: newValue,
     type,
+    inputStyle,
+    outLineColor,
 }: TextBoxProps) => {
     const [value, setValue] = useState(newValue);
 
@@ -66,7 +68,9 @@ const TextBox = ({
                     height: size === 'small' ? '34px' : '44px',
                     borderRadius: variant === 'outlined' ? '5px' : '0',
                     border:
-                        variant === 'outlined' ? 'solid 2px #057EFF' : 'none',
+                        variant === 'outlined'
+                            ? `solid 2px ${outLineColor || '#057EFF'}`
+                            : 'none',
                     backgroundColor:
                         variant === 'filled' ? '#F3F3F3' : 'transparent',
                 }}
@@ -83,6 +87,7 @@ const TextBox = ({
                         cursor: disabled ? 'not-allowed' : 'text',
                         backgroundColor:
                             variant === 'filled' ? '#F3F3F3' : 'transparent',
+                        ...inputStyle,
                     }}
                     onChange={(evt) => handleChange(evt)}
                     maxLength={maxLength || -1}

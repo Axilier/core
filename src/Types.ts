@@ -64,7 +64,7 @@ export type TextBoxProps = {
     label?: string; // DOC the label that is before the input, background does not extend to cover it
     size?: 'small' | 'large';
     disabled?: boolean;
-    variant?: 'filled' | 'outlined'; // DOC the type of input that will be shown, filled has sharp corners, outlined has rounded corners
+    variant?: 'filled' | 'outlined' | 'bare'; // DOC the type of input that will be shown, filled has sharp corners, outlined has rounded corners
     prefixComponent?: JSX.Element; // DOC component usually an icon that comes before the input box
     suffixComponent?: JSX.Element; // DOC component usually an icon that comes after the input box
     units?: string;
@@ -77,6 +77,8 @@ export type TextBoxProps = {
     className?: string;
     value?: string;
     type?: string;
+    inputStyle?: CSSProperties;
+    outLineColor?: string;
 };
 
 export type IconProps = {
