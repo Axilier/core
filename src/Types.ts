@@ -1,5 +1,10 @@
 /** @format */
-import React, { CSSProperties, Dispatch, SetStateAction } from 'react';
+import React, {
+    CSSProperties,
+    Dispatch,
+    ReactNode,
+    SetStateAction,
+} from 'react';
 
 export type ButtonProps = {
     label: string; // DOC the label/name for the button
@@ -81,4 +86,27 @@ export type IconProps = {
 export type BasicComponent = {
     style?: CSSProperties;
     className?: string;
+};
+
+type TabProps = {
+    direction?: 'horizontal' | 'vertical';
+    tabSelectedColor?: string;
+    tabNotSelectedColor?: string;
+};
+
+export type TabType = {
+    index?: number;
+    children: ReactNode; // TEXT
+} & TabProps;
+
+export type TabMenuProps = {
+    children: { props: TabType } | Array<{ props: TabType }>;
+    tabIndicatorColor?: string;
+    tabFontColor?: string;
+    onChange: (value: number) => void;
+} & TabProps;
+
+export type TabMenuContextType = {
+    selectedTab: number;
+    setSelectedTab: Dispatch<SetStateAction<number>> | (() => void);
 };

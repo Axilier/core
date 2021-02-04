@@ -2,8 +2,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { TextBoxProps } from '../Types';
-import { TextBox } from '../index';
-import Mail from '../components/Icons/Mail';
+import { Mail, TextBox } from '../index';
 
 export default {
     title: 'Example/TextBox',

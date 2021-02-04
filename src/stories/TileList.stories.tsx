@@ -2,10 +2,8 @@
 import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
 
-import { TileList } from '../index';
+import { TileList, Room, Tile } from '../index';
 import { TileListProps } from '../Types';
-import Tile from '../components/TileList/Tile';
-import Room from '../components/Icons/Room';
 
 export default {
     title: 'Example/TileList',
