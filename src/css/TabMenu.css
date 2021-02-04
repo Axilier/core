@@ -1,0 +1,60 @@
+.web-tab-menu {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;
+    display: flex;
+    flex: 1 1 0;
+    vertical-align: center;
+}
+
+.web-tab {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.web-tab * {
+    margin-right: 5px;
+}
+
+.web-tab-horizontal {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+.web-tab:hover {
+    cursor: pointer;
+}
+
+.web-tab-selected-block {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    transition: left .2s ease-in-out, top .2s ease-in-out;
+}
+
+.web-tab-selected-background {
+    position: absolute;
+    z-index: 0;
+    transition: left .2s ease-in-out, top .2s ease-in-out;
+}
+
+.web-tab-selected-shadow {
+    position: absolute;
+    bottom: 0;
+    background-color: #E0E0E0;
+    width: 100%;
+    transition: left .2s ease-in-out, top .2s ease-in-out;
+}
+
+.web-tab-menu-component-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
