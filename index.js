@@ -460,7 +460,7 @@ var css_248z$5 = ".core-text-box {\n    justify-content: flex-start;\n    margin
 styleInject(css_248z$5);
 
 /** @format */
-const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, value: newValue, type, }) => {
+const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, value: newValue, type, inputStyle, outLineColor, }) => {
     const [value, setValue] = React.useState(newValue);
     React.useEffect(() => setValue(newValue), [newValue]);
     function handleChange(evt) {
@@ -485,16 +485,13 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
                 color: disabled ? '#8C8C8C' : '#000000',
                 height: size === 'small' ? '34px' : '44px',
                 borderRadius: variant === 'outlined' ? '5px' : '0',
-                border: variant === 'outlined' ? 'solid 2px #057EFF' : 'none',
+                border: variant === 'outlined'
+                    ? `solid 2px ${outLineColor || '#057EFF'}`
+                    : 'none',
                 backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent',
             } },
             React.createElement("div", { style: iconStyles(prefixComponent) }, prefixComponent),
-            React.createElement("input", { type: type, value: value, className: 'core-text-box-input', placeholder: placeholder, style: {
-                    width: size === 'small' ? '30px' : '320px',
-                    height: size === 'small' ? '34px' : '44px',
-                    cursor: disabled ? 'not-allowed' : 'text',
-                    backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent',
-                }, onChange: (evt) => handleChange(evt), maxLength: maxLength || -1, disabled: disabled }),
+            React.createElement("input", { type: type, value: value, className: 'core-text-box-input', placeholder: placeholder, style: Object.assign({ width: size === 'small' ? '30px' : '320px', height: size === 'small' ? '34px' : '44px', cursor: disabled ? 'not-allowed' : 'text', backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent' }, inputStyle), onChange: (evt) => handleChange(evt), maxLength: maxLength || -1, disabled: disabled }),
             units ? (React.createElement("div", { style: {
                     marginLeft: '5px',
                 } }, units)) : null,

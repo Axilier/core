@@ -55,7 +55,7 @@ export declare type TextBoxProps = {
     label?: string;
     size?: 'small' | 'large';
     disabled?: boolean;
-    variant?: 'filled' | 'outlined';
+    variant?: 'filled' | 'outlined' | 'bare';
     prefixComponent?: JSX.Element;
     suffixComponent?: JSX.Element;
     units?: string;
@@ -68,6 +68,8 @@ export declare type TextBoxProps = {
     className?: string;
     value?: string;
     type?: string;
+    inputStyle?: CSSProperties;
+    outLineColor?: string;
 };
 export declare type IconProps = {
     iconColor?: string;
