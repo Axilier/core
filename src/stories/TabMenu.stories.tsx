@@ -10,27 +10,44 @@ export default {
     component: TabMenu,
 } as Meta;
 
-export const Horizontal: Story<TabMenuProps> = (args) => (
-    <div style={{ width: '500px' }}>
+export const Horizontal: Story<TabMenuProps> = (args: TabMenuProps) => (
+    <div
+        style={{
+            width: '600px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}
+    >
         <TabMenu {...args} tabFontColor={'black'}>
-            <Tab>sex</Tab>
-            <Tab>sex1</Tab>
-            <Tab>sex1</Tab>
+            <Tab>Test1</Tab>
+            <Tab>Test2</Tab>
+            <Tab>Test3</Tab>
         </TabMenu>
     </div>
 );
 
-export const Vertical: Story<TabMenuProps> = (args) => (
-    <div style={{ width: '200px' }}>
+export const Vertical: Story<TabMenuProps> = (args: TabMenuProps) => (
+    <div
+        style={{
+            width: '600px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '300px',
+        }}
+    >
         <TabMenu {...args} direction={'vertical'}>
-            <Tab>sex</Tab>
-            <Tab>sex1</Tab>
-            <Tab>sex1</Tab>
+            <Tab>Test1</Tab>
+            <Tab>Test2</Tab>
+            <Tab>Test3</Tab>
         </TabMenu>
     </div>
 );
 
-export const Colored: Story<TabMenuProps> = (args) => (
+export const Colored: Story<TabMenuProps> = (args: TabMenuProps) => (
     <div
         style={{
             width: '200px',

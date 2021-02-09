@@ -30,3 +30,7 @@
 .core-lock:hover {
     cursor: pointer;
 }
+
+.core-tile-left div, svg {
+    margin: 0 2px;
+}

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
 
-import { TileList, Room, Tile } from '../index';
+import { Room, Tile, TileList } from '../index';
 import { TileListProps } from '../Types';
 
 export default {
@@ -21,7 +21,9 @@ export const Single: Story<TileListProps> = (args) => (
 export const Multiple: Story<TileListProps> = (args) => (
     <div style={{ width: '500px' }}>
         <TileList {...args}>
-            <Tile label={'tile1'} icon={<Room />} />
+            <Tile label={'tile1'} icon={<Room />}>
+                <Tile label={'child Test'} />
+            </Tile>
             <Tile label={'tile2'} icon={<Room />} />
             <Tile label={'tile3'} icon={<Room />} />
         </TileList>

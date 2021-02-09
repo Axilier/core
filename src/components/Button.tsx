@@ -106,8 +106,6 @@ const Button = ({
             style={{ width: variant === 'text' ? '' : btnSize(), ...style }}
         >
             <button
-                // onMouseDown={() => setClicked(true)}
-                // onMouseUp={() => setClicked(false)}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 type={'button'}

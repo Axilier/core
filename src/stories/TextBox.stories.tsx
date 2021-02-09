@@ -2,7 +2,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { TextBoxProps } from '../Types';
-import { Mail, Search, TextBox } from '../index';
+import { Lock, Mail, Search, TextBox } from '../index';
 
 export default {
     title: 'Example/TextBox',
@@ -76,6 +76,15 @@ PrefixComponent.args = {
     prefixComponent: <Mail />,
     placeholder: 'Test placeholder',
     size: 'large',
+};
+
+export const FilledSuffix = Template.bind({});
+FilledSuffix.args = {
+    variant: 'filled',
+    maxLength: 3,
+    units: 'Inch',
+    label: 'Test:',
+    suffixComponent: <Lock locked={false} />,
 };
 
 export const SuffixComponent = Template.bind({});

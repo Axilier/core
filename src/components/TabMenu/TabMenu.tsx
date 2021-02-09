@@ -83,7 +83,7 @@ const TabMenu = ({
                 ref={menu}
                 style={{
                     height: direction === 'horizontal' ? '40px' : 'unset',
-                    width: direction === 'horizontal' ? 'unset' : 'inherit',
+                    width: direction === 'horizontal' ? '100%' : 'inherit',
                     flexDirection:
                         direction === 'horizontal' ? 'row' : 'column',
                     color: tabFontColor || tabIndicatorColor || '#057AFF',

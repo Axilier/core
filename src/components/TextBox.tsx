@@ -102,8 +102,15 @@ const TextBox = ({
                         {units}
                     </div>
                 ) : null}
-                <div style={iconStyles(suffixComponent)}>{suffixComponent}</div>
+                {variant !== 'filled' && suffixComponent ? (
+                    <div style={iconStyles(suffixComponent)}>
+                        {suffixComponent}
+                    </div>
+                ) : null}
             </div>
+            {variant === 'filled' && suffixComponent ? (
+                <div style={iconStyles(suffixComponent)}>{suffixComponent}</div>
+            ) : null}
         </div>
     );
 };
