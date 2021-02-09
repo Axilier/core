@@ -16,3 +16,4 @@ export { Favourites } from './Favourites';
 export { Recent } from './Recent';
 export { AllFiles } from './AllFiles';
 export { Search } from './Search';
+export { Dropdown } from './Dropdown';

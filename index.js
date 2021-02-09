@@ -31,11 +31,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&display=swap');\n\n.core-button {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    font-size: 18px;\n    font-weight: 400;\n    transition: color .5s, background-color .5s, border .5s;\n    cursor: pointer;\n    justify-content: center;\n}\n\n.core-button-container {\n    position: relative;\n}\n\n.core-button div {\n    padding: 4px;\n    border-radius: 7px;\n    display: flex;\n    margin-right: 5px;\n}\n\n.core-button-filter {\n    position: absolute;\n    z-index: 20;\n    background-color: black;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n}\n";
+var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');\n\n.core-button {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    font-size: 18px;\n    font-weight: 400;\n    transition: color .5s, background-color .5s, border .5s;\n    cursor: pointer;\n    justify-content: center;\n}\n\n.core-button-container {\n    position: relative;\n}\n\n.core-button div {\n    padding: 4px;\n    border-radius: 7px;\n    display: flex;\n    margin-right: 5px;\n}\n\n.core-button-filter {\n    position: absolute;\n    z-index: 20;\n    background-color: black;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n}\n";
 styleInject(css_248z);
 
 /** @format */
-const Button = ({ label, type, variant, onClick, style, className, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }) => {
+const Button = ({ label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }) => {
     // const [clicked, setClicked] = useState(false);
     const [hover, setHover] = React.useState(false);
     const primaryColour = () => {
@@ -110,11 +110,8 @@ const Button = ({ label, type, variant, onClick, style, className, disabled, but
                 return size || '';
         }
     };
-    return (React.createElement("div", { className: 'core-button-container', style: { width: variant === 'text' ? '' : btnSize() } },
-        React.createElement("button", { 
-            // onMouseDown={() => setClicked(true)}
-            // onMouseUp={() => setClicked(false)}
-            onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), type: 'button', className: `core-button ${className}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 35px', width: variant === 'text' ? '' : btnSize() }, style), onClick: () => {
+    return (React.createElement("div", { className: `core-button-container ${className}`, style: Object.assign({ width: variant === 'text' ? '' : btnSize() }, style) },
+        React.createElement("button", { onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), type: 'button', className: `core-button ${btnClassName}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 35px', width: variant === 'text' ? '' : btnSize() }, btnStyle), onClick: () => {
                 if (!onClick)
                     return;
                 onClick();
@@ -148,15 +145,15 @@ const Tickbox = ({ ticked, onChange, className, style }) => {
             if (!onChange)
                 return;
             onChange();
-        }, viewBox: "0 0 64 64", xmlns: "http://www.w3.org/2000/svg", fillRule: "evenodd", clipRule: "evenodd", strokeLinejoin: "round", strokeMiterlimit: 2, style: style },
-        React.createElement("path", { d: "M63.994 0h-64v64h64V0zM2.552 2.545v58.914h58.884V2.544H2.552z", fill: "#d3d3d3" }),
-        isTicked ? (React.createElement("path", { d: "M24.442 50.674c-.605.605-1.463 1.11-2.22 1.11-.758 0-1.615-.53-2.246-1.136L5.844 36.517l4.492-4.492 11.91 11.91L53.74 12.217l4.416 4.568-33.714 33.89z", fill: "#6f7b91", fillRule: "nonzero" })) : null));
+        }, viewBox: '0 0 64 64', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: style },
+        React.createElement("path", { d: 'M63.994 0h-64v64h64V0zM2.552 2.545v58.914h58.884V2.544H2.552z', fill: '#d3d3d3' }),
+        isTicked ? (React.createElement("path", { d: 'M24.442 50.674c-.605.605-1.463 1.11-2.22 1.11-.758 0-1.615-.53-2.246-1.136L5.844 36.517l4.492-4.492 11.91 11.91L53.74 12.217l4.416 4.568-33.714 33.89z', fill: '#6f7b91', fillRule: 'nonzero' })) : null));
 };
 Tickbox.defaultProps = {
     onChange: () => { },
 };
 
-var css_248z$2 = ".icon {\n    height: 20px;\n    width: 20px;\n}\n";
+var css_248z$2 = ".icon {\n    height: 20px;\n    width: 20px;\n}\n\n.dropdown {\n    transition: transform .1s linear;\n    cursor: pointer;\n}\n";
 styleInject(css_248z$2);
 
 /** @format */
@@ -215,17 +212,15 @@ const Google = ({ style, className }) => {
 
 /** @format */
 const Github = ({ style, className }) => {
-    return (React.createElement("svg", { viewBox: "0 0 19 18", xmlns: "http://www.w3.org/2000/svg", fillRule: "evenodd", clipRule: "evenodd", strokeLinejoin: "round", strokeMiterlimit: 2, style: style, className: `${className} icon` },
-        React.createElement("path", { d: "M9.228 0A9.228 9.228 0 006.31 17.984c.462.086.63-.2.63-.444 0-.22-.008-.947-.012-1.718-2.567.559-3.109-1.088-3.109-1.088-.42-1.067-1.024-1.35-1.024-1.35-.837-.573.063-.562.063-.562.927.065 1.415.952 1.415.952.823 1.41 2.158 1.002 2.685.766.083-.596.322-1.003.586-1.233-2.05-.234-4.204-1.025-4.204-4.56 0-1.008.36-1.832.95-2.478-.096-.232-.411-1.17.09-2.442 0 0 .775-.248 2.538.946a8.845 8.845 0 012.31-.31 8.868 8.868 0 012.311.31c1.762-1.194 2.536-.946 2.536-.946.502 1.271.186 2.21.09 2.442.592.646.95 1.47.95 2.477 0 3.544-2.16 4.325-4.214 4.553.331.287.626.848.626 1.71 0 1.234-.01 2.227-.01 2.531 0 .246.165.534.633.443a9.229 9.229 0 006.305-8.755A9.228 9.228 0 009.228 0", fill: "#1b1817" }),
-        React.createElement("path", { d: "M9.228 0A9.228 9.228 0 006.31 17.984c.462.086.63-.2.63-.444 0-.22-.008-.947-.012-1.718-2.567.559-3.109-1.088-3.109-1.088-.42-1.067-1.024-1.35-1.024-1.35-.837-.573.063-.562.063-.562.927.065 1.415.952 1.415.952.823 1.41 2.158 1.002 2.685.766.083-.596.322-1.003.586-1.233-2.05-.234-4.204-1.025-4.204-4.56 0-1.008.36-1.832.95-2.478-.096-.232-.411-1.17.09-2.442 0 0 .775-.248 2.538.946a8.845 8.845 0 012.31-.31 8.868 8.868 0 012.311.31c1.762-1.194 2.536-.946 2.536-.946.502 1.271.186 2.21.09 2.442.592.646.95 1.47.95 2.477 0 3.544-2.16 4.325-4.214 4.553.331.287.626.848.626 1.71 0 1.234-.01 2.227-.01 2.531 0 .246.165.534.633.443a9.229 9.229 0 006.305-8.755A9.228 9.228 0 009.228 0", fill: "#1b1817" })));
+    return (React.createElement("svg", { viewBox: '0 0 19 18', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: style, className: `${className} icon` },
+        React.createElement("path", { d: 'M9.228 0A9.228 9.228 0 006.31 17.984c.462.086.63-.2.63-.444 0-.22-.008-.947-.012-1.718-2.567.559-3.109-1.088-3.109-1.088-.42-1.067-1.024-1.35-1.024-1.35-.837-.573.063-.562.063-.562.927.065 1.415.952 1.415.952.823 1.41 2.158 1.002 2.685.766.083-.596.322-1.003.586-1.233-2.05-.234-4.204-1.025-4.204-4.56 0-1.008.36-1.832.95-2.478-.096-.232-.411-1.17.09-2.442 0 0 .775-.248 2.538.946a8.845 8.845 0 012.31-.31 8.868 8.868 0 012.311.31c1.762-1.194 2.536-.946 2.536-.946.502 1.271.186 2.21.09 2.442.592.646.95 1.47.95 2.477 0 3.544-2.16 4.325-4.214 4.553.331.287.626.848.626 1.71 0 1.234-.01 2.227-.01 2.531 0 .246.165.534.633.443a9.229 9.229 0 006.305-8.755A9.228 9.228 0 009.228 0', fill: '#1b1817' }),
+        React.createElement("path", { d: 'M9.228 0A9.228 9.228 0 006.31 17.984c.462.086.63-.2.63-.444 0-.22-.008-.947-.012-1.718-2.567.559-3.109-1.088-3.109-1.088-.42-1.067-1.024-1.35-1.024-1.35-.837-.573.063-.562.063-.562.927.065 1.415.952 1.415.952.823 1.41 2.158 1.002 2.685.766.083-.596.322-1.003.586-1.233-2.05-.234-4.204-1.025-4.204-4.56 0-1.008.36-1.832.95-2.478-.096-.232-.411-1.17.09-2.442 0 0 .775-.248 2.538.946a8.845 8.845 0 012.31-.31 8.868 8.868 0 012.311.31c1.762-1.194 2.536-.946 2.536-.946.502 1.271.186 2.21.09 2.442.592.646.95 1.47.95 2.477 0 3.544-2.16 4.325-4.214 4.553.331.287.626.848.626 1.71 0 1.234-.01 2.227-.01 2.531 0 .246.165.534.633.443a9.229 9.229 0 006.305-8.755A9.228 9.228 0 009.228 0', fill: '#1b1817' })));
 };
 
 /** @format */
-const Warning = ({ style, className, iconColor }) => {
-    return (React.createElement("svg", { viewBox: "0 0 16 16", xmlns: "http://www.w3.org/2000/svg", fillRule: "evenodd", clipRule: "evenodd", strokeLinejoin: "round", strokeMiterlimit: 2, style: style, className: `${className} icon` },
-        React.createElement("path", { d: "M8 0c4.415 0 8 3.585 8 8s-3.585 8-8 8-8-3.585-8-8 3.585-8 8-8zm0 1.76A6.243 6.243 0 0114.24 8 6.243 6.243 0 018 14.24 6.243 6.243 0 011.76 8 6.243 6.243 0 018 1.76z", fill: iconColor || '#fff' }),
-        React.createElement("path", { fill: iconColor || '#fff', d: "M7 3h2v7H7zM7 11h2v2H7z" })));
-};
+const Warning = ({ style, className, iconColor }) => (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: style, className: `${className} icon` },
+    React.createElement("path", { d: 'M8 0c4.415 0 8 3.585 8 8s-3.585 8-8 8-8-3.585-8-8 3.585-8 8-8zm0 1.76A6.243 6.243 0 0114.24 8 6.243 6.243 0 018 14.24 6.243 6.243 0 011.76 8 6.243 6.243 0 018 1.76z', fill: iconColor || '#fff' }),
+    React.createElement("path", { fill: iconColor || '#fff', d: 'M7 3h2v7H7zM7 11h2v2H7z' })));
 
 /** @format */
 const Tick = ({ style, className, iconColor }) => {
@@ -305,6 +300,29 @@ const Search = ({ style, className, iconColor }) => {
 };
 
 /** @format */
+const Dropdown = ({ style, className, open, onChange, }) => {
+    const [isOpen, setIsOpen] = React.useState(open || false);
+    React.useEffect(() => {
+        setIsOpen(open || false);
+    }, [open]);
+    return (React.createElement("svg", { 
+        // transform={}
+        viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: Object.assign({ transform: isOpen ? 'rotate(90deg)' : 'none' }, style), className: `${className} dropdown icon`, onClick: () => {
+            setIsOpen(!isOpen);
+            if (!onChange)
+                return;
+            onChange(isOpen);
+        } },
+        React.createElement("g", { transform: 'matrix(.72802 0 0 .72806 -1044.709 -250.453)' },
+            React.createElement("circle", { cx: 1446, cy: 355, r: 11, fill: '#ebebeb' }),
+            React.createElement("path", { d: 'M1446 344c6.07 0 11 4.929 11 11s-4.93 11-11 11-11-4.929-11-11 4.93-11 11-11zm0 .174c5.98 0 10.83 4.851 10.83 10.826 0 5.975-4.85 10.826-10.83 10.826-5.97 0-10.83-4.851-10.83-10.826 0-5.975 4.86-10.826 10.83-10.826z', fill: '#d3d3d3' })),
+        React.createElement("path", { d: 'M11.839 7.785l-5.881 4.227V3.558l5.88 4.227z', fill: '#d3d3d3' })));
+};
+Dropdown.defaultProps = {
+    open: false,
+};
+
+/** @format */
 // eslint-disable-next-line import/prefer-default-export
 const TilesContext = React.createContext({
     selectedTile: 0,
@@ -316,22 +334,21 @@ const TabMenuContext = React.createContext({
 });
 
 /** @format */
-const Tile = ({ label, icon, children, index }) => {
-    return (React.createElement(TilesContext.Consumer, null, (tilesInfo) => (React.createElement(React.Fragment, null,
-        React.createElement("div", { role: 'row', className: 'core-tile-list-tile', style: {
-                backgroundColor: tilesInfo.selectedTile === index
-                    ? '#EDF3FD'
-                    : '#F9F9F9',
-            }, onClick: () => tilesInfo.setSelectedTile(index || 0) },
-            React.createElement("div", null,
-                icon || null,
-                label),
-            React.createElement("div", null,
-                React.createElement(Lock, { disabled: false, locked: false }))),
-        children))));
-};
+const Tile = ({ label, icon, children, index }) => (React.createElement(TilesContext.Consumer, null, tilesInfo => (React.createElement(React.Fragment, null,
+    React.createElement("div", { role: 'row', className: 'core-tile-list-tile', style: {
+            backgroundColor: tilesInfo.selectedTile === index
+                ? '#EDF3FD'
+                : '#F9F9F9',
+        }, onClick: () => tilesInfo.setSelectedTile(index || 0) },
+        React.createElement("div", { className: 'core-tile-left' },
+            children ? (React.createElement(Dropdown, null)) : (React.createElement("div", { style: { width: '20px' } })),
+            React.createElement("div", null, icon || null),
+            React.createElement("div", null, label)),
+        React.createElement("div", null,
+            React.createElement(Lock, { disabled: false, locked: false }))),
+    children))));
 
-var css_248z$3 = ".web-tab-menu {\n    overflow-x: hidden;\n    overflow-y: hidden;\n    position: relative;\n    font-size: 15px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    flex: 1 1 0;\n    vertical-align: center;\n}\n\n.web-tab {\n    position: relative;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    height: 40px;\n}\n\n.web-tab * {\n    margin-right: 5px;\n}\n\n.web-tab-horizontal {\n    flex-grow: 1;\n    flex-shrink: 1;\n    flex-basis: 0;\n}\n\n.web-tab:hover {\n    cursor: pointer;\n}\n\n.web-tab-selected-block {\n    position: absolute;\n    bottom: 0;\n    z-index: 2;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-selected-background {\n    position: absolute;\n    z-index: 0;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-selected-shadow {\n    position: absolute;\n    bottom: 0;\n    background-color: #E0E0E0;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-menu-component-container {\n    display: flex;\n    justify-content: center;\n    align-content: center;\n}\n";
+var css_248z$3 = ".web-tab-menu {\n    overflow-x: hidden;\n    overflow-y: hidden;\n    position: relative;\n    font-size: 15px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    flex: 1 1 0;\n}\n\n.web-tab {\n    position: relative;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    height: 40px;\n}\n\n.web-tab * {\n    margin-right: 5px;\n}\n\n.web-tab-horizontal {\n    flex-grow: 1;\n    flex-shrink: 1;\n    flex-basis: 0;\n}\n\n.web-tab:hover {\n    cursor: pointer;\n}\n\n.web-tab-selected-block {\n    position: absolute;\n    bottom: 0;\n    z-index: 2;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-selected-background {\n    position: absolute;\n    z-index: 0;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-selected-shadow {\n    position: absolute;\n    bottom: 0;\n    background-color: #E0E0E0;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.web-tab-menu-component-container {\n    display: flex;\n    justify-content: center;\n    align-content: center;\n}\n";
 styleInject(css_248z$3);
 
 /** @format */
@@ -405,7 +422,7 @@ const TabMenu = ({ children, direction, tabIndicatorColor, tabNotSelectedColor, 
         } },
         React.createElement("div", { className: 'web-tab-menu', ref: menu, style: {
                 height: direction === 'horizontal' ? '40px' : 'unset',
-                width: direction === 'horizontal' ? 'unset' : 'inherit',
+                width: direction === 'horizontal' ? '100%' : 'inherit',
                 flexDirection: direction === 'horizontal' ? 'row' : 'column',
                 color: tabFontColor || tabIndicatorColor || '#057AFF',
             } },
@@ -437,7 +454,7 @@ TabMenu.defaultProps = {
     direction: 'horizontal',
 };
 
-var css_248z$4 = ".core-tile-list-tile {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.core-tile-list-tile:hover {\n    cursor: pointer;\n}\n\n.core-tile-list-tile div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.core-tile-list-tile-segment {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.core-lock:hover {\n    cursor: pointer;\n}\n";
+var css_248z$4 = ".core-tile-list-tile {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.core-tile-list-tile:hover {\n    cursor: pointer;\n}\n\n.core-tile-list-tile div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.core-tile-list-tile-segment {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.core-lock:hover {\n    cursor: pointer;\n}\n\n.core-tile-left div, svg {\n    margin: 0 2px;\n}\n";
 styleInject(css_248z$4);
 
 /** @format */
@@ -447,7 +464,7 @@ const TileList = ({ children }) => {
         if (!Array.isArray(children)) {
             return React.createElement(Tile, Object.assign({ index: 0 }, children.props));
         }
-        return children.map(({ props }, index) => (React.createElement(Tile, Object.assign({ index: index }, props))));
+        return children.map(({ props }, index) => (React.createElement(Tile, Object.assign({ index: index, key: `tile-index-${children.length}-${index}` }, props))));
     };
     return (React.createElement(TilesContext.Provider, { value: {
             selectedTile,
@@ -495,7 +512,8 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
             units ? (React.createElement("div", { style: {
                     marginLeft: '5px',
                 } }, units)) : null,
-            React.createElement("div", { style: iconStyles(suffixComponent) }, suffixComponent))));
+            variant !== 'filled' && suffixComponent ? (React.createElement("div", { style: iconStyles(suffixComponent) }, suffixComponent)) : null),
+        variant === 'filled' && suffixComponent ? (React.createElement("div", { style: iconStyles(suffixComponent) }, suffixComponent)) : null));
 };
 TextBox.defaultProps = {
     units: '',
@@ -511,6 +529,7 @@ exports.AllFiles = AllFiles;
 exports.Button = Button;
 exports.Copyright = Copyright;
 exports.Cross = Cross;
+exports.Dropdown = Dropdown;
 exports.Favourites = Favourites;
 exports.Github = Github;
 exports.Google = Google;

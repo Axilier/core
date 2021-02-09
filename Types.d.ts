@@ -4,9 +4,11 @@ export declare type ButtonProps = {
     label: string;
     type?: 'primary' | 'secondary' | 'tertiary';
     variant?: 'contained' | 'text' | 'outlined';
-    onClick?: () => void;
+    onClick?(): void;
     style?: CSSProperties;
     className?: string;
+    btnStyle?: CSSProperties;
+    btnClassName?: string;
     disabled?: boolean;
     buttonColor?: string;
     altButtonColor?: string;
@@ -16,7 +18,7 @@ export declare type ButtonProps = {
 };
 export declare type TickboxProps = {
     ticked: boolean;
-    onChange?: () => void;
+    onChange?(): void;
     style?: CSSProperties;
     className?: string;
 };
@@ -35,16 +37,10 @@ export declare type TileType = {
     children?: React.ReactNode;
     index?: number;
 };
-export declare type DropdownProps = {
-    open: boolean;
-    onChange?: () => void;
-    style?: CSSProperties;
-    className?: string;
-};
 export declare type LockProps = {
     locked: boolean;
     disabled?: boolean;
-    onChange?: (state: boolean) => void;
+    onChange?(state: boolean): void;
     style?: CSSProperties;
 } & IconProps;
 export declare type TilesContextType = {
@@ -59,11 +55,11 @@ export declare type TextBoxProps = {
     prefixComponent?: JSX.Element;
     suffixComponent?: JSX.Element;
     units?: string;
-    onChange?: (value: string) => void;
+    onChange?(value: string): void;
     maxLength?: number;
     required?: boolean;
     placeholder?: string;
-    filter?: (value: string) => boolean;
+    filter?(value: string): boolean;
     style?: CSSProperties;
     className?: string;
     value?: string;
@@ -78,6 +74,10 @@ export declare type BasicComponent = {
     style?: CSSProperties;
     className?: string;
 };
+export interface DropdownProps extends BasicComponent {
+    open?: boolean;
+    onChange?(value: boolean): void;
+}
 declare type TabProps = {
     direction?: 'horizontal' | 'vertical';
     tabSelectedColor?: string;
@@ -95,7 +95,7 @@ export declare type TabMenuProps = {
     }>;
     tabIndicatorColor?: string;
     tabFontColor?: string;
-    onChange: (value: number) => void;
+    onChange(value: number): void;
 } & TabProps;
 export declare type TabMenuContextType = {
     selectedTab: number;
