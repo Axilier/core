@@ -13,6 +13,8 @@ export type ButtonProps = {
     onClick?: () => void; // DOC ran when the button is clicked
     style?: CSSProperties;
     className?: string;
+    btnStyle?: CSSProperties;
+    btnClassName?: string;
     disabled?: boolean;
     buttonColor?: string;
     altButtonColor?: string;
