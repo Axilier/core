@@ -16,7 +16,11 @@ const TileList = ({ children }: TileListProps) => {
             return <Tile index={0} {...children.props} />;
         }
         return children.map(({ props }, index) => (
-            <Tile index={index} {...props} />
+            <Tile
+                index={index}
+                key={`tile-index-${children.length}-${index}`}
+                {...props}
+            />
         ));
     };
 

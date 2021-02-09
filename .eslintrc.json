@@ -8,12 +8,12 @@
         "JSX": "readonly"
     },
     "extends": [
+        "airbnb",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
-        "airbnb",
-        "prettier/react",
-        "plugin:prettier/recommended",
-        "prettier"
+        "prettier",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/react"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -53,14 +53,14 @@
                 "devDependencies": ["stories/*/*"]
             }
         ],
-        "react/jsx-curly-brace-presence": 0,
         "react/jsx-no-undef": [
             "error",
             {
                 "allowGlobals": true
             }
         ],
-        "import/prefer-default-export": 0
+        "import/prefer-default-export": 0,
+        "react/jsx-curly-brace-presence": ["error", "always"]
     },
     "settings": {
         "import/resolver": {

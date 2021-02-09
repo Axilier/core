@@ -13,6 +13,8 @@ const Button = ({
     onClick,
     style,
     className,
+    btnStyle,
+    btnClassName,
     disabled,
     buttonColor,
     altButtonColor,
@@ -100,23 +102,21 @@ const Button = ({
 
     return (
         <div
-            className={'core-button-container'}
-            style={{ width: variant === 'text' ? '' : btnSize() }}
+            className={`core-button-container ${className}`}
+            style={{ width: variant === 'text' ? '' : btnSize(), ...style }}
         >
             <button
-                // onMouseDown={() => setClicked(true)}
-                // onMouseUp={() => setClicked(false)}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 type={'button'}
-                className={`core-button ${className}`}
+                className={`core-button ${btnClassName}`}
                 style={{
                     border: border(),
                     backgroundColor: backgroundColor(),
                     color: color(),
                     padding: variant === 'text' ? 'unset' : '5px 35px',
                     width: variant === 'text' ? '' : btnSize(),
-                    ...style,
+                    ...btnStyle,
                 }}
                 onClick={() => {
                     if (!onClick) return;

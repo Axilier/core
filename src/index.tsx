@@ -25,4 +25,5 @@ export {
     Issue,
     Question,
     Search,
+    Dropdown,
 } from './components/Icons';
