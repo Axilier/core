@@ -10,20 +10,19 @@ const Tab = ({
     children,
     index,
     direction,
-    tabNotSelectedColor,
-    tabSelectedColor,
+    showNotSelectedShadow,
 }: TabType) => {
     const shadowStyles = () => {
         switch (direction) {
             case 'horizontal':
                 return {
-                    width: '200px',
+                    width: 'calc(100% - 2px)',
                     height: '2px',
                     left: 2,
                 };
             case 'vertical':
                 return {
-                    height: '40px',
+                    height: 'calc(100% - 2px)',
                     width: '2px',
                     left: '0px',
                     top: '2px',
@@ -35,7 +34,7 @@ const Tab = ({
 
     return (
         <TabMenuContext.Consumer>
-            {(context) => (
+            {context => (
                 <div
                     role={'tab'}
                     className={`${
@@ -56,7 +55,10 @@ const Tab = ({
                     {children}
                     <div
                         className={'web-tab-selected-shadow'}
-                        style={shadowStyles()}
+                        style={{
+                            ...shadowStyles(),
+                            display: showNotSelectedShadow ? 'block' : 'none',
+                        }}
                     />
                 </div>
             )}

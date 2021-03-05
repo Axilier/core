@@ -13,17 +13,17 @@ export default {
 export const Horizontal: Story<TabMenuProps> = (args: TabMenuProps) => (
     <div
         style={{
-            width: '600px',
+            width: '800px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
         }}
     >
-        <TabMenu {...args} tabFontColor={'black'}>
-            <Tab>Test1</Tab>
-            <Tab>Test2</Tab>
-            <Tab>Test3</Tab>
+        <TabMenu {...args} tabFontColor={'black'} showNotSelectedShadow>
+            <Tab>{'Test1'}</Tab>
+            <Tab>{'Test2'}</Tab>
+            <Tab>{'Test3'}</Tab>
         </TabMenu>
     </div>
 );
@@ -40,9 +40,9 @@ export const Vertical: Story<TabMenuProps> = (args: TabMenuProps) => (
         }}
     >
         <TabMenu {...args} direction={'vertical'}>
-            <Tab>Test1</Tab>
-            <Tab>Test2</Tab>
-            <Tab>Test3</Tab>
+            <Tab>{'Test1'}</Tab>
+            <Tab>{'Test2'}</Tab>
+            <Tab>{'Test3'}</Tab>
         </TabMenu>
     </div>
 );
@@ -50,29 +50,37 @@ export const Vertical: Story<TabMenuProps> = (args: TabMenuProps) => (
 export const Colored: Story<TabMenuProps> = (args: TabMenuProps) => (
     <div
         style={{
-            width: '200px',
+            width: '300px',
             backgroundColor: '#1E4EE5',
         }}
     >
-        <TabMenu
-            {...args}
-            direction={'vertical'}
-            tabNotSelectedColor={'#1E4EE5'}
-            tabSelectedColor={'#1B44C4'}
-            tabIndicatorColor={'white'}
+        <div
+            style={{
+                width: '200px',
+                backgroundColor: '#1E4EE5',
+                margin: 'auto',
+            }}
         >
-            <Tab>
-                <AllFiles />
-                All Files
-            </Tab>
-            <Tab>
-                <Recent />
-                Recent
-            </Tab>
-            <Tab>
-                <Favourites />
-                Favourites
-            </Tab>
-        </TabMenu>
+            <TabMenu
+                {...args}
+                direction={'vertical'}
+                tabNotSelectedColor={'#1E4EE5'}
+                tabSelectedColor={'#1B44C4'}
+                tabIndicatorColor={'white'}
+            >
+                <Tab>
+                    <AllFiles />
+                    {'All Files'}
+                </Tab>
+                <Tab>
+                    <Recent />
+                    {'Recent'}
+                </Tab>
+                <Tab>
+                    <Favourites />
+                    {'Favourites'}
+                </Tab>
+            </TabMenu>
+        </div>
     </div>
 );

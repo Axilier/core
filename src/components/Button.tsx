@@ -103,7 +103,7 @@ const Button = ({
     return (
         <div
             className={`core-button-container ${className}`}
-            style={{ width: variant === 'text' ? '' : btnSize(), ...style }}
+            style={{ width: variant === 'text' ? 'max-content' : btnSize(), ...style }}
         >
             <button
                 onMouseEnter={() => setHover(true)}
@@ -114,7 +114,7 @@ const Button = ({
                     border: border(),
                     backgroundColor: backgroundColor(),
                     color: color(),
-                    padding: variant === 'text' ? 'unset' : '5px 35px',
+                    padding: variant === 'text' ? 'unset' : '5px 20px',
                     width: variant === 'text' ? '' : btnSize(),
                     ...btnStyle,
                 }}
