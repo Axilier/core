@@ -100,12 +100,14 @@ type TabProps = {
 export type TabType = {
     index?: number;
     children: ReactNode; // TEXT
+    showNotSelectedShadow?: boolean;
 } & TabProps;
 
 export type TabMenuProps = {
     children: { props: TabType } | Array<{ props: TabType }>;
     tabIndicatorColor?: string;
     tabFontColor?: string;
+    showNotSelectedShadow?: boolean;
     onChange(value: number): void;
 } & TabProps;
 

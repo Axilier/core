@@ -16,6 +16,7 @@ const TabMenu = ({
     tabSelectedColor,
     tabFontColor,
     onChange,
+    showNotSelectedShadow,
 }: TabMenuProps) => {
     const [selectedTab, setSelectedTab] = useState(0);
     const [indicatorWidth, setIndicatorWidth] = useState(
@@ -53,6 +54,7 @@ const TabMenu = ({
                     direction={direction}
                     tabSelectedColor={tabSelectedColor}
                     tabNotSelectedColor={tabNotSelectedColor}
+                    showNotSelectedShadow={showNotSelectedShadow}
                 >
                     {children.props.children}
                 </Tab>
@@ -60,11 +62,13 @@ const TabMenu = ({
         }
         return children.map(({ props }, index) => (
             <Tab
+                key={props.children ? props.children.toString() : index}
                 index={index}
                 {...props}
                 direction={direction}
                 tabSelectedColor={tabSelectedColor}
                 tabNotSelectedColor={tabNotSelectedColor}
+                showNotSelectedShadow={showNotSelectedShadow}
             >
                 {props.children}
             </Tab>
