@@ -86,6 +86,7 @@ declare type TabProps = {
 export declare type TabType = {
     index?: number;
     children: ReactNode;
+    showNotSelectedShadow?: boolean;
 } & TabProps;
 export declare type TabMenuProps = {
     children: {
@@ -95,6 +96,7 @@ export declare type TabMenuProps = {
     }>;
     tabIndicatorColor?: string;
     tabFontColor?: string;
+    showNotSelectedShadow?: boolean;
     onChange(value: number): void;
 } & TabProps;
 export declare type TabMenuContextType = {

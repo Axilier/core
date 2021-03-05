@@ -3,7 +3,7 @@
 import { TabMenuProps } from '../../Types';
 import '../../css/TabMenu.css';
 declare const TabMenu: {
-    ({ children, direction, tabIndicatorColor, tabNotSelectedColor, tabSelectedColor, tabFontColor, onChange, }: TabMenuProps): JSX.Element;
+    ({ children, direction, tabIndicatorColor, tabNotSelectedColor, tabSelectedColor, tabFontColor, onChange, showNotSelectedShadow, }: TabMenuProps): JSX.Element;
     defaultProps: {
         direction: string;
     };

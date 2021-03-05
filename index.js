@@ -110,8 +110,8 @@ const Button = ({ label, type, variant, onClick, style, className, btnStyle, btn
                 return size || '';
         }
     };
-    return (React.createElement("div", { className: `core-button-container ${className}`, style: Object.assign({ width: variant === 'text' ? '' : btnSize() }, style) },
-        React.createElement("button", { onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), type: 'button', className: `core-button ${btnClassName}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 35px', width: variant === 'text' ? '' : btnSize() }, btnStyle), onClick: () => {
+    return (React.createElement("div", { className: `core-button-container ${className}`, style: Object.assign({ width: variant === 'text' ? 'max-content' : btnSize() }, style) },
+        React.createElement("button", { onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), type: 'button', className: `core-button ${btnClassName}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 20px', width: variant === 'text' ? '' : btnSize() }, btnStyle), onClick: () => {
                 if (!onClick)
                     return;
                 onClick();
@@ -352,18 +352,18 @@ var css_248z$3 = ".web-tab-menu {\n    overflow-x: hidden;\n    overflow-y: hidd
 styleInject(css_248z$3);
 
 /** @format */
-const Tab = ({ children, index, direction, tabNotSelectedColor, tabSelectedColor, }) => {
+const Tab = ({ children, index, direction, showNotSelectedShadow, }) => {
     const shadowStyles = () => {
         switch (direction) {
             case 'horizontal':
                 return {
-                    width: '200px',
+                    width: 'calc(100% - 2px)',
                     height: '2px',
                     left: 2,
                 };
             case 'vertical':
                 return {
-                    height: '40px',
+                    height: 'calc(100% - 2px)',
                     width: '2px',
                     left: '0px',
                     top: '2px',
@@ -372,7 +372,7 @@ const Tab = ({ children, index, direction, tabNotSelectedColor, tabSelectedColor
                 return {};
         }
     };
-    return (React.createElement(TabMenuContext.Consumer, null, (context) => (React.createElement("div", { role: 'tab', className: `${direction === 'horizontal'
+    return (React.createElement(TabMenuContext.Consumer, null, context => (React.createElement("div", { role: 'tab', className: `${direction === 'horizontal'
             ? 'web-tab web-tab-horizontal'
             : 'web-tab'}`, style: {
             justifyContent: direction === 'horizontal'
@@ -381,11 +381,11 @@ const Tab = ({ children, index, direction, tabNotSelectedColor, tabSelectedColor
             paddingLeft: direction === 'horizontal' ? 'unset' : '20px',
         }, onClick: () => context.setSelectedTab(index || 0) },
         children,
-        React.createElement("div", { className: 'web-tab-selected-shadow', style: shadowStyles() })))));
+        React.createElement("div", { className: 'web-tab-selected-shadow', style: Object.assign(Object.assign({}, shadowStyles()), { display: showNotSelectedShadow ? 'block' : 'none' }) })))));
 };
 
 /** @format */
-const TabMenu = ({ children, direction, tabIndicatorColor, tabNotSelectedColor, tabSelectedColor, tabFontColor, onChange, }) => {
+const TabMenu = ({ children, direction, tabIndicatorColor, tabNotSelectedColor, tabSelectedColor, tabFontColor, onChange, showNotSelectedShadow, }) => {
     var _a;
     const [selectedTab, setSelectedTab] = React.useState(0);
     const [indicatorWidth, setIndicatorWidth] = React.useState(direction === 'horizontal' ? 0 : 2);
@@ -412,9 +412,9 @@ const TabMenu = ({ children, direction, tabIndicatorColor, tabNotSelectedColor, 
     }, [selectedTab]);
     const newChildren = () => {
         if (!Array.isArray(children)) {
-            return (React.createElement(Tab, Object.assign({ index: 0 }, children.props, { direction: direction, tabSelectedColor: tabSelectedColor, tabNotSelectedColor: tabNotSelectedColor }), children.props.children));
+            return (React.createElement(Tab, Object.assign({ index: 0 }, children.props, { direction: direction, tabSelectedColor: tabSelectedColor, tabNotSelectedColor: tabNotSelectedColor, showNotSelectedShadow: showNotSelectedShadow }), children.props.children));
         }
-        return children.map(({ props }, index) => (React.createElement(Tab, Object.assign({ index: index }, props, { direction: direction, tabSelectedColor: tabSelectedColor, tabNotSelectedColor: tabNotSelectedColor }), props.children)));
+        return children.map(({ props }, index) => (React.createElement(Tab, Object.assign({ key: props.children ? props.children.toString() : index, index: index }, props, { direction: direction, tabSelectedColor: tabSelectedColor, tabNotSelectedColor: tabNotSelectedColor, showNotSelectedShadow: showNotSelectedShadow }), props.children)));
     };
     return (React.createElement(TabMenuContext.Provider, { value: {
             selectedTab,
@@ -464,7 +464,7 @@ const TileList = ({ children }) => {
         if (!Array.isArray(children)) {
             return React.createElement(Tile, Object.assign({ index: 0 }, children.props));
         }
-        return children.map(({ props }, index) => (React.createElement(Tile, Object.assign({ index: index, key: `tile-index-${children.length}-${index}` }, props))));
+        return children.map(({ props }, index) => (React.createElement(Tile, Object.assign({ index: index, key: `tile-index-${children.length}` }, props))));
     };
     return (React.createElement(TilesContext.Provider, { value: {
             selectedTile,

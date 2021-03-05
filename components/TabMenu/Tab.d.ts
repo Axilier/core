@@ -2,5 +2,5 @@
 /// <reference types="react" />
 import { TabType } from '../../Types';
 import '../../css/TabMenu.css';
-declare const Tab: ({ children, index, direction, tabNotSelectedColor, tabSelectedColor, }: TabType) => JSX.Element;
+declare const Tab: ({ children, index, direction, showNotSelectedShadow, }: TabType) => JSX.Element;
 export default Tab;
