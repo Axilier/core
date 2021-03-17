@@ -476,7 +476,7 @@ const TileList = ({ children }) => {
         React.createElement("div", null, newChildren())));
 };
 
-var css_248z$5 = ".core-text-box {\n    justify-content: flex-start;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n.core-text-box-label {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.core-text-box-input-units {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding: 0 10px;\n}\n\n.core-text-box-input {\n    width: 100%;\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.core-text-box-input:focus {\n    outline: none;\n}\n\n.core-required-icon {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
+var css_248z$5 = ".core-text-box {\n    justify-content: flex-start;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n.core-text-box-label {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.core-text-box-input-units {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    width: 100%;\n}\n\n.core-text-box-input {\n    width: 100%;\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.core-text-box-input:focus {\n    outline: none;\n}\n\n.core-required-icon {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
 styleInject(css_248z$5);
 
 /** @format */
