@@ -3,7 +3,7 @@
 import { TextBoxProps } from '../Types';
 import '../css/TextBox.css';
 declare const TextBox: {
-    ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, value: newValue, type, inputStyle, outLineColor, }: TextBoxProps): JSX.Element;
+    ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, value: newValue, type, inputStyle, outLineColor, height, }: TextBoxProps): JSX.Element;
     defaultProps: {
         units: string;
         disabled: boolean;

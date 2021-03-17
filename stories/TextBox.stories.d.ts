@@ -11,3 +11,4 @@ export declare const NumbersOnly: Story<TextBoxProps>;
 export declare const PrefixComponent: Story<TextBoxProps>;
 export declare const FilledSuffix: Story<TextBoxProps>;
 export declare const SuffixComponent: Story<TextBoxProps>;
+export declare const SizeSet: Story<TextBoxProps>;

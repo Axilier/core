@@ -35,7 +35,7 @@ var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+S
 styleInject(css_248z);
 
 /** @format */
-const Button = ({ label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }) => {
+const Button = ({ buttonType, label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }) => {
     // const [clicked, setClicked] = useState(false);
     const [hover, setHover] = React.useState(false);
     const primaryColour = () => {
@@ -111,7 +111,9 @@ const Button = ({ label, type, variant, onClick, style, className, btnStyle, btn
         }
     };
     return (React.createElement("div", { className: `core-button-container ${className}`, style: Object.assign({ width: variant === 'text' ? 'max-content' : btnSize() }, style) },
-        React.createElement("button", { onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), type: 'button', className: `core-button ${btnClassName}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 20px', width: variant === 'text' ? '' : btnSize() }, btnStyle), onClick: () => {
+        React.createElement("button", { 
+            // eslint-disable-next-line react/button-has-type
+            type: buttonType || 'button', onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), className: `core-button ${btnClassName}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 20px', width: variant === 'text' ? '' : btnSize() }, btnStyle), onClick: () => {
                 if (!onClick)
                     return;
                 onClick();
@@ -125,10 +127,11 @@ const Button = ({ label, type, variant, onClick, style, className, btnStyle, btn
             } })) : null));
 };
 Button.defaultProps = {
+    buttonType: 'button',
     variant: 'outlined',
     type: 'primary',
     label: 'test',
-    onClick: () => { },
+    onClick: () => null,
     disabled: false,
     size: 'small',
 };
@@ -473,11 +476,11 @@ const TileList = ({ children }) => {
         React.createElement("div", null, newChildren())));
 };
 
-var css_248z$5 = ".core-text-box {\n    justify-content: flex-start;\n    margin: 10px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n\n.core-text-box-label {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.core-text-box-input-units {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding: 0 10px;\n}\n\n.core-text-box-input {\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.core-text-box-input:focus {\n    outline: none;\n}\n\n.core-required-icon {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
+var css_248z$5 = ".core-text-box {\n    justify-content: flex-start;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n\n.core-text-box-label {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.core-text-box-input-units {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding: 0 10px;\n}\n\n.core-text-box-input {\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.core-text-box-input:focus {\n    outline: none;\n}\n\n.core-required-icon {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
 styleInject(css_248z$5);
 
 /** @format */
-const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, value: newValue, type, inputStyle, outLineColor, }) => {
+const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder, size, variant, required, disabled, maxLength, units, onChange, className, style, value: newValue, type, inputStyle, outLineColor, height, }) => {
     const [value, setValue] = React.useState(newValue);
     React.useEffect(() => setValue(newValue), [newValue]);
     function handleChange(evt) {
@@ -494,13 +497,33 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
         height: size === 'small' ? '10x' : '16px',
         width: size === 'small' ? '12x' : '20px',
     });
+    const calcHeight = () => {
+        switch (size) {
+            case 'small':
+                return '34px';
+            case 'large':
+                return '44px';
+            default:
+                return height || '34px';
+        }
+    };
+    const width = () => {
+        switch (size) {
+            case 'small':
+                return '30px';
+            case 'large':
+                return '320px';
+            default:
+                return size;
+        }
+    };
     return (React.createElement("div", { className: `core-text-box ${className || ''}`, style: Object.assign({ flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start' }, style) },
         label !== '' ? (React.createElement("div", { className: 'core-text-box-label' },
             label,
-            required ? (React.createElement("div", { className: 'core-required-icon' }, "*")) : null)) : null,
+            required ? (React.createElement("div", { className: 'core-required-icon' }, '*')) : null)) : null,
         React.createElement("div", { className: 'core-text-box-input-units', style: {
                 color: disabled ? '#8C8C8C' : '#000000',
-                height: size === 'small' ? '34px' : '44px',
+                height: calcHeight(),
                 borderRadius: variant === 'outlined' ? '5px' : '0',
                 border: variant === 'outlined'
                     ? `solid 2px ${outLineColor || '#057EFF'}`
@@ -508,7 +531,7 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
                 backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent',
             } },
             React.createElement("div", { style: iconStyles(prefixComponent) }, prefixComponent),
-            React.createElement("input", { type: type, value: value, className: 'core-text-box-input', placeholder: placeholder, style: Object.assign({ width: size === 'small' ? '30px' : '320px', height: size === 'small' ? '34px' : '44px', cursor: disabled ? 'not-allowed' : 'text', backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent' }, inputStyle), onChange: (evt) => handleChange(evt), maxLength: maxLength || -1, disabled: disabled }),
+            React.createElement("input", { type: type, value: value, className: 'core-text-box-input', placeholder: placeholder, style: Object.assign({ width: width(), height: calcHeight(), cursor: disabled ? 'not-allowed' : 'text', backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent' }, inputStyle), onChange: evt => handleChange(evt), maxLength: maxLength || -1, disabled: disabled }),
             units ? (React.createElement("div", { style: {
                     marginLeft: '5px',
                 } }, units)) : null,

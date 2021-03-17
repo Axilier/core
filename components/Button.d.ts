@@ -3,12 +3,13 @@
 import { ButtonProps } from '../Types';
 import '../css/Button.css';
 declare const Button: {
-    ({ label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }: ButtonProps): JSX.Element;
+    ({ buttonType, label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }: ButtonProps): JSX.Element;
     defaultProps: {
+        buttonType: string;
         variant: string;
         type: string;
         label: string;
-        onClick: () => void;
+        onClick: () => null;
         disabled: boolean;
         size: string;
     };

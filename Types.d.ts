@@ -1,6 +1,7 @@
 /** @format */
 import React, { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
 export declare type ButtonProps = {
+    buttonType?: 'submit' | 'reset' | 'button';
     label: string;
     type?: 'primary' | 'secondary' | 'tertiary';
     variant?: 'contained' | 'text' | 'outlined';
@@ -49,7 +50,7 @@ export declare type TilesContextType = {
 };
 export declare type TextBoxProps = {
     label?: string;
-    size?: 'small' | 'large';
+    size?: 'small' | 'large' | string;
     disabled?: boolean;
     variant?: 'filled' | 'outlined' | 'bare';
     prefixComponent?: JSX.Element;
@@ -66,6 +67,7 @@ export declare type TextBoxProps = {
     type?: string;
     inputStyle?: CSSProperties;
     outLineColor?: string;
+    height?: string;
 };
 export declare type IconProps = {
     iconColor?: string;
