@@ -74,6 +74,7 @@ const TextBox = ({
                 flexDirection: variant === 'filled' ? 'row' : 'column',
                 alignItems: variant === 'filled' ? 'center' : 'start',
                 ...style,
+                width: width(),
             }}
         >
             {label !== '' ? (
@@ -105,7 +106,6 @@ const TextBox = ({
                     className={'core-text-box-input'}
                     placeholder={placeholder}
                     style={{
-                        width: width(),
                         height: calcHeight(),
                         cursor: disabled ? 'not-allowed' : 'text',
                         backgroundColor:
