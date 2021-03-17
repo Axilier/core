@@ -7,6 +7,7 @@ import { ButtonProps } from '../Types';
 import '../css/Button.css';
 
 const Button = ({
+    buttonType,
     label,
     type,
     variant,
@@ -103,12 +104,16 @@ const Button = ({
     return (
         <div
             className={`core-button-container ${className}`}
-            style={{ width: variant === 'text' ? 'max-content' : btnSize(), ...style }}
+            style={{
+                width: variant === 'text' ? 'max-content' : btnSize(),
+                ...style,
+            }}
         >
             <button
+                // eslint-disable-next-line react/button-has-type
+                type={buttonType || 'button'}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
-                type={'button'}
                 className={`core-button ${btnClassName}`}
                 style={{
                     border: border(),
@@ -147,10 +152,11 @@ const Button = ({
 };
 
 Button.defaultProps = {
+    buttonType: 'button',
     variant: 'outlined',
     type: 'primary',
     label: 'test',
-    onClick: () => {},
+    onClick: () => null,
     disabled: false,
     size: 'small',
 };
