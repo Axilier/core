@@ -31,3 +31,9 @@ jobs:
           BRANCH: build
           FOLDER: dist
           CLEAN: true
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: Axilier/build-screen
+          event-type: build
