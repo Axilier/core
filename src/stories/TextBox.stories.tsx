@@ -9,7 +9,7 @@ export default {
     component: TextBox,
 } as Meta;
 
-const Template: Story<TextBoxProps> = (args) => <TextBox {...args} />;
+const Template: Story<TextBoxProps> = args => <TextBox {...args} />;
 
 export const Filled = Template.bind({});
 Filled.args = {
@@ -65,9 +65,7 @@ NumbersOnly.args = {
     variant: 'outlined',
     placeholder: 'Test placeholder',
     size: 'large',
-    filter: (value) => {
-        return !/^[a-zA-Z]+$/.test(value);
-    },
+    filter: value => !/^[a-zA-Z]+$/.test(value),
 };
 
 export const PrefixComponent = Template.bind({});
@@ -93,4 +91,13 @@ SuffixComponent.args = {
     suffixComponent: <Mail />,
     placeholder: 'Test placeholder',
     size: 'large',
+};
+
+export const SizeSet = Template.bind({});
+SizeSet.args = {
+    variant: 'outlined',
+    placeholder: 'Test placeholder',
+    size: '200px',
+    label: 'Password',
+    required: true,
 };

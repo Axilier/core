@@ -25,6 +25,7 @@ const TextBox = ({
     type,
     inputStyle,
     outLineColor,
+    height,
 }: TextBoxProps) => {
     const [value, setValue] = useState(newValue);
 
@@ -44,6 +45,28 @@ const TextBox = ({
         width: size === 'small' ? '12x' : '20px',
     });
 
+    const calcHeight = () => {
+        switch (size) {
+            case 'small':
+                return '34px';
+            case 'large':
+                return '44px';
+            default:
+                return height || '34px';
+        }
+    };
+
+    const width = () => {
+        switch (size) {
+            case 'small':
+                return '30px';
+            case 'large':
+                return '320px';
+            default:
+                return size;
+        }
+    };
+
     return (
         <div
             className={`core-text-box ${className || ''}`}
@@ -57,7 +80,7 @@ const TextBox = ({
                 <div className={'core-text-box-label'}>
                     {label}
                     {required ? (
-                        <div className={'core-required-icon'}>*</div>
+                        <div className={'core-required-icon'}>{'*'}</div>
                     ) : null}
                 </div>
             ) : null}
@@ -65,7 +88,7 @@ const TextBox = ({
                 className={'core-text-box-input-units'}
                 style={{
                     color: disabled ? '#8C8C8C' : '#000000',
-                    height: size === 'small' ? '34px' : '44px',
+                    height: calcHeight(),
                     borderRadius: variant === 'outlined' ? '5px' : '0',
                     border:
                         variant === 'outlined'
@@ -82,14 +105,14 @@ const TextBox = ({
                     className={'core-text-box-input'}
                     placeholder={placeholder}
                     style={{
-                        width: size === 'small' ? '30px' : '320px',
-                        height: size === 'small' ? '34px' : '44px',
+                        width: width(),
+                        height: calcHeight(),
                         cursor: disabled ? 'not-allowed' : 'text',
                         backgroundColor:
                             variant === 'filled' ? '#F3F3F3' : 'transparent',
                         ...inputStyle,
                     }}
-                    onChange={(evt) => handleChange(evt)}
+                    onChange={evt => handleChange(evt)}
                     maxLength={maxLength || -1}
                     disabled={disabled}
                 />

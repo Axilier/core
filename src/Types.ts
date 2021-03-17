@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 
 export type ButtonProps = {
+    buttonType?: 'submit' | 'reset' | 'button';
     label: string; // DOC the label/name for the button
     type?: 'primary' | 'secondary' | 'tertiary'; // DOC the three different types of button for different times (dark/light mode)
     variant?: 'contained' | 'text' | 'outlined'; // DOC reads as is
@@ -57,7 +58,7 @@ export type TilesContextType = {
 
 export type TextBoxProps = {
     label?: string; // DOC the label that is before the input, background does not extend to cover it
-    size?: 'small' | 'large';
+    size?: 'small' | 'large' | string;
     disabled?: boolean;
     variant?: 'filled' | 'outlined' | 'bare'; // DOC the type of input that will be shown, filled has sharp corners, outlined has rounded corners
     prefixComponent?: JSX.Element; // DOC component usually an icon that comes before the input box
@@ -74,6 +75,7 @@ export type TextBoxProps = {
     type?: string;
     inputStyle?: CSSProperties;
     outLineColor?: string;
+    height?: string;
 };
 
 export type IconProps = {
