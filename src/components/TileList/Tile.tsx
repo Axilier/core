@@ -5,14 +5,15 @@ import * as React from 'react';
 import { TileType } from '../../Types';
 import { Dropdown, Lock } from '../Icons';
 import { TilesContext } from '../../Contex';
+import styles from '../../css/TileList.module.css';
 
-const Tile = ({ label, icon, children, index }: TileType) => (
+const Tile = ({ label, icon, children, index }: TileType): JSX.Element => (
     <TilesContext.Consumer>
         {tilesInfo => (
             <>
                 <div
                     role={'row'}
-                    className={'core-tile-list-tile'}
+                    className={styles.tileListTile}
                     style={{
                         backgroundColor:
                             tilesInfo.selectedTile === index
@@ -21,7 +22,7 @@ const Tile = ({ label, icon, children, index }: TileType) => (
                     }}
                     onClick={() => tilesInfo.setSelectedTile(index || 0)}
                 >
-                    <div className={'core-tile-left'}>
+                    <div className={styles.tileLeft}>
                         {children ? (
                             <Dropdown />
                         ) : (

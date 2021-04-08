@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { LockProps } from '../../Types';
-import '../../css/Icons.css';
+import styles from '../../css/Icons.module.css';
 
 export const Lock = ({
     locked,
@@ -13,7 +13,7 @@ export const Lock = ({
     iconColor,
     onChange,
     className,
-}: LockProps) => {
+}: LockProps): JSX.Element => {
     const [isLocked, setIsLocked] = useState(locked);
 
     useEffect(() => setIsLocked(locked), [locked]);
@@ -27,14 +27,14 @@ export const Lock = ({
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
             style={style}
-            className={`${className} icon`}
+            className={`${className} ${styles.icon}`}
             onClick={() => {
                 setIsLocked(!isLocked);
                 if (!onChange) return;
                 onChange(!isLocked);
             }}
         >
-            <path fill="none" d="M0 0h16v16H0z" />
+            <path fill={'none'} d={'M0 0h16v16H0z'} />
             <path
                 d={
                     isLocked || disabled
@@ -42,12 +42,12 @@ export const Lock = ({
                         : 'M4.544 14.1A1.15 1.15 0 013.4 12.956V7.62a1.15 1.15 0 011.144-1.144h4.003V5.427A3.543 3.543 0 0112.073 1.9 3.543 3.543 0 0115.6 5.427v1.525a.67.67 0 01-.667.667.67.67 0 01-.667-.667V5.427c0-1.203-.99-2.193-2.193-2.193-1.202 0-2.192.99-2.192 2.193v1.048h1.525a1.15 1.15 0 011.144 1.144v5.337a1.15 1.15 0 01-1.144 1.144H4.544zm0-1.144h6.862V7.62H4.544v5.337z'
                 }
                 fill={iconColor || '#6f7b91'}
-                fillRule="nonzero"
+                fillRule={'nonzero'}
             />
             {disabled ? (
                 <path
-                    fill="#ff2f24"
-                    d="M12.89 2.404l.706.707L3.111 13.596l-.707-.707z"
+                    fill={'#ff2f24'}
+                    d={'M12.89 2.404l.706.707L3.111 13.596l-.707-.707z'}
                 />
             ) : null}
         </svg>

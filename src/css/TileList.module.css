@@ -1,4 +1,4 @@
-.core-tile-list-tile {
+.tileListTile {
     height: 40px;
     display: flex;
     flex-direction: row;
@@ -11,26 +11,26 @@
     font-weight: 400;
 }
 
-.core-tile-list-tile:hover {
+.tileListTile:hover {
     cursor: pointer;
 }
 
-.core-tile-list-tile div {
+.tileListTile div {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.core-tile-list-tile-segment {
+.tileListTileSegment {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.core-lock:hover {
+.lock:hover {
     cursor: pointer;
 }
 
-.core-tile-left div, svg {
+.tileLeft div, svg {
     margin: 0 2px;
 }

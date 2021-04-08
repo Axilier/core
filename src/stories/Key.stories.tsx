@@ -9,7 +9,7 @@ export default {
     component: Key,
 } as Meta;
 
-const Template: Story<IconProps> = (args) => <Key {...args} />;
+const Template: Story<IconProps> = args => <Key {...args} />;
 
 export const Basic = Template.bind({});
 

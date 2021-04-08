@@ -10,7 +10,7 @@ export default {
     component: Lock,
 } as Meta;
 
-const Template: Story<LockProps> = (args) => <Lock {...args} />;
+const Template: Story<LockProps> = args => <Lock {...args} />;
 
 export const Disabled = Template.bind({});
 Disabled.args = {

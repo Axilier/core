@@ -4,16 +4,21 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { TickboxProps } from '../Types';
-import '../css/Tickbox.css';
+import styles from '../css/Tickbox.module.css';
 
-const Tickbox = ({ ticked, onChange, className, style }: TickboxProps) => {
+const Tickbox = ({
+    ticked,
+    onChange,
+    className,
+    style,
+}: TickboxProps): JSX.Element => {
     const [isTicked, setIsTicked] = useState(ticked);
 
     useEffect(() => setIsTicked(ticked), [ticked]);
 
     return (
         <svg
-            className={`core-tick-box ${className}`}
+            className={`${styles.tickBox} ${className}`}
             onClick={() => {
                 setIsTicked(!isTicked);
                 if (!onChange) return;
@@ -47,7 +52,7 @@ const Tickbox = ({ ticked, onChange, className, style }: TickboxProps) => {
 };
 
 Tickbox.defaultProps = {
-    onChange: () => {},
+    onChange: () => null,
 };
 
 export default Tickbox;

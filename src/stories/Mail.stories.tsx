@@ -9,7 +9,7 @@ export default {
     component: Mail,
 } as Meta;
 
-const Template: Story<IconProps> = (args) => <Mail {...args} />;
+const Template: Story<IconProps> = args => <Mail {...args} />;
 
 export const Basic = Template.bind({});
 
