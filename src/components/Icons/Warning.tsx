@@ -3,9 +3,13 @@
 // @flow
 import * as React from 'react';
 import { IconProps } from '../../Types';
-import '../../css/Icons.css';
+import styles from '../../css/Icons.module.css';
 
-export const Warning = ({ style, className, iconColor }: IconProps) => (
+export const Warning = ({
+    style,
+    className,
+    iconColor,
+}: IconProps): JSX.Element => (
     <svg
         viewBox={'0 0 16 16'}
         xmlns={'http://www.w3.org/2000/svg'}
@@ -14,7 +18,7 @@ export const Warning = ({ style, className, iconColor }: IconProps) => (
         strokeLinejoin={'round'}
         strokeMiterlimit={2}
         style={style}
-        className={`${className} icon`}
+        className={`${className} ${styles.icon}`}
     >
         <path
             d={

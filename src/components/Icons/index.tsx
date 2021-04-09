@@ -12,6 +12,7 @@ export { Cross } from './Cross';
 export { Question } from './Question';
 export { Issue } from './Issue';
 export { Copyright } from './Copyright';
+export { Connections } from './Connections';
 export { SharedFiles } from './SharedFiled';
 export { Favourites } from './Favourites';
 export { Recent } from './Recent';

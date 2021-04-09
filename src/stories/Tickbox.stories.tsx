@@ -10,7 +10,7 @@ export default {
     component: Tickbox,
 } as Meta;
 
-const Template: Story<TickboxProps> = (args) => <Tickbox {...args} />;
+const Template: Story<TickboxProps> = args => <Tickbox {...args} />;
 
 export const Ticked = Template.bind({});
 Ticked.args = {

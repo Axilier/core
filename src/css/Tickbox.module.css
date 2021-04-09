@@ -1,7 +1,7 @@
-.core-tick-box {
+.tickBox {
     height: 18px;
 }
 
-.core-tick-box:hover {
+.tickBox:hover {
     cursor: pointer;
 }

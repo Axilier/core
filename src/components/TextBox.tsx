@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { TextBoxProps } from '../Types';
-import '../css/TextBox.css';
+import styles from '../css/TextBox.module.css';
 
 const TextBox = ({
     label,
@@ -26,7 +26,7 @@ const TextBox = ({
     inputStyle,
     outLineColor,
     height,
-}: TextBoxProps) => {
+}: TextBoxProps): JSX.Element => {
     const [value, setValue] = useState(newValue);
 
     useEffect(() => setValue(newValue), [newValue]);
@@ -69,7 +69,7 @@ const TextBox = ({
 
     return (
         <div
-            className={`core-text-box ${className || ''}`}
+            className={`${styles.textBox} ${className || ''}`}
             style={{
                 flexDirection: variant === 'filled' ? 'row' : 'column',
                 alignItems: variant === 'filled' ? 'center' : 'start',
@@ -78,15 +78,15 @@ const TextBox = ({
             }}
         >
             {label !== '' ? (
-                <div className={'core-text-box-label'}>
+                <div className={styles.textBoxLabel}>
                     {label}
                     {required ? (
-                        <div className={'core-required-icon'}>{'*'}</div>
+                        <div className={styles.requiredIcon}>{'*'}</div>
                     ) : null}
                 </div>
             ) : null}
             <div
-                className={'core-text-box-input-units'}
+                className={styles.textBoxInputUnits}
                 style={{
                     color: disabled ? '#8C8C8C' : '#000000',
                     height: calcHeight(),
@@ -103,7 +103,7 @@ const TextBox = ({
                 <input
                     type={type}
                     value={value}
-                    className={'core-text-box-input'}
+                    className={styles.textBoxInput}
                     placeholder={placeholder}
                     style={{
                         height: calcHeight(),

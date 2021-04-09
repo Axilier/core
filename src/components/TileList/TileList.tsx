@@ -3,12 +3,11 @@
 // @flow
 import * as React from 'react';
 import { useState } from 'react';
-import '../../css/TileList.css';
 import { TileListProps } from '../../Types';
 import Tile from './Tile';
 import { TilesContext } from '../../Contex';
 
-const TileList = ({ children }: TileListProps) => {
+const TileList = ({ children }: TileListProps): JSX.Element => {
     const [selectedTile, setSelectedTile] = useState(0);
 
     const newChildren = () => {

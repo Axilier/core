@@ -1,4 +1,4 @@
-.web-tab-menu {
+.tabMenu {
     overflow-x: hidden;
     overflow-y: hidden;
     position: relative;
@@ -8,7 +8,7 @@
     flex: 1 1 0;
 }
 
-.web-tab {
+.tab {
     position: relative;
     z-index: 1;
     display: flex;
@@ -16,21 +16,21 @@
     height: 40px;
 }
 
-.web-tab * {
+.tab * {
     margin-right: 5px;
 }
 
-.web-tab-horizontal {
+.tabHorizontal {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0;
 }
 
-.web-tab:hover {
+.tab:hover {
     cursor: pointer;
 }
 
-.web-tab-selected-block {
+.tabSelectedBlock {
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -38,13 +38,13 @@
     transition: left .2s ease-in-out, top .2s ease-in-out;
 }
 
-.web-tab-selected-background {
+.tabSelectedBackground {
     position: absolute;
     z-index: 0;
     transition: left .2s ease-in-out, top .2s ease-in-out;
 }
 
-.web-tab-selected-shadow {
+.tabSelectedShadow {
     position: absolute;
     bottom: 0;
     background-color: #E0E0E0;
@@ -52,8 +52,8 @@
     transition: left .2s ease-in-out, top .2s ease-in-out;
 }
 
-.web-tab-menu-component-container {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
+/*.tab-menu-component-container {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-content: center;*/
+/*}*/
