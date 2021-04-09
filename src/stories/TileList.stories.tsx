@@ -10,7 +10,7 @@ export default {
     component: TileList,
 };
 
-export const Single: Story<TileListProps> = (args) => (
+export const Single: Story<TileListProps> = args => (
     <div style={{ width: '500px' }}>
         <TileList {...args}>
             <Tile label={'tile1'} icon={<Room />} />
@@ -18,7 +18,7 @@ export const Single: Story<TileListProps> = (args) => (
     </div>
 );
 
-export const Multiple: Story<TileListProps> = (args) => (
+export const Multiple: Story<TileListProps> = args => (
     <div style={{ width: '500px' }}>
         <TileList {...args}>
             <Tile label={'tile1'} icon={<Room />}>

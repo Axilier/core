@@ -15,13 +15,14 @@ export default {
         format: 'cjs',
         sourcemap: true,
     },
-
     plugins: [
         peerDepsExternal(),
         resolve(),
         commonjs(),
         typescript({ useTsconfigDeclarationDir: true }),
-        postcss(),
+        postcss({
+            autoModules: true,
+        }),
         image(),
     ],
 };

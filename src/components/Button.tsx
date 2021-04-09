@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { ButtonProps } from '../Types';
-import '../css/Button.css';
+import styles from '../css/Button.module.css';
 
 const Button = ({
     buttonType,
@@ -22,7 +22,7 @@ const Button = ({
     buttonIcon,
     iconBackgroundColor,
     size,
-}: ButtonProps) => {
+}: ButtonProps): JSX.Element => {
     // const [clicked, setClicked] = useState(false);
     const [hover, setHover] = useState(false);
 
@@ -103,7 +103,7 @@ const Button = ({
 
     return (
         <div
-            className={`core-button-container ${className}`}
+            className={`${styles.buttonContainer} ${className}`}
             style={{
                 width: variant === 'text' ? 'max-content' : btnSize(),
                 ...style,
@@ -114,7 +114,7 @@ const Button = ({
                 type={buttonType || 'button'}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
-                className={`core-button ${btnClassName}`}
+                className={`${styles.button} ${btnClassName}`}
                 style={{
                     border: border(),
                     backgroundColor: backgroundColor(),
@@ -141,7 +141,7 @@ const Button = ({
             </button>
             {disabled ? (
                 <div
-                    className={'core-button-filter'}
+                    className={styles.buttonFilter}
                     style={{
                         opacity: 0.3,
                     }}

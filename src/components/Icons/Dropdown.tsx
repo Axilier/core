@@ -4,14 +4,14 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { DropdownProps } from '../../Types';
-import '../../css/Icons.css';
+import styles from '../../css/Icons.module.css';
 
 export const Dropdown = ({
     style,
     className,
     open,
     onChange,
-}: DropdownProps) => {
+}: DropdownProps): JSX.Element => {
     const [isOpen, setIsOpen] = useState(open || false);
 
     useEffect(() => {
@@ -28,7 +28,7 @@ export const Dropdown = ({
             strokeLinejoin={'round'}
             strokeMiterlimit={2}
             style={{ transform: isOpen ? 'rotate(90deg)' : 'none', ...style }}
-            className={`${className} dropdown icon`}
+            className={`${className} ${styles.dropdown} ${styles.icon}`}
             onClick={() => {
                 setIsOpen(!isOpen);
                 if (!onChange) return;

@@ -1,4 +1,4 @@
-.core-text-box {
+.textBox {
     justify-content: flex-start;
     font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;
     display: flex;
@@ -7,21 +7,21 @@
     text-transform: capitalize;
 
 }
-.core-text-box-label {
+.textBoxLabel {
     display: flex;
     flex-direction: row;
     margin-right: 5px;
     font-size: 13px;
 }
 
-.core-text-box-input-units {
+.textBoxInputUnits {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
 }
 
-.core-text-box-input {
+.textBoxInput {
     width: 100%;
     padding-top: 0;
     padding-bottom: 0;
@@ -31,11 +31,11 @@
     margin-left: 10px;
 }
 
-.core-text-box-input:focus {
+.textBoxInput:focus {
     outline: none;
 }
 
-.core-required-icon {
+.requiredIcon {
     color: #FF0000;
     margin-left: 3px;
 }

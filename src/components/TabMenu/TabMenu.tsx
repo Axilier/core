@@ -5,7 +5,7 @@ import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { TabMenuProps } from '../../Types';
 import { TabMenuContext } from '../../Contex';
-import '../../css/TabMenu.css';
+import styles from '../../css/TabMenu.module.css';
 import Tab from './Tab';
 
 const TabMenu = ({
@@ -83,7 +83,7 @@ const TabMenu = ({
             }}
         >
             <div
-                className={'web-tab-menu'}
+                className={styles.tabMenu}
                 ref={menu}
                 style={{
                     height: direction === 'horizontal' ? '40px' : 'unset',
@@ -95,7 +95,7 @@ const TabMenu = ({
             >
                 {newChildren()}
                 <div
-                    className={'web-tab-selected-block'}
+                    className={styles.tabSelectedBlock}
                     style={{
                         left:
                             direction === 'horizontal'
@@ -111,7 +111,7 @@ const TabMenu = ({
                     }}
                 />
                 <div
-                    className={'web-tab-selected-background'}
+                    className={styles.tabSelectedBackground}
                     style={{
                         left:
                             direction === 'horizontal'

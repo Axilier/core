@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { TabType } from '../../Types';
 import { TabMenuContext } from '../../Contex';
-import '../../css/TabMenu.css';
+import styles from '../../css/TabMenu.module.css';
 
 const Tab = ({
     children,
@@ -39,8 +39,8 @@ const Tab = ({
                     role={'tab'}
                     className={`${
                         direction === 'horizontal'
-                            ? 'web-tab web-tab-horizontal'
-                            : 'web-tab'
+                            ? `${styles.tab} ${styles.tabHorizontal}`
+                            : styles.tab
                     }`}
                     style={{
                         justifyContent:
@@ -54,7 +54,7 @@ const Tab = ({
                 >
                     {children}
                     <div
-                        className={'web-tab-selected-shadow'}
+                        className={styles.tabSelectedShadow}
                         style={{
                             ...shadowStyles(),
                             display: showNotSelectedShadow ? 'block' : 'none',
