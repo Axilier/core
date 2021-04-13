@@ -1,0 +1,11 @@
+{
+    "name": "core",
+    "author": "Kieran Lewin <kieran.lewin2000@gmail.com>",
+    "main": "index.js",
+    "version": "0.1.5",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0"
+    }
+}
