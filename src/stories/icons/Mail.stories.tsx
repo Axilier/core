@@ -1,15 +1,15 @@
 /** @format */
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Key } from '../components/Icons';
-import { IconProps } from '../Types';
+import { Mail } from '../../components/Icons';
+import { IconProps } from '../../Types';
 
 export default {
-    title: 'Example/Icons/Key',
-    component: Key,
+    title: 'Example/Icons/Mail',
+    component: Mail,
 } as Meta;
 
-const Template: Story<IconProps> = args => <Key {...args} />;
+const Template: Story<IconProps> = args => <Mail {...args} />;
 
 export const Basic = Template.bind({});
 

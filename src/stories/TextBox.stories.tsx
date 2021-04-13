@@ -65,7 +65,7 @@ NumbersOnly.args = {
     variant: 'outlined',
     placeholder: 'Test placeholder',
     size: 'large',
-    filter: value => !/^[a-zA-Z]+$/.test(value),
+    filter: value => /^[0-9]*$/.test(value),
 };
 
 export const PrefixComponent = Template.bind({});
@@ -99,5 +99,6 @@ SizeSet.args = {
     placeholder: 'Test placeholder',
     size: '200px',
     label: 'Password',
+    prefixComponent: <Mail />,
     required: true,
 };

@@ -41,7 +41,7 @@ const TextBox = ({
 
     const iconStyles = (component: JSX.Element | undefined) => ({
         display: !component ? 'none' : 'block',
-        height: size === 'small' ? '10x' : '16px',
+        height: size === 'small' ? '10x' : '20px',
         width: size === 'small' ? '12x' : '20px',
     });
 
@@ -58,8 +58,8 @@ const TextBox = ({
 
     const width = () => {
         switch (size) {
-            case 'small':
-                return '30px';
+            case 'small' || undefined:
+                return `${(maxLength || 2) * 8 + 60}px`;
             case 'large':
                 return '320px';
             default:
@@ -86,7 +86,7 @@ const TextBox = ({
                 </div>
             ) : null}
             <div
-                className={styles.textBoxInputUnits}
+                className={styles.textBoxInputWithUnits}
                 style={{
                     color: disabled ? '#8C8C8C' : '#000000',
                     height: calcHeight(),
@@ -95,45 +95,62 @@ const TextBox = ({
                         variant === 'outlined'
                             ? `solid 2px ${outLineColor || '#057EFF'}`
                             : 'none',
-                    backgroundColor:
-                        variant === 'filled' ? '#F3F3F3' : 'transparent',
                 }}
             >
-                <div style={iconStyles(prefixComponent)}>{prefixComponent}</div>
-                <input
-                    type={type}
-                    value={value}
-                    className={styles.textBoxInput}
-                    placeholder={placeholder}
+                <div
+                    className={styles.textBoxInputWithUnits}
                     style={{
-                        height: calcHeight(),
-                        cursor: disabled ? 'not-allowed' : 'text',
                         backgroundColor:
                             variant === 'filled' ? '#F3F3F3' : 'transparent',
-                        ...inputStyle,
                     }}
-                    onChange={evt => handleChange(evt)}
-                    maxLength={maxLength || -1}
-                    disabled={disabled}
-                />
-                {units ? (
+                >
                     <div
                         style={{
-                            marginLeft: '5px',
+                            marginLeft: '7px',
+                            ...iconStyles(prefixComponent),
                         }}
                     >
-                        {units}
+                        {prefixComponent}
                     </div>
-                ) : null}
-                {variant !== 'filled' && suffixComponent ? (
+                    <input
+                        type={type}
+                        value={value}
+                        className={styles.textBoxInput}
+                        placeholder={placeholder}
+                        style={{
+                            height: calcHeight(),
+                            lineHeight: calcHeight(),
+                            cursor: disabled ? 'not-allowed' : 'text',
+                            backgroundColor:
+                                variant === 'filled'
+                                    ? '#F3F3F3'
+                                    : 'transparent',
+                            ...inputStyle,
+                        }}
+                        onChange={evt => handleChange(evt)}
+                        maxLength={maxLength || -1}
+                        disabled={disabled}
+                    />
+                    {units ? (
+                        <div className={styles.textBoxInputUnits}>{units}</div>
+                    ) : null}
+                    {variant !== 'filled' && suffixComponent ? (
+                        <div
+                            style={{
+                                marginRight: '7px',
+                                ...iconStyles(suffixComponent),
+                            }}
+                        >
+                            {suffixComponent}
+                        </div>
+                    ) : null}
+                </div>
+                {variant === 'filled' && suffixComponent ? (
                     <div style={iconStyles(suffixComponent)}>
                         {suffixComponent}
                     </div>
                 ) : null}
             </div>
-            {variant === 'filled' && suffixComponent ? (
-                <div style={iconStyles(suffixComponent)}>{suffixComponent}</div>
-            ) : null}
         </div>
     );
 };

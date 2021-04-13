@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 
 export type ButtonProps = {
-    buttonType?: 'submit' | 'reset' | 'button';
+    btnType?: 'submit' | 'reset' | 'button';
     label: string; // DOC the label/name for the button
     type?: 'primary' | 'secondary' | 'tertiary'; // DOC the three different types of button for different times (dark/light mode)
     variant?: 'contained' | 'text' | 'outlined'; // DOC reads as is

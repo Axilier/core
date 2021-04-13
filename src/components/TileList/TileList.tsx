@@ -30,7 +30,7 @@ const TileList = ({ children }: TileListProps): JSX.Element => {
                 setSelectedTile,
             }}
         >
-            <div>{newChildren()}</div>
+            {newChildren()}
         </TilesContext.Provider>
     );
 };
