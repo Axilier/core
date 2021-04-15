@@ -31,12 +31,12 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');\n\n.Button-module_button__2jq1t {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    font-size: 18px;\n    font-weight: 400;\n    transition: color .5s, background-color .5s, border .5s;\n    cursor: pointer;\n    justify-content: center;\n}\n\n.Button-module_buttonContainer__9w-Pk {\n    position: relative;\n}\n\n.Button-module_button__2jq1t div {\n    padding: 4px;\n    border-radius: 7px;\n    display: flex;\n    margin-right: 5px;\n}\n\n.Button-module_buttonFilter__2kCl6 {\n    position: absolute;\n    z-index: 20;\n    background-color: black;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n}\n";
+var css_248z = "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');\n\n.Button-module_button__2jq1t {\n    user-select: none;\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    font-size: 18px;\n    font-weight: 400;\n    transition: color .5s, background-color .5s, border .5s;\n    cursor: pointer;\n    justify-content: center;\n}\n\n.Button-module_buttonContainer__9w-Pk {\n    position: relative;\n}\n\n.Button-module_button__2jq1t div {\n    padding: 4px;\n    border-radius: 7px;\n    display: flex;\n    margin-right: 5px;\n}\n\n.Button-module_buttonFilter__2kCl6 {\n    position: absolute;\n    z-index: 20;\n    background-color: black;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n}\n";
 var styles = {"button":"Button-module_button__2jq1t","buttonContainer":"Button-module_buttonContainer__9w-Pk","buttonFilter":"Button-module_buttonFilter__2kCl6"};
 styleInject(css_248z);
 
 /** @format */
-const Button = ({ buttonType, label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }) => {
+const Button = ({ btnType, label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }) => {
     // const [clicked, setClicked] = useState(false);
     const [hover, setHover] = React.useState(false);
     const primaryColour = () => {
@@ -114,7 +114,7 @@ const Button = ({ buttonType, label, type, variant, onClick, style, className, b
     return (React.createElement("div", { className: `${styles.buttonContainer} ${className}`, style: Object.assign({ width: variant === 'text' ? 'max-content' : btnSize() }, style) },
         React.createElement("button", { 
             // eslint-disable-next-line react/button-has-type
-            type: buttonType || 'button', onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), className: `${styles.button} ${btnClassName}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 20px', width: variant === 'text' ? '' : btnSize() }, btnStyle), onClick: () => {
+            type: btnType || 'button', onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false), className: `${styles.button} ${btnClassName}`, style: Object.assign({ border: border(), backgroundColor: backgroundColor(), color: color(), padding: variant === 'text' ? 'unset' : '5px 20px', width: variant === 'text' ? '' : btnSize() }, btnStyle), onClick: () => {
                 if (!onClick)
                     return;
                 onClick();
@@ -264,7 +264,7 @@ const Recent = ({ style, className, iconColor, }) => (React.createElement("svg",
         React.createElement("path", { d: 'M7.468 8.741a.797.797 0 01-.058-.3V5.428c0-.434.344-.786.769-.786.424 0 .768.352.768.786v2.689l1.86 1.901c.3.307.3.805 0 1.112a.756.756 0 01-1.088 0L7.635 8.997a.784.784 0 01-.166-.254l-.001-.002z' }))));
 
 /** @format */
-const AllFiles = ({ style, className, iconColor, }) => (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, style: style, className: `${className} ${styles$2.icon}` },
+const AllFiles = ({ style, className, iconColor, }) => (React.createElement("svg", { viewBox: '0 0 16 16', xmlns: 'http://www.w3.org/2000/svg', fillRule: 'evenodd', clipRule: 'evenodd', strokeLinejoin: 'round', strokeMiterlimit: 2, className: `${className} ${styles$2.icon}`, style: style },
     React.createElement("g", { fill: iconColor || '#fff' },
         React.createElement("path", { d: 'M12.145 0H4.691L1.296 3.394v10.047h10.849V0zM4.597 1.181v2.115H2.482l2.115-2.115zm6.785 11.493H2.064V3.812h3.045V.768h6.273v11.906z', fillRule: 'nonzero' }),
         React.createElement("path", { d: 'M3.475 5.979H9.97v.767H3.475zM3.475 7.974H9.97v.768H3.475zM3.475 9.966H9.97v.767H3.475z' }),
@@ -309,7 +309,7 @@ const TabMenuContext = React.createContext({
     setSelectedTab: () => null,
 });
 
-var css_248z$3 = ".TileList-module_tileListTile__39P2E {\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.TileList-module_tileListTile__39P2E:hover {\n    cursor: pointer;\n}\n\n.TileList-module_tileListTile__39P2E div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.TileList-module_tileListTileSegment__3CR26 {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.TileList-module_lock__22ipJ:hover {\n    cursor: pointer;\n}\n\n.TileList-module_tileLeft__1oj1v div, svg {\n    margin: 0 2px;\n}\n";
+var css_248z$3 = ".TileList-module_tileListTile__39P2E {\n    user-select: none;\n    height: 40px;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding: 0 12px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 16px;\n    text-transform: capitalize;\n    font-weight: 400;\n}\n\n.TileList-module_tileListTile__39P2E:hover {\n    cursor: pointer;\n}\n\n.TileList-module_tileListTile__39P2E div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.TileList-module_tileListTileSegment__3CR26 {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.TileList-module_lock__22ipJ:hover {\n    cursor: pointer;\n}\n\n.TileList-module_tileLeft__1oj1v div, .TileList-module_tileLeft__1oj1v svg {\n    margin: 0 2px;\n}\n";
 var styles$3 = {"tileListTile":"TileList-module_tileListTile__39P2E","tileListTileSegment":"TileList-module_tileListTileSegment__3CR26","lock":"TileList-module_lock__22ipJ","tileLeft":"TileList-module_tileLeft__1oj1v"};
 styleInject(css_248z$3);
 
@@ -328,7 +328,7 @@ const Tile = ({ label, icon, children, index }) => (React.createElement(TilesCon
             React.createElement(Lock, { disabled: false, locked: false }))),
     children))));
 
-var css_248z$4 = ".TabMenu-module_tabMenu__2DRM4 {\n    overflow-x: hidden;\n    overflow-y: hidden;\n    position: relative;\n    font-size: 15px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    flex: 1 1 0;\n}\n\n.TabMenu-module_tab__ZRll6 {\n    position: relative;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    height: 40px;\n}\n\n.TabMenu-module_tab__ZRll6 * {\n    margin-right: 5px;\n}\n\n.TabMenu-module_tabHorizontal__1AP08 {\n    flex-grow: 1;\n    flex-shrink: 1;\n    flex-basis: 0;\n}\n\n.TabMenu-module_tab__ZRll6:hover {\n    cursor: pointer;\n}\n\n.TabMenu-module_tabSelectedBlock__3wIk5 {\n    position: absolute;\n    bottom: 0;\n    z-index: 2;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.TabMenu-module_tabSelectedBackground__1BHeU {\n    position: absolute;\n    z-index: 0;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.TabMenu-module_tabSelectedShadow__1eEx3 {\n    position: absolute;\n    bottom: 0;\n    background-color: #E0E0E0;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n/*.tab-menu-component-container {*/\n/*    display: flex;*/\n/*    justify-content: center;*/\n/*    align-content: center;*/\n/*}*/\n";
+var css_248z$4 = ".TabMenu-module_tabMenu__2DRM4 {\n    overflow-x: hidden;\n    overflow-y: hidden;\n    position: relative;\n    font-size: 15px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    flex: 1 1 0;\n}\n\n.TabMenu-module_tab__ZRll6 {\n    user-select: none;\n    position: relative;\n    z-index: 1;\n    display: flex;\n    align-items: center;\n    height: 40px;\n}\n\n.TabMenu-module_tab__ZRll6 * {\n    margin-right: 5px;\n}\n\n.TabMenu-module_tabHorizontal__1AP08 {\n    flex-grow: 1;\n    flex-shrink: 1;\n    flex-basis: 0;\n}\n\n.TabMenu-module_tab__ZRll6:hover {\n    cursor: pointer;\n}\n\n.TabMenu-module_tabSelectedBlock__3wIk5 {\n    position: absolute;\n    bottom: 0;\n    z-index: 2;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.TabMenu-module_tabSelectedBackground__1BHeU {\n    position: absolute;\n    z-index: 0;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n.TabMenu-module_tabSelectedShadow__1eEx3 {\n    position: absolute;\n    bottom: 0;\n    background-color: #E0E0E0;\n    width: 100%;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n\n/*.tab-menu-component-container {*/\n/*    display: flex;*/\n/*    justify-content: center;*/\n/*    align-content: center;*/\n/*}*/\n";
 var styles$4 = {"tabMenu":"TabMenu-module_tabMenu__2DRM4","tab":"TabMenu-module_tab__ZRll6","tabHorizontal":"TabMenu-module_tabHorizontal__1AP08","tabSelectedBlock":"TabMenu-module_tabSelectedBlock__3wIk5","tabSelectedBackground":"TabMenu-module_tabSelectedBackground__1BHeU","tabSelectedShadow":"TabMenu-module_tabSelectedShadow__1eEx3"};
 styleInject(css_248z$4);
 
@@ -447,12 +447,11 @@ const TileList = ({ children }) => {
     return (React.createElement(TilesContext.Provider, { value: {
             selectedTile,
             setSelectedTile,
-        } },
-        React.createElement("div", null, newChildren())));
+        } }, newChildren()));
 };
 
-var css_248z$5 = ".TextBox-module_textBox__DqL25 {\n    justify-content: flex-start;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n.TextBox-module_textBoxLabel__33lnE {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.TextBox-module_textBoxInputUnits__3u9fC {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    width: 100%;\n}\n\n.TextBox-module_textBoxInput__3gia0 {\n    width: 100%;\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin-left: 10px;\n}\n\n.TextBox-module_textBoxInput__3gia0:focus {\n    outline: none;\n}\n\n.TextBox-module_requiredIcon__25JqO {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
-var styles$5 = {"textBox":"TextBox-module_textBox__DqL25","textBoxLabel":"TextBox-module_textBoxLabel__33lnE","textBoxInputUnits":"TextBox-module_textBoxInputUnits__3u9fC","textBoxInput":"TextBox-module_textBoxInput__3gia0","requiredIcon":"TextBox-module_requiredIcon__25JqO"};
+var css_248z$5 = ".TextBox-module_textBox__DqL25 {\n    user-select: none;\n    justify-content: flex-start;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n\n}\n.TextBox-module_textBoxLabel__33lnE {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n}\n\n.TextBox-module_textBoxInputWithUnits__1EQSf {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    width: 100%;\n}\n\n.TextBox-module_textBoxInputUnits__3u9fC {\n    margin-right: 5px;\n}\n\n.TextBox-module_textBoxInput__3gia0 {\n    width: 100%;\n    padding-top: 0;\n    padding-bottom: 0;\n    align-items: center;\n    border: none;\n    font-size: 13px;\n    margin: 0 10px;\n}\n\n.TextBox-module_textBoxInput__3gia0:focus {\n    outline: none;\n}\n\n.TextBox-module_requiredIcon__25JqO {\n    color: #FF0000;\n    margin-left: 3px;\n}\n";
+var styles$5 = {"textBox":"TextBox-module_textBox__DqL25","textBoxLabel":"TextBox-module_textBoxLabel__33lnE","textBoxInputWithUnits":"TextBox-module_textBoxInputWithUnits__1EQSf","textBoxInputUnits":"TextBox-module_textBoxInputUnits__3u9fC","textBoxInput":"TextBox-module_textBoxInput__3gia0","requiredIcon":"TextBox-module_requiredIcon__25JqO"};
 styleInject(css_248z$5);
 
 /** @format */
@@ -470,7 +469,7 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
     }
     const iconStyles = (component) => ({
         display: !component ? 'none' : 'block',
-        height: size === 'small' ? '10x' : '16px',
+        height: size === 'small' ? '10x' : '20px',
         width: size === 'small' ? '12x' : '20px',
     });
     const calcHeight = () => {
@@ -485,34 +484,36 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
     };
     const width = () => {
         switch (size) {
-            case 'small':
-                return '30px';
+            case 'small' :
+                return `${(maxLength || 2) * 8 + 60}px`;
             case 'large':
                 return '320px';
             default:
                 return size;
         }
     };
-    return (React.createElement("div", { className: `${styles$5.textBox} ${className || ''}`, style: Object.assign(Object.assign({ flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start' }, style), { width: width() }) },
+    return (React.createElement("div", { className: `${styles$5.textBox} ${className || ''}`, style: Object.assign({ height: 'fit-content', flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start', width: width() }, style) },
         label !== '' ? (React.createElement("div", { className: styles$5.textBoxLabel },
             label,
             required ? (React.createElement("div", { className: styles$5.requiredIcon }, '*')) : null)) : null,
-        React.createElement("div", { className: styles$5.textBoxInputUnits, style: {
+        React.createElement("div", { className: styles$5.textBoxInputWithUnits, style: {
                 color: disabled ? '#8C8C8C' : '#000000',
                 height: calcHeight(),
                 borderRadius: variant === 'outlined' ? '5px' : '0',
                 border: variant === 'outlined'
                     ? `solid 2px ${outLineColor || '#057EFF'}`
                     : 'none',
-                backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent',
             } },
-            React.createElement("div", { style: iconStyles(prefixComponent) }, prefixComponent),
-            React.createElement("input", { type: type, value: value, className: styles$5.textBoxInput, placeholder: placeholder, style: Object.assign({ height: calcHeight(), cursor: disabled ? 'not-allowed' : 'text', backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent' }, inputStyle), onChange: evt => handleChange(evt), maxLength: maxLength || -1, disabled: disabled }),
-            units ? (React.createElement("div", { style: {
-                    marginLeft: '5px',
-                } }, units)) : null,
-            variant !== 'filled' && suffixComponent ? (React.createElement("div", { style: iconStyles(suffixComponent) }, suffixComponent)) : null),
-        variant === 'filled' && suffixComponent ? (React.createElement("div", { style: iconStyles(suffixComponent) }, suffixComponent)) : null));
+            React.createElement("div", { className: styles$5.textBoxInputWithUnits, style: {
+                    backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent',
+                } },
+                React.createElement("div", { style: Object.assign({ marginLeft: '7px' }, iconStyles(prefixComponent)) }, prefixComponent),
+                React.createElement("input", { type: type, value: value, className: styles$5.textBoxInput, placeholder: placeholder, style: Object.assign({ height: calcHeight(), lineHeight: calcHeight(), cursor: disabled ? 'not-allowed' : 'text', backgroundColor: variant === 'filled'
+                            ? '#F3F3F3'
+                            : 'transparent' }, inputStyle), onChange: evt => handleChange(evt), maxLength: maxLength || -1, disabled: disabled }),
+                units ? (React.createElement("div", { className: styles$5.textBoxInputUnits }, units)) : null,
+                variant !== 'filled' && suffixComponent ? (React.createElement("div", { style: Object.assign({ marginRight: '7px' }, iconStyles(suffixComponent)) }, suffixComponent)) : null),
+            variant === 'filled' && suffixComponent ? (React.createElement("div", { style: iconStyles(suffixComponent) }, suffixComponent)) : null)));
 };
 TextBox.defaultProps = {
     units: '',

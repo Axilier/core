@@ -1,7 +1,7 @@
 /** @format */
 import { ButtonProps } from '../Types';
 declare const Button: {
-    ({ buttonType, label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }: ButtonProps): JSX.Element;
+    ({ btnType, label, type, variant, onClick, style, className, btnStyle, btnClassName, disabled, buttonColor, altButtonColor, buttonIcon, iconBackgroundColor, size, }: ButtonProps): JSX.Element;
     defaultProps: {
         buttonType: string;
         variant: string;

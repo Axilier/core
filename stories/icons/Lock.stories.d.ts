@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { LockProps } from '../Types';
+import { LockProps } from '../../Types';
 declare const _default: Meta<import("@storybook/react/types-6-0").Args>;
 export default _default;
 export declare const Disabled: Story<LockProps>;

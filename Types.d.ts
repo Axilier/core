@@ -1,7 +1,7 @@
 /** @format */
 import React, { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
 export declare type ButtonProps = {
-    buttonType?: 'submit' | 'reset' | 'button';
+    btnType?: 'submit' | 'reset' | 'button';
     label: string;
     type?: 'primary' | 'secondary' | 'tertiary';
     variant?: 'contained' | 'text' | 'outlined';
