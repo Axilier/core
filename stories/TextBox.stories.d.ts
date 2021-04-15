@@ -7,6 +7,7 @@ export declare const Outlined: Story<TextBoxProps>;
 export declare const Bare: Story<TextBoxProps>;
 export declare const ColouredOutline: Story<TextBoxProps>;
 export declare const ChangedFont: Story<TextBoxProps>;
+export declare const BareCentered: Story<TextBoxProps>;
 export declare const NumbersOnly: Story<TextBoxProps>;
 export declare const PrefixComponent: Story<TextBoxProps>;
 export declare const FilledSuffix: Story<TextBoxProps>;

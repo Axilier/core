@@ -492,7 +492,7 @@ const TextBox = ({ label, prefixComponent, suffixComponent, filter, placeholder,
                 return size;
         }
     };
-    return (React.createElement("div", { className: `${styles$5.textBox} ${className || ''}`, style: Object.assign(Object.assign({ flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start' }, style), { width: width() }) },
+    return (React.createElement("div", { className: `${styles$5.textBox} ${className || ''}`, style: Object.assign({ height: 'fit-content', flexDirection: variant === 'filled' ? 'row' : 'column', alignItems: variant === 'filled' ? 'center' : 'start', width: width() }, style) },
         label !== '' ? (React.createElement("div", { className: styles$5.textBoxLabel },
             label,
             required ? (React.createElement("div", { className: styles$5.requiredIcon }, '*')) : null)) : null,
