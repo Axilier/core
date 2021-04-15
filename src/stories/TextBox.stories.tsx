@@ -60,6 +60,35 @@ ChangedFont.args = {
     },
 };
 
+export const BareCentered: Story<TextBoxProps> = (args: TextBoxProps) => (
+    <div
+        style={{
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'row',
+            backgroundColor: 'white',
+            boxShadow: '0 3px 6px #00000029',
+            height: '70px',
+            padding: '0 65px',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+        }}
+    >
+        <TextBox
+            label={'test'}
+            {...args}
+            variant={'bare'}
+            placeholder={'Test placeholder'}
+            size={'large'}
+            prefixComponent={<Search iconColor={'#8C8C8C'} />}
+            inputStyle={{
+                fontWeight: 500,
+                color: 'red',
+            }}
+        />
+    </div>
+);
+
 export const NumbersOnly = Template.bind({});
 NumbersOnly.args = {
     variant: 'outlined',

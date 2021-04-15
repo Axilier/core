@@ -71,10 +71,11 @@ const TextBox = ({
         <div
             className={`${styles.textBox} ${className || ''}`}
             style={{
+                height: 'fit-content',
                 flexDirection: variant === 'filled' ? 'row' : 'column',
                 alignItems: variant === 'filled' ? 'center' : 'start',
-                ...style,
                 width: width(),
+                ...style,
             }}
         >
             {label !== '' ? (
