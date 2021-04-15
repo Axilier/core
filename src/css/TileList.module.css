@@ -1,4 +1,5 @@
 .tileListTile {
+    user-select: none;
     height: 40px;
     display: flex;
     flex-direction: row;
@@ -31,6 +32,6 @@
     cursor: pointer;
 }
 
-.tileLeft div, svg {
+.tileLeft div, .tileLeft svg {
     margin: 0 2px;
 }

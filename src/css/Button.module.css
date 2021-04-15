@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
 
 .button {
+    user-select: none;
     position: relative;
     display: flex;
     flex-direction: row;

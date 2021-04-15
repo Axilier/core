@@ -2,8 +2,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Lock } from '../index';
-import { LockProps } from '../Types';
+import { Lock } from '../../index';
+import { LockProps } from '../../Types';
 
 export default {
     title: 'Example/Icons/Lock',

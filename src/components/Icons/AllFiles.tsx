@@ -17,8 +17,8 @@ export const AllFiles = ({
         clipRule={'evenodd'}
         strokeLinejoin={'round'}
         strokeMiterlimit={2}
-        style={style}
         className={`${className} ${styles.icon}`}
+        style={style}
     >
         <g fill={iconColor || '#fff'}>
             <path

@@ -7,7 +7,7 @@ import { ButtonProps } from '../Types';
 import styles from '../css/Button.module.css';
 
 const Button = ({
-    buttonType,
+    btnType,
     label,
     type,
     variant,
@@ -111,7 +111,7 @@ const Button = ({
         >
             <button
                 // eslint-disable-next-line react/button-has-type
-                type={buttonType || 'button'}
+                type={btnType || 'button'}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 className={`${styles.button} ${btnClassName}`}
