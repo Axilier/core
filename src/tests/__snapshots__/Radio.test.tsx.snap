@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the radio is used in an application should render the contained radio correctly 1`] = `
+<Radio
+  onChange={[MockFunction]}
+  options={
+    Array [
+      "Test1",
+      "Test2",
+    ]
+  }
+>
+  <form
+    className="contactRadio"
+  >
+    <label
+      className="radioContainer"
+      htmlFor="Test1"
+      key="Test1"
+    >
+      Test1
+      <input
+        checked={true}
+        id="Test1"
+        name="radio"
+        onChange={[Function]}
+        type="radio"
+        value="Test1"
+      />
+      <span
+        className="radioCheckmark"
+      />
+    </label>
+    <label
+      className="radioContainer"
+      htmlFor="Test2"
+      key="Test2"
+    >
+      Test2
+      <input
+        checked={false}
+        id="Test2"
+        name="radio"
+        onChange={[Function]}
+        type="radio"
+        value="Test2"
+      />
+      <span
+        className="radioCheckmark"
+      />
+    </label>
+  </form>
+</Radio>
+`;

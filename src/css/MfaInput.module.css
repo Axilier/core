@@ -1,0 +1,15 @@
+.mfaInput {
+    margin: auto;
+    width: 240px;
+    justify-content: space-between;
+}
+
+.mfaInput > input {
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border: solid 1px #055eff;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+}

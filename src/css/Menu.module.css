@@ -1,0 +1,18 @@
+.container {
+    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;
+    z-index: 10000;
+    position: absolute;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+.main {
+    width: fit-content;
+    margin-top: 300px;
+    padding: 20px 40px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

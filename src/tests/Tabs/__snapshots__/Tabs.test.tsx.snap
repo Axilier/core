@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when I render the component should render as expected 1`] = `
+<Tabs
+  orientation="row"
+>
+  <Layout
+    className="tabMenu"
+    elemRef={
+      Object {
+        "current": <div
+          class="tabMenu"
+          style="display: flex; flex-direction: row; width: 100%; color: black; background-color: transparent;"
+        >
+          <div
+            class="tab tabHorizontal"
+            style="display: flex; flex-direction: row; align-items: center; justify-content: center;"
+          >
+            test1
+            <div
+              class="tabSelectedShadow horizontalShadow"
+              style="display: block;"
+            />
+          </div>
+          <div
+            class="tab tabHorizontal"
+            style="display: flex; flex-direction: row; align-items: center; justify-content: center;"
+          >
+            test2
+            <div
+              class="tabSelectedShadow horizontalShadow"
+              style="display: block;"
+            />
+          </div>
+          <div
+            class="tab tabHorizontal"
+            style="display: flex; flex-direction: row; align-items: center; justify-content: center;"
+          >
+            test3
+            <div
+              class="tabSelectedShadow horizontalShadow"
+              style="display: block;"
+            />
+          </div>
+          <div
+            class="tabIndicator"
+            id="indicator"
+            style="background-color: rgb(5, 122, 255); width: calc( 100% / 3); height: 2px; top: calc( 100% - 2px ); left: 0px;"
+          />
+          <div
+            class="tabSelectedBackground"
+            id="selectedTab"
+            style="height: 100%; width: 0px; top: 0px; left: 0px; background-color: rgb(244, 244, 244);"
+          />
+        </div>,
+      }
+    }
+    orientation="row"
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "black",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="tabMenu"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "color": "black",
+          "display": "flex",
+          "flexDirection": "row",
+          "width": "100%",
+        }
+      }
+    >
+      <Tab
+        key="test1-loop"
+        onClick={[Function]}
+        orientation="row"
+        showNotSelectedShadow={true}
+      >
+        <Layout
+          center={true}
+          className="tab tabHorizontal"
+          onClick={[Function]}
+          orientation="row"
+          style={
+            Object {
+              "paddingLeft": "unset",
+            }
+          }
+        >
+          <div
+            className="tab tabHorizontal"
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingLeft": "unset",
+              }
+            }
+          >
+            test1
+            <div
+              className="tabSelectedShadow horizontalShadow"
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+            />
+          </div>
+        </Layout>
+      </Tab>
+      <Tab
+        key="test2-loop"
+        onClick={[Function]}
+        orientation="row"
+        showNotSelectedShadow={true}
+      >
+        <Layout
+          center={true}
+          className="tab tabHorizontal"
+          onClick={[Function]}
+          orientation="row"
+          style={
+            Object {
+              "paddingLeft": "unset",
+            }
+          }
+        >
+          <div
+            className="tab tabHorizontal"
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingLeft": "unset",
+              }
+            }
+          >
+            test2
+            <div
+              className="tabSelectedShadow horizontalShadow"
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+            />
+          </div>
+        </Layout>
+      </Tab>
+      <Tab
+        key="test3-loop"
+        onClick={[Function]}
+        orientation="row"
+        showNotSelectedShadow={true}
+      >
+        <Layout
+          center={true}
+          className="tab tabHorizontal"
+          onClick={[Function]}
+          orientation="row"
+          style={
+            Object {
+              "paddingLeft": "unset",
+            }
+          }
+        >
+          <div
+            className="tab tabHorizontal"
+            onClick={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "paddingLeft": "unset",
+              }
+            }
+          >
+            test3
+            <div
+              className="tabSelectedShadow horizontalShadow"
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+            />
+          </div>
+        </Layout>
+      </Tab>
+      <div
+        className="tabIndicator"
+        id="indicator"
+        key="indicator"
+        style={
+          Object {
+            "backgroundColor": "#057AFF",
+            "height": "2px",
+            "left": 0,
+            "top": "calc( 100% - 2px )",
+            "width": "calc( 100% / 3)",
+          }
+        }
+      />
+      <div
+        className="tabSelectedBackground"
+        id="selectedTab"
+        key="selectedTab"
+        style={
+          Object {
+            "backgroundColor": "#F4F4F4",
+            "height": "100%",
+            "left": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+    </div>
+  </Layout>
+</Tabs>
+`;

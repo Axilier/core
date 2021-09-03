@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the menu is used in an application should render the contained menu correctly 1`] = `
+<Menu
+  open={true}
+>
+  <Layout
+    className="container"
+    orientation="column"
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  >
+    <div
+      className="container"
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+        }
+      }
+    >
+      <div
+        className="main"
+      >
+        <div>
+          test menu
+        </div>
+      </div>
+    </div>
+  </Layout>
+</Menu>
+`;

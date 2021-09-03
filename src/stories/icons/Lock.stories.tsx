@@ -2,7 +2,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Lock } from '../../index';
+import { Lock, useToggle } from '../../index';
 import { LockProps } from '../../Types';
 
 export default {
@@ -10,7 +10,10 @@ export default {
     component: Lock,
 } as Meta;
 
-const Template: Story<LockProps> = args => <Lock {...args} />;
+const Template: Story<LockProps> = args => {
+    const [locked, toggleLock] = useToggle(true);
+    return <Lock {...args} onClick={() => toggleLock()} locked={locked} />;
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {

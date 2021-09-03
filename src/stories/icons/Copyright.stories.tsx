@@ -1,12 +1,12 @@
 /** @format */
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Copyright } from '../../components/Icons';
+import { Copyright, Cross, Dropdown } from '../../index';
 import { IconProps } from '../../Types';
 
 export default {
     title: 'Example/Icons/Copyright',
-    component: Copyright,
+    component: Cross,
 } as Meta;
 
 const Template: Story<IconProps> = args => (

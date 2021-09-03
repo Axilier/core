@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the button is used in an application should render the contained button correctly 1`] = `
+<Button
+  onClick={[MockFunction]}
+>
+  <div
+    className="buttonContainer undefined"
+  >
+    <button
+      className="button"
+      id="button"
+      onClick={[MockFunction]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#057AFF",
+          "border": "solid 2px transparent",
+          "color": "white",
+          "padding": "5px 20px",
+        }
+      }
+      type="button"
+    >
+      click me
+    </button>
+  </div>
+</Button>
+`;

@@ -1,0 +1,13 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    height: 4px;
+    width: 100%;
+}
+
+.bar {
+    margin-right: 6px;
+    border-radius: 15px;
+    width: 25%;
+}
