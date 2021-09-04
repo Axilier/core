@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the dropdown is used in an application should render the contained dropdown correctly 1`] = `
+<Dropdown
+  label="test"
+  onChange={[MockFunction]}
+>
+  <div
+    className="dropdown undefined"
+  >
+    <div
+      className="label"
+    >
+      test
+    </div>
+    <div
+      className="mainBody"
+      id="DropdownMainBody"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      style={
+        Object {
+          "height": "45px",
+        }
+      }
+    >
+      <Option>
+        <div
+          className="option"
+          onClick={[Function]}
+          role="button"
+        >
+          test1
+        </div>
+      </Option>
+      <svg
+        className="dropArrow"
+        fill="black"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+      >
+        <path
+          d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+        />
+      </svg>
+    </div>
+    <div
+      className="openMenu"
+      id="openMenu"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    >
+      <Option
+        key="test-0"
+        onClick={[Function]}
+      >
+        <div
+          className="option"
+          onClick={[Function]}
+          role="button"
+        >
+          test1
+        </div>
+      </Option>
+      <Option
+        key="test-1"
+        onClick={[Function]}
+      >
+        <div
+          className="option"
+          onClick={[Function]}
+          role="button"
+        >
+          test2
+        </div>
+      </Option>
+    </div>
+  </div>
+</Dropdown>
+`;

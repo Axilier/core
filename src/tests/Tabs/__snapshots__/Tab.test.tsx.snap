@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the \`orientation\` is column should render correctly 1`] = `
+<Tab
+  orientation="column"
+>
+  <Layout
+    center={true}
+    className="tab "
+    onClick={[Function]}
+    orientation="column"
+    style={
+      Object {
+        "paddingLeft": "20px",
+      }
+    }
+  >
+    <div
+      className="tab "
+      onClick={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "center",
+          "paddingLeft": "20px",
+        }
+      }
+    >
+      click me
+      <div
+        className="tabSelectedShadow verticalShadow"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
+      />
+    </div>
+  </Layout>
+</Tab>
+`;
+
+exports[`when the \`orientation\` is not defined should render correctly 1`] = `
+<Tab>
+  <Layout
+    center={true}
+    className="tab tabHorizontal"
+    onClick={[Function]}
+    orientation="row"
+    style={
+      Object {
+        "paddingLeft": "unset",
+      }
+    }
+  >
+    <div
+      className="tab tabHorizontal"
+      onClick={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingLeft": "unset",
+        }
+      }
+    >
+      click me
+      <div
+        className="tabSelectedShadow horizontalShadow"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
+      />
+    </div>
+  </Layout>
+</Tab>
+`;
+
+exports[`when the \`orientation\` is row should render correctly 1`] = `
+<Tab
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  orientation="row"
+>
+  <Layout
+    center={true}
+    className="tab tabHorizontal"
+    onClick={[Function]}
+    orientation="row"
+    style={
+      Object {
+        "paddingLeft": "unset",
+      }
+    }
+  >
+    <div
+      className="tab tabHorizontal"
+      onClick={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingLeft": "unset",
+        }
+      }
+    >
+      click me
+      <div
+        className="tabSelectedShadow horizontalShadow"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
+      />
+    </div>
+  </Layout>
+</Tab>
+`;

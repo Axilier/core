@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when I render the demo in an application should render correctly 1`] = `
+<Demo>
+  <div
+    id="container"
+  >
+    <div
+      id="state"
+    >
+      1
+    </div>
+    <button
+      id="toggle"
+      onClick={[Function]}
+      type="button"
+    >
+      toggle
+    </button>
+    <button
+      id="setFalse"
+      onClick={[Function]}
+      type="button"
+    >
+      setToFalse
+    </button>
+  </div>
+</Demo>
+`;

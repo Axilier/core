@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when I render the List in an application should render correctly 1`] = `
+<ListGroup
+  listItem={
+    <ListItem
+      onClick={[MockFunction]}
+    >
+      <React.Fragment />
+    </ListItem>
+  }
+>
+  <ListItem
+    dropdown={false}
+    key="item1"
+    onClick={[Function]}
+  >
+    <Layout
+      className="listItem"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      orientation="row"
+      style={
+        Object {
+          "backgroundColor": "#F9F9F9",
+          "paddingLeft": "30px",
+        }
+      }
+    >
+      <div
+        className="listItem"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#F9F9F9",
+            "display": "flex",
+            "flexDirection": "row",
+            "paddingLeft": "30px",
+          }
+        }
+      >
+        <div
+          className="listItemChildren"
+        />
+        <div
+          className="endFragment"
+        >
+          <svg
+            className="dropdown-test"
+            fill="black"
+            height="16"
+            style={
+              Object {
+                "transform": "none",
+              }
+            }
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"
+            />
+          </svg>
+        </div>
+      </div>
+    </Layout>
+  </ListItem>
+  <div
+    className="listGroup"
+    style={
+      Object {
+        "height": "0px",
+      }
+    }
+  >
+    <List>
+      <Layout
+        orientation="column"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "width": "100%",
+            }
+          }
+        >
+          <ListItem
+            child={true}
+            key="item2"
+          >
+            <Layout
+              className="listItem"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              orientation="row"
+              style={
+                Object {
+                  "backgroundColor": "#F9F9F9",
+                  "paddingLeft": "40px",
+                }
+              }
+            >
+              <div
+                className="listItem"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#F9F9F9",
+                    "display": "flex",
+                    "flexDirection": "row",
+                    "paddingLeft": "40px",
+                  }
+                }
+              >
+                <div
+                  className="listItemChildren"
+                />
+                <div
+                  className="endFragment"
+                >
+                  <div
+                    style={
+                      Object {
+                        "height": "16px",
+                        "width": "16px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </Layout>
+          </ListItem>
+        </div>
+      </Layout>
+    </List>
+  </div>
+</ListGroup>
+`;

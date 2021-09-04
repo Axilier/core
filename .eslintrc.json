@@ -25,14 +25,8 @@
     },
     "plugins": ["react", "@typescript-eslint"],
     "rules": {
-        "indent": [
-            "error",
-            4,
-            {
-                "SwitchCase": 1
-            }
-        ],
-        "react/jsx-indent": [2, 4],
+        "indent": ["off"],
+        "react/jsx-indent": ["off"],
         "semi": ["error", "always"],
         "import/extensions": "off",
         "react/jsx-filename-extension": [
@@ -60,7 +54,7 @@
             }
         ],
         "import/prefer-default-export": 0,
-        "react/jsx-curly-brace-presence": ["error", "always"]
+        "react/jsx-curly-brace-presence": ["off", "always"]
     },
     "settings": {
         "import/resolver": {

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when I render the demo in an application should render correctly 1`] = `
+<Demo>
+  <div
+    id="container"
+  >
+    <div
+      id="state"
+    >
+      1
+    </div>
+    <button
+      id="increment"
+      onClick={[Function]}
+      type="button"
+    >
+      increment
+    </button>
+    <button
+      id="decrement"
+      onClick={[Function]}
+      type="button"
+    >
+      decrement
+    </button>
+    <button
+      id="zero"
+      onClick={[Function]}
+      type="button"
+    >
+      zero
+    </button>
+  </div>
+</Demo>
+`;

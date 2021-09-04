@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the mfa-input is used in an application should render the contained divider correctly 1`] = `
+<div>
+  <MfaInput
+    id="test"
+    nextFocusElementId="test1"
+    onChange={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <Layout
+      className="mfaInput"
+      orientation="row"
+    >
+      <div
+        className="mfaInput"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <input
+          id="test-mfa-input-0"
+          key="test-mfa-input-0"
+          maxLength={1}
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          value=""
+        />
+        <input
+          id="test-mfa-input-1"
+          key="test-mfa-input-1"
+          maxLength={1}
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          value=""
+        />
+        <input
+          id="test-mfa-input-2"
+          key="test-mfa-input-2"
+          maxLength={1}
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          value=""
+        />
+        <input
+          id="test-mfa-input-3"
+          key="test-mfa-input-3"
+          maxLength={1}
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          value=""
+        />
+        <input
+          id="test-mfa-input-4"
+          key="test-mfa-input-4"
+          maxLength={1}
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          value=""
+        />
+        <input
+          id="test-mfa-input-5"
+          key="test-mfa-input-5"
+          maxLength={1}
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          onPaste={[Function]}
+          value=""
+        />
+      </div>
+    </Layout>
+  </MfaInput>
+  <button
+    id="test1"
+    type="button"
+  >
+    test
+  </button>
+</div>
+`;

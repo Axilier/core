@@ -1,8 +1,8 @@
-/** @format */
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { TextBoxProps } from '../Types';
-import { Lock, Mail, Search, TextBox } from '../index';
+import TextBox from '../components/TextBox';
+import { Lock, Key } from '../components/icons';
 
 export default {
     title: 'Example/TextBox',
@@ -15,8 +15,8 @@ export const Filled = Template.bind({});
 Filled.args = {
     variant: 'filled',
     maxLength: 3,
-    units: 'Inch',
     label: 'Test',
+    units: 'Inches',
 };
 
 export const Outlined = Template.bind({});
@@ -34,30 +34,7 @@ Bare.args = {
     placeholder: 'Test placeholder',
     size: 'large',
     required: true,
-    prefixComponent: <Search iconColor={'#8C8C8C'} />,
-};
-
-export const ColouredOutline = Template.bind({});
-ColouredOutline.args = {
-    variant: 'outlined',
-    placeholder: 'Test placeholder',
-    size: 'large',
-    label: 'Password',
-    required: true,
-    outLineColor: 'red',
-};
-
-export const ChangedFont = Template.bind({});
-ChangedFont.args = {
-    variant: 'bare',
-    placeholder: 'Test placeholder',
-    size: 'large',
-    required: true,
-    prefixComponent: <Search iconColor={'#8C8C8C'} />,
-    inputStyle: {
-        fontWeight: 500,
-        color: 'red',
-    },
+    prefixComponent: <Key iconColor={'#8C8C8C'} />,
 };
 
 export const BareCentered: Story<TextBoxProps> = (args: TextBoxProps) => (
@@ -80,7 +57,7 @@ export const BareCentered: Story<TextBoxProps> = (args: TextBoxProps) => (
             variant={'bare'}
             placeholder={'Test placeholder'}
             size={'large'}
-            prefixComponent={<Search iconColor={'#8C8C8C'} />}
+            prefixComponent={<Key iconColor={'#8C8C8C'} />}
             inputStyle={{
                 fontWeight: 500,
                 color: 'red',
@@ -88,6 +65,29 @@ export const BareCentered: Story<TextBoxProps> = (args: TextBoxProps) => (
         />
     </div>
 );
+
+export const ColouredOutline = Template.bind({});
+ColouredOutline.args = {
+    variant: 'outlined',
+    placeholder: 'Test placeholder',
+    size: 'large',
+    label: 'Password',
+    required: true,
+    outLineColor: 'red',
+};
+
+export const ChangedFont = Template.bind({});
+ChangedFont.args = {
+    variant: 'bare',
+    placeholder: 'Test placeholder',
+    size: 'large',
+    required: true,
+    prefixComponent: <Key iconColor={'#8C8C8C'} />,
+    inputStyle: {
+        fontWeight: 500,
+        color: 'red',
+    },
+};
 
 export const NumbersOnly = Template.bind({});
 NumbersOnly.args = {
@@ -100,7 +100,7 @@ NumbersOnly.args = {
 export const PrefixComponent = Template.bind({});
 PrefixComponent.args = {
     variant: 'outlined',
-    prefixComponent: <Mail />,
+    prefixComponent: <Key />,
     placeholder: 'Test placeholder',
     size: 'large',
 };
@@ -109,7 +109,6 @@ export const FilledSuffix = Template.bind({});
 FilledSuffix.args = {
     variant: 'filled',
     maxLength: 3,
-    units: 'Inch',
     label: 'Test:',
     suffixComponent: <Lock locked={false} />,
 };
@@ -117,17 +116,18 @@ FilledSuffix.args = {
 export const SuffixComponent = Template.bind({});
 SuffixComponent.args = {
     variant: 'outlined',
-    suffixComponent: <Mail />,
+    suffixComponent: <Key />,
     placeholder: 'Test placeholder',
     size: 'large',
 };
 
 export const SizeSet = Template.bind({});
 SizeSet.args = {
+    size: 'small',
+    width: 200,
     variant: 'outlined',
     placeholder: 'Test placeholder',
-    size: '200px',
     label: 'Password',
-    prefixComponent: <Mail />,
+    prefixComponent: <Key />,
     required: true,
 };

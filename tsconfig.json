@@ -9,9 +9,10 @@
         "strict": true,
         "jsx": "react",
         "outDir": "./dist",
+        "rootDir": "./",
         "moduleResolution": "Node",
         "esModuleInterop": true
     },
-    "include": ["./src/**/*"],
+    "include": ["./src/**/*", "./src/setupTests.ts"],
     "exclude": ["node_modules", "dist", "example"]
 }

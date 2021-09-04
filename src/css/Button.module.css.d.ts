@@ -1,5 +1,4 @@
-/** @format */
-
-export const button: string;
 export const buttonContainer: string;
-export const buttonFilter: string;
+export const button: string;
+export const buttonIcon: string;
+export const filter: string;

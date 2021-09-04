@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the strengthBar is used in an application should render the contained strengthBar correctly 1`] = `
+<StrengthBar
+  currentStrength={0}
+>
+  <div
+    className="main"
+    id="strengthBar"
+  >
+    <div
+      className="bar"
+      key="strengthIndicator-0"
+      style={
+        Object {
+          "backgroundColor": "#E6E6E6",
+        }
+      }
+    />
+    <div
+      className="bar"
+      key="strengthIndicator-1"
+      style={
+        Object {
+          "backgroundColor": "#E6E6E6",
+        }
+      }
+    />
+    <div
+      className="bar"
+      key="strengthIndicator-2"
+      style={
+        Object {
+          "backgroundColor": "#E6E6E6",
+        }
+      }
+    />
+    <div
+      className="bar"
+      key="strengthIndicator-3"
+      style={
+        Object {
+          "backgroundColor": "#E6E6E6",
+        }
+      }
+    />
+  </div>
+</StrengthBar>
+`;

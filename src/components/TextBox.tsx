@@ -1,169 +1,141 @@
-/** @format */
-
-// @flow
-import * as React from 'react';
-import { ChangeEvent, useEffect, useState } from 'react';
-import { TextBoxProps } from '../Types';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import Layout from './Layout';
 import styles from '../css/TextBox.module.css';
+import { TextBoxProps } from '../Types';
 
 const TextBox = ({
-    label,
-    prefixComponent,
-    suffixComponent,
-    filter,
-    placeholder,
-    size,
-    variant,
-    required,
-    disabled,
+    label = '',
+    variant = 'outlined',
+    size = variant === 'filled' ? 'small' : 'large',
+    disabled = false,
+    outLineColor = '#057EFF',
+    value: newValue = '',
     maxLength,
-    units,
-    onChange,
-    className,
-    style,
-    value: newValue,
-    type,
-    inputStyle,
-    outLineColor,
+    width,
     height,
+    prefixComponent,
+    required,
+    type,
+    placeholder,
+    filter,
+    onChange,
+    inputStyle,
+    suffixComponent,
+    units,
 }: TextBoxProps): JSX.Element => {
     const [value, setValue] = useState(newValue);
 
     useEffect(() => setValue(newValue), [newValue]);
 
-    function handleChange(evt: ChangeEvent<HTMLInputElement>) {
-        const isFiltered = filter ? filter(evt.target.value) : true;
-        if (!isFiltered) return;
-        setValue(evt.target.value);
-        if (!onChange) return;
-        onChange(evt.target.value);
-    }
+    const minWidth = () => (maxLength || 4) * 8 + 70;
 
-    const iconStyles = (component: JSX.Element | undefined) => ({
-        display: !component ? 'none' : 'block',
-        height: size === 'small' ? '10x' : '20px',
-        width: size === 'small' ? '12x' : '20px',
-    });
-
+    const calcWidth = () => {
+        if (width) return `${Math.max(minWidth(), width)}px`;
+        switch (size) {
+            case 'small':
+                return `${minWidth()}px`;
+            case 'large':
+            default:
+                return `${Math.max(minWidth(), 320)}px`;
+        }
+    };
     const calcHeight = () => {
+        if (height) return `${height}px`;
         switch (size) {
             case 'small':
                 return '34px';
             case 'large':
-                return '44px';
             default:
-                return height || '34px';
+                return '44px';
         }
     };
-
-    const width = () => {
-        switch (size) {
-            case 'small' || undefined:
-                return `${(maxLength || 2) * 8 + 60}px`;
-            case 'large':
-                return '320px';
-            default:
-                return size;
-        }
+    const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
+        const passesFilter = filter ? filter(evt.target.value) : true;
+        if (!passesFilter) return;
+        setValue(evt.target.value);
+        if (onChange) onChange(evt.target.value);
     };
 
     return (
-        <div
-            className={`${styles.textBox} ${className || ''}`}
-            style={{
-                height: 'fit-content',
-                flexDirection: variant === 'filled' ? 'row' : 'column',
-                alignItems: variant === 'filled' ? 'center' : 'start',
-                width: width(),
-                ...style,
-            }}
+        <Layout
+            orientation={'column'}
+            className={styles.textBoxContainer}
+            style={{ width: calcWidth() }}
         >
-            {label !== '' ? (
-                <div className={styles.textBoxLabel}>
-                    {label}
-                    {required ? (
-                        <div className={styles.requiredIcon}>{'*'}</div>
-                    ) : null}
-                </div>
+            {label || required ? (
+                <>
+                    <div className={styles.textBoxLabel}>
+                        {label}
+                        {required ? (
+                            <p
+                                className={`${styles.requiredIcon} ${styles.textBoxLabel}`}
+                            >
+                                *
+                            </p>
+                        ) : null}
+                    </div>
+                </>
             ) : null}
-            <div
-                className={styles.textBoxInputWithUnits}
+            <Layout
+                className={styles.textBox}
+                orientation={'row'}
                 style={{
                     color: disabled ? '#8C8C8C' : '#000000',
-                    height: calcHeight(),
                     borderRadius: variant === 'outlined' ? '5px' : '0',
+                    height: calcHeight(),
                     border:
                         variant === 'outlined'
-                            ? `solid 2px ${outLineColor || '#057EFF'}`
+                            ? `solid 2px ${outLineColor}`
                             : 'none',
                 }}
             >
-                <div
-                    className={styles.textBoxInputWithUnits}
-                    style={{
-                        backgroundColor:
-                            variant === 'filled' ? '#F3F3F3' : 'transparent',
-                    }}
-                >
+                {prefixComponent ? (
                     <div
+                        className={styles.icon}
                         style={{
                             marginLeft: '7px',
-                            ...iconStyles(prefixComponent),
                         }}
                     >
                         {prefixComponent}
                     </div>
-                    <input
-                        type={type}
-                        value={value}
-                        className={styles.textBoxInput}
-                        placeholder={placeholder}
+                ) : null}
+                <input
+                    className={styles.textBoxInput}
+                    type={type}
+                    placeholder={placeholder}
+                    style={{
+                        height: calcHeight(),
+                        lineHeight: calcHeight(),
+                        cursor: disabled ? 'not-allowed' : 'text',
+                        backgroundColor:
+                            variant === 'filled' ? '#F3F3F3' : 'transparent',
+                        ...inputStyle,
+                    }}
+                    value={value}
+                    maxLength={maxLength || -1}
+                    onChange={handleChange}
+                />
+                {units ? (
+                    <div
+                        className={`${styles.textBoxUnits} unit-comp`}
                         style={{
-                            height: calcHeight(),
-                            lineHeight: calcHeight(),
-                            cursor: disabled ? 'not-allowed' : 'text',
                             backgroundColor:
                                 variant === 'filled'
                                     ? '#F3F3F3'
                                     : 'transparent',
-                            ...inputStyle,
                         }}
-                        onChange={evt => handleChange(evt)}
-                        maxLength={maxLength || -1}
-                        disabled={disabled}
-                    />
-                    {units ? (
-                        <div className={styles.textBoxInputUnits}>{units}</div>
-                    ) : null}
-                    {variant !== 'filled' && suffixComponent ? (
-                        <div
-                            style={{
-                                marginRight: '7px',
-                                ...iconStyles(suffixComponent),
-                            }}
-                        >
-                            {suffixComponent}
-                        </div>
-                    ) : null}
-                </div>
-                {variant === 'filled' && suffixComponent ? (
-                    <div style={iconStyles(suffixComponent)}>
+                    >
+                        {units}
+                    </div>
+                ) : null}
+                {suffixComponent ? (
+                    <div className={`suffix-comp ${styles.suffix}`}>
                         {suffixComponent}
                     </div>
                 ) : null}
-            </div>
-        </div>
+            </Layout>
+        </Layout>
     );
-};
-
-TextBox.defaultProps = {
-    units: '',
-    disabled: false,
-    label: '',
-    size: 'small',
-    variant: 'filled',
-    onChange: () => null,
-    value: '',
 };
 
 export default TextBox;
