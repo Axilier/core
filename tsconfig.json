@@ -9,7 +9,7 @@
         "strict": true,
         "jsx": "react",
         "outDir": "./dist",
-        "rootDir": "./",
+        "rootDir": "./src",
         "moduleResolution": "Node",
         "esModuleInterop": true
     },
