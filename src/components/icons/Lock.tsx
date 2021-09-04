@@ -3,7 +3,7 @@ import { LockProps } from '../../Types';
 import styles from '../../css/Icons.module.css';
 
 export const Lock = ({
-    locked = true,
+    locked,
     style,
     disabled,
     iconColor,

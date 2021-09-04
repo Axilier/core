@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Lock } from '../../index';
 
 const onChange = jest.fn();
-const lock = mount(<Lock className={'test-Lock'} />);
+const lock = mount(<Lock className={'test-Lock'} locked/>);
 
 describe('when I render the component in an application', () => {
     it('should render correctly', () => {

@@ -3,6 +3,7 @@
 exports[`when I render the component in an application should render correctly 1`] = `
 <Lock
   className="test-Lock"
+  locked={true}
 >
   <svg
     className="test-Lock icon lock"
