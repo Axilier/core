@@ -1,8 +1,5 @@
-/** @format */
-
-// @flow
 import * as React from 'react';
-import { BasicComponent } from '../../../src-old/Types';
+import { BasicComponent } from '../../Types';
 import styles from '../../css/Icons.module.css';
 
 export const Google = ({ style, className }: BasicComponent): JSX.Element => (

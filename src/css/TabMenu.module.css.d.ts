@@ -1,5 +1,3 @@
-/** @format */
-
 export const tabMenu: string;
 export const tab: string;
 export const tabHorizontal: string;

@@ -10,7 +10,6 @@ export { default as Radio } from './components/Radio';
 export { default as Menu } from './components/Menu';
 export { default as StrengthBar } from './components/StrengthBar';
 export { Option, Dropdown } from './components/Dropdown';
-export { table, tableHeader } from './css/Table.module.css';
 export { Lock, Key, Google, Cross, Copyright } from './components/icons';
 export { default as useClickOutside } from './hooks/useClickOutside';
 export { default as useStateWithCallback } from './hooks/useStateWithCallback';

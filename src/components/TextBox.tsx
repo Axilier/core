@@ -49,10 +49,6 @@ const TextBox = ({
                 return '44px';
         }
     };
-    const iconStyles = () => ({
-        height: size === 'small' ? '10px' : '20px',
-        width: size === 'small' ? '12px' : '20px',
-    });
     const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
         const passesFilter = filter ? filter(evt.target.value) : true;
         if (!passesFilter) return;
@@ -95,9 +91,9 @@ const TextBox = ({
             >
                 {prefixComponent ? (
                     <div
+                        className={styles.icon}
                         style={{
                             marginLeft: '7px',
-                            ...iconStyles(),
                         }}
                     >
                         {prefixComponent}
@@ -133,13 +129,7 @@ const TextBox = ({
                     </div>
                 ) : null}
                 {suffixComponent ? (
-                    <div
-                        className={'suffix-comp'}
-                        style={{
-                            marginRight: '10px',
-                            ...iconStyles(),
-                        }}
-                    >
+                    <div className={`suffix-comp ${styles.suffix}`}>
                         {suffixComponent}
                     </div>
                 ) : null}

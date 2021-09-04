@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LockProps } from '../../../src-old/Types';
+import { LockProps } from '../../Types';
 import styles from '../../css/Icons.module.css';
 
 export const Lock = ({

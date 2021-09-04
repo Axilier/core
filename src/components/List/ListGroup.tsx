@@ -15,27 +15,13 @@ const ListGroup = ({
         [children],
     );
     useEffect(() => {
-        if (
-            listItem.type !==
-            (
-                <ListItem>
-                    <></>
-                </ListItem>
-            ).type
-        ) {
+        if (listItem.type.name !== 'ListItem') {
             throw new Error('The listItem prop must be of type listItem');
         }
     }, [listItem]);
     useEffect(() => {
         childrenArray.forEach(child => {
-            if (
-                child.type !==
-                (
-                    <ListItem>
-                        <></>
-                    </ListItem>
-                ).type
-            ) {
+            if (child.type.name !== 'ListItem') {
                 throw new Error('Children must be of type ListItem');
             }
         });

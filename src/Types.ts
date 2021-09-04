@@ -134,7 +134,7 @@ export type TickboxProps = {
 export type LockProps = {
     locked: boolean;
     disabled?: boolean;
-    onChange?(state: boolean): void;
+    onClick?(): void;
     style?: CSSProperties;
 } & IconProps;
 

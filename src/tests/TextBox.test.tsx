@@ -1,5 +1,3 @@
-/** @format */
-
 import { mount } from 'enzyme';
 import React from 'react';
 import TextBox from '../components/TextBox';
@@ -144,8 +142,6 @@ describe('when I render the TextBox in an app', () => {
                         .props().style,
                 ).toEqual({
                     marginLeft: '7px',
-                    height: '10px',
-                    width: '12px',
                 });
             });
             afterAll(() => textBox.setProps({ size: 'large' }));
@@ -163,8 +159,6 @@ describe('when I render the TextBox in an app', () => {
                         .props().style,
                 ).toEqual({
                     marginLeft: '7px',
-                    height: '20px',
-                    width: '20px',
                 });
             });
             afterAll(() => textBox.setProps({ size: undefined }));
