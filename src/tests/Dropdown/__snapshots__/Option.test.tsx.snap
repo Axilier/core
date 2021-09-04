@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the option is used in an application should render the contained option correctly 1`] = `
+<Option
+  onClick={[MockFunction]}
+>
+  <div
+    className="option"
+    onClick={[Function]}
+    role="button"
+  >
+    test
+  </div>
+</Option>
+`;

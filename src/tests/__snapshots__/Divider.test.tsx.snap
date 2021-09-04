@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the divider is used in an application should render the contained divider correctly 1`] = `
+<Divider>
+  <Layout
+    orientation="row"
+    style={
+      Object {
+        "alignItems": "center",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "fontFamily": "'IBM Plex Sans', sans-serif",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#BEBEBE",
+            "height": "2px",
+            "width": "100%",
+          }
+        }
+      />
+      <div
+        style={
+          Object {
+            "color": "#BEBEBE",
+            "padding": "0 8px",
+            "verticalAlign": "center",
+          }
+        }
+      >
+        test
+      </div>
+      <div
+        style={
+          Object {
+            "backgroundColor": "#BEBEBE",
+            "height": "2px",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+  </Layout>
+</Divider>
+`;

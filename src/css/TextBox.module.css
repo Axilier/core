@@ -1,46 +1,54 @@
-.textBox {
+.textBoxContainer {
     user-select: none;
-    justify-content: flex-start;
     font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;
-    display: flex;
     font-size: 13px;
     flex-wrap: wrap;
     text-transform: capitalize;
-
 }
+
 .textBoxLabel {
-    display: flex;
-    flex-direction: row;
-    margin-right: 5px;
+    margin: 0;
     font-size: 13px;
 }
 
-.textBoxInputWithUnits {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
+.requiredIcon {
+    display: inline-block;
+    color: #ff0000;
+    margin-left: 3px;
 }
 
-.textBoxInputUnits {
-    margin-right: 5px;
+.icon {
+    margin-left: 7px;
+    height: 20px;
+    width: 20px;
+}
+
+.textBox {
+    align-items: center;
+    width: 100%;
 }
 
 .textBoxInput {
-    width: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
-    align-items: center;
     border: none;
     font-size: 13px;
-    margin: 0 10px;
+    padding: 0 10px;
+    width: 100%;
 }
 
 .textBoxInput:focus {
     outline: none;
 }
 
-.requiredIcon {
-    color: #FF0000;
-    margin-left: 3px;
+.textBoxUnits {
+    display: flex;
+    padding-right: 10px;
+    height: 100%;
+    vertical-align: center;
+    align-items: center;
+}
+
+.suffix {
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
 }

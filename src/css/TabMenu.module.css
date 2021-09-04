@@ -1,24 +1,19 @@
 .tabMenu {
-    overflow-x: hidden;
-    overflow-y: hidden;
     position: relative;
+    width: 100%;
+    height: 40px;
+    display: flex;
     font-size: 15px;
     font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;
-    display: flex;
     flex: 1 1 0;
 }
 
 .tab {
-    user-select: none;
     position: relative;
+    user-select: none;
     z-index: 1;
-    display: flex;
-    align-items: center;
     height: 40px;
-}
-
-.tab * {
-    margin-right: 5px;
+    cursor: pointer;
 }
 
 .tabHorizontal {
@@ -27,16 +22,28 @@
     flex-basis: 0;
 }
 
-.tab:hover {
-    cursor: pointer;
+.tabIndicator {
+    position: absolute;
+    z-index: 10;
+    transition: left 0.2s ease-in-out, top 0.2s ease-in-out;
 }
 
-.tabSelectedBlock {
+.horizontalShadow {
+    width: 100%;
+    height: 2px;
+}
+
+.verticalShadow {
+    height: 100%;
+    width: 2px;
+    left: 0;
+}
+
+.tabSelectedShadow {
     position: absolute;
     bottom: 0;
-    z-index: 2;
-    width: 100%;
-    transition: left .2s ease-in-out, top .2s ease-in-out;
+    background-color: #e0e0e0;
+    transition: left 0.2s ease-in-out, top 0.2s ease-in-out;
 }
 
 .tabSelectedBackground {
@@ -44,17 +51,3 @@
     z-index: 0;
     transition: left .2s ease-in-out, top .2s ease-in-out;
 }
-
-.tabSelectedShadow {
-    position: absolute;
-    bottom: 0;
-    background-color: #E0E0E0;
-    width: 100%;
-    transition: left .2s ease-in-out, top .2s ease-in-out;
-}
-
-/*.tab-menu-component-container {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-content: center;*/
-/*}*/

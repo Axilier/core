@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the demo is used in an application should render the demo correctly 1`] = `
+<Demo
+  button1Callback={[MockFunction]}
+  button2Callback={[MockFunction]}
+  hookCallback={[MockFunction]}
+  hookCallback2={[MockFunction]}
+>
+  <div
+    id="container"
+  >
+    <button
+      id="test1"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      test1
+    </button>
+    <button
+      id="test2"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      test2
+    </button>
+  </div>
+</Demo>
+`;

@@ -1,7 +1,6 @@
-/** @format */
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Key } from '../../components/Icons';
+import { Key } from '../../index';
 import { IconProps } from '../../Types';
 
 export default {

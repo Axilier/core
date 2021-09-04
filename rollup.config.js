@@ -1,5 +1,3 @@
-/** @format */
-
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -14,6 +12,7 @@ export default {
         file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
+        exports: 'named',
     },
     plugins: [
         peerDepsExternal(),

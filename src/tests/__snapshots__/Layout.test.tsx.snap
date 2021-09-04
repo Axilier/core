@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when the \`orientation\` prop is set to column should render correctly 1`] = `
+<Layout
+  orientation="column"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  >
+    click me
+  </div>
+</Layout>
+`;
+
+exports[`when the \`orientation\` prop is set to row should render correctly 1`] = `
+<Layout
+  orientation="row"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  >
+    click me
+  </div>
+</Layout>
+`;

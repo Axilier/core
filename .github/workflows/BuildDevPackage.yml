@@ -18,7 +18,9 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
+          node-version: '16'
+      - name: run full test (in future post coverage)
+        run: yarn test --coverage
       - name: install deps and predeploy
         run: |
           yarn install

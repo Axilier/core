@@ -3,7 +3,7 @@
   "useTabs": false,
   "arrowParens": "avoid",
   "bracketSpacing": true,
-  "insertPragma": true,
+  "insertPragma": false,
   "requirePragma": false,
   "singleQuote": true,
   "trailingComma": "all",

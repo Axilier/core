@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when I render the demo in an application should render correctly 1`] = `
+<Demo
+  callback={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          1,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <div
+    id="container"
+  >
+    <div
+      id="state"
+    >
+      1
+    </div>
+    <button
+      id="increment"
+      onClick={[Function]}
+      type="button"
+    >
+      increment
+    </button>
+  </div>
+</Demo>
+`;

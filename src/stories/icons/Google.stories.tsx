@@ -1,7 +1,6 @@
-/** @format */
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Google } from '../../components/Icons';
+import { Google } from '../../index';
 import { BasicComponent } from '../../Types';
 
 export default {

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when I render the component in an application should render correctly 1`] = `
+<Lock
+  className="test-Lock"
+>
+  <svg
+    className="test-Lock icon lock"
+    clipRule="evenodd"
+    fillRule="evenodd"
+    strokeLinejoin="round"
+    strokeMiterlimit={2}
+    viewBox="0 0 16 16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h16v16H0z"
+      fill="none"
+    />
+    <path
+      d="M4.587 14.066a1.139 1.139 0 01-1.144-1.144V7.585c0-.636.508-1.144 1.144-1.144h.38V4.916c0-1.652 1.399-3.05 3.05-3.05 1.653 0 3.05 1.398 3.05 3.05v1.525h.382c.636 0 1.144.508 1.144 1.144v5.337c0 .636-.508 1.144-1.144 1.144H4.587zm0-1.144h6.862V7.585H4.587v5.337zm5.337-6.481V4.916c0-1.017-.89-1.906-1.906-1.906-1.017 0-1.906.89-1.906 1.906v1.525h3.812z"
+      fill="black"
+      fillRule="nonzero"
+      name="locked"
+    />
+  </svg>
+</Lock>
+`;

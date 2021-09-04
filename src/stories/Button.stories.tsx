@@ -1,4 +1,3 @@
-/** @format */
 import React from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
@@ -10,17 +9,24 @@ export default {
     component: Button,
 } as Meta;
 
-const Template: Story<ButtonProps> = args => <Button {...args} />;
+const Template: Story<ButtonProps> = args => (
+    <>
+        <Button style={{ margin: '10px' }} {...args}>
+            {'Login'}
+        </Button>
+        <Button style={{ margin: '10px' }} {...args}>
+            {'Reset 2 Factor Authentication'}
+        </Button>
+    </>
+);
 
 export const Contained = Template.bind({});
 Contained.args = {
-    label: 'Sign Up',
     variant: 'contained',
 };
 
 export const Outlined = Template.bind({});
 Outlined.args = {
-    label: 'Login',
     variant: 'outlined',
 };
 
@@ -31,7 +37,6 @@ Text.args = {
 
 export const Event = Template.bind({});
 Event.args = {
-    label: 'Sign Up',
     onClick: () => {
         console.debug('I was clicked!');
     },
@@ -39,25 +44,22 @@ Event.args = {
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-    label: 'Sign Up',
     variant: 'contained',
-    disabled: true,
 };
 
-export const Styled = Template.bind({});
-Styled.args = {
-    style: {
-        width: '320px',
-    },
-};
+// export const Styled = Template.bind({});
+// Styled.args = {
+//     style: {
+//         width: '320px',
+//     },
+// };
 
 export const GoogleSignIn = Template.bind({});
 GoogleSignIn.args = {
     variant: 'outlined',
-    label: 'Sign Up with Google',
-    style: {
+    children: 'Sign Up with Google',
+    btnStyles: {
         fontWeight: 'bold',
     },
-    buttonIcon: <Google />,
-    size: 'large',
+    btnIcon: <Google />,
 };

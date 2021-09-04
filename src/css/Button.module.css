@@ -1,37 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap');
+.buttonContainer {
+    position: relative;
+    z-index: 5;
+    width: fit-content;
+    border-radius: 5px;
+}
 
 .button {
     user-select: none;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     text-transform: capitalize;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    transition: color .5s, background-color .5s, border .5s;
+    transition: color 0.5s, background-color 0.5s, border 0.5s;
     cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 }
 
-.buttonContainer {
-    position: relative;
-}
-
-.button div {
+.buttonIcon {
     padding: 4px;
     border-radius: 7px;
     display: flex;
     margin-right: 5px;
 }
 
-.buttonFilter {
+.filter {
+    z-index: 10;
     position: absolute;
-    z-index: 20;
-    background-color: black;
     height: 100%;
     width: 100%;
+    background-color: black;
+    opacity: 0.5;
     top: 0;
     left: 0;
 }

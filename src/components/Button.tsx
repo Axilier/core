@@ -1,164 +1,109 @@
-/** @format */
-
-// @flow
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ButtonProps } from '../Types';
 import styles from '../css/Button.module.css';
 
 const Button = ({
-    btnType,
-    label,
-    type,
-    variant,
+    btnType = 'button',
+    variant = 'contained',
+    btnColor = 'primary',
+    btnStyles = {},
+    btnIconBackgroundColor = 'white',
+    disabled = false,
+    btnIcon,
+    children,
     onClick,
     style,
     className,
-    btnStyle,
-    btnClassName,
-    disabled,
-    buttonColor,
-    altButtonColor,
-    buttonIcon,
-    iconBackgroundColor,
-    size,
+    id,
 }: ButtonProps): JSX.Element => {
-    // const [clicked, setClicked] = useState(false);
-    const [hover, setHover] = useState(false);
-
-    const primaryColour = (): string => {
-        switch (type) {
+    const [hovered, setHovered] = useState(false);
+    const mainColour = () => {
+        switch (btnColor) {
             case 'primary':
-                return buttonColor || '#057AFF';
+                return '#057AFF';
             case 'secondary':
-                return buttonColor || 'white';
-            case 'tertiary':
-                return buttonColor || 'black';
+                return 'black';
             default:
-                return buttonColor || 'black';
+                return btnColor;
         }
     };
-    const secondaryColour = (): string => {
-        switch (type) {
-            case 'primary':
-                return altButtonColor || 'white';
-            case 'secondary':
-                return altButtonColor || '#057AFF';
-            case 'tertiary':
-                return altButtonColor || 'white';
-            default:
-                return altButtonColor || 'white';
-        }
-    };
-
-    const border = () => {
+    const backgroundColour = () => {
         switch (variant) {
             case 'contained':
-                return hover
-                    ? `solid 2px ${primaryColour()}`
-                    : 'solid 2px transparent';
+                return hovered ? 'white' : mainColour();
             case 'outlined':
-                return `solid 2px ${primaryColour()}`;
-            case 'text':
-                return 'none';
-            default:
-                return 'none';
-        }
-    };
-    const backgroundColor = () => {
-        switch (variant) {
-            case 'contained':
-                return hover ? secondaryColour() : primaryColour();
-            case 'outlined':
-                return hover ? primaryColour() : 'transparent';
+                return hovered ? mainColour() : 'white';
             case 'text':
                 return 'transparent';
             default:
-                return primaryColour();
+                return hovered ? 'white' : mainColour();
         }
     };
-    const color = () => {
+    const border = () => {
         switch (variant) {
             case 'contained':
-                return hover ? primaryColour() : secondaryColour();
+                return hovered
+                    ? `solid 2px ${mainColour()}`
+                    : 'solid 2px transparent';
             case 'outlined':
-                return hover ? secondaryColour() : primaryColour();
+                return `solid 2px ${mainColour()}`;
             case 'text':
-                return primaryColour();
+                return 'none';
             default:
-                return primaryColour();
+                return hovered
+                    ? `solid 2px ${mainColour()}`
+                    : 'solid 2px transparent';
         }
     };
-
-    const btnSize = (): string => {
-        switch (size) {
-            case 'small':
-                return '150px';
-            case 'large':
-                return '320px';
+    const textColor = () => {
+        switch (variant) {
+            case 'contained':
+                return hovered ? mainColour() : 'white';
+            case 'outlined':
+                return hovered ? 'white' : mainColour();
+            case 'text':
+                return mainColour();
             default:
-                return size || '';
+                return hovered ? mainColour() : 'white';
         }
     };
+    const padding = () =>
+        children && children.toString().length > 14 ? '10px' : '5px';
 
     return (
-        <div
-            className={`${styles.buttonContainer} ${className}`}
-            style={{
-                width: variant === 'text' ? 'max-content' : btnSize(),
-                ...style,
-            }}
-        >
+        <div className={`${styles.buttonContainer} ${className}`} style={style}>
             <button
+                id={id || 'button'}
                 // eslint-disable-next-line react/button-has-type
                 type={btnType || 'button'}
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
-                className={`${styles.button} ${btnClassName}`}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+                className={styles.button}
+                onClick={onClick}
                 style={{
+                    backgroundColor: backgroundColour(),
+                    color: textColor(),
                     border: border(),
-                    backgroundColor: backgroundColor(),
-                    color: color(),
-                    padding: variant === 'text' ? 'unset' : '5px 20px',
-                    width: variant === 'text' ? '' : btnSize(),
-                    ...btnStyle,
-                }}
-                onClick={() => {
-                    if (!onClick) return;
-                    onClick();
+                    padding: variant === 'text' ? 'unset' : `${padding()} 20px`,
+                    ...btnStyles,
                 }}
             >
-                {buttonIcon ? (
+                {btnIcon ? (
                     <div
+                        id={'icon-container'}
+                        className={styles.buttonIcon}
                         style={{
-                            backgroundColor: iconBackgroundColor || 'white',
+                            backgroundColor: btnIconBackgroundColor || 'white',
                         }}
                     >
-                        {buttonIcon}
+                        {btnIcon}
                     </div>
                 ) : null}
-                {label}
+                {children}
             </button>
-            {disabled ? (
-                <div
-                    className={styles.buttonFilter}
-                    style={{
-                        opacity: 0.3,
-                    }}
-                />
-            ) : null}
+            {disabled ? <span id={'filter'} className={styles.filter} /> : null}
         </div>
     );
-};
-
-Button.defaultProps = {
-    buttonType: 'button',
-    variant: 'outlined',
-    type: 'primary',
-    label: 'test',
-    onClick: () => null,
-    disabled: false,
-    size: 'small',
 };
 
 export default Button;
