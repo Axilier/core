@@ -22,7 +22,7 @@ jobs:
       - name: install deps, test and predeploy
         run: |
           yarn install
-          jest --coverage
+          yarn test --coverage
           yarn build
           yarn postbuild
       - name: Deploy
