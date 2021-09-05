@@ -402,7 +402,7 @@ var css_248z$5 = ".TextBox-module_textBoxContainer__2ZTEV {\n    user-select: no
 var styles$5 = {"textBoxContainer":"TextBox-module_textBoxContainer__2ZTEV","textBoxLabel":"TextBox-module_textBoxLabel__33lnE","requiredIcon":"TextBox-module_requiredIcon__25JqO","icon":"TextBox-module_icon__3Wd1V","textBox":"TextBox-module_textBox__DqL25","textBoxInput":"TextBox-module_textBoxInput__3gia0","textBoxUnits":"TextBox-module_textBoxUnits__1BmOO","suffix":"TextBox-module_suffix__3DPoD"};
 styleInject(css_248z$5);
 
-const TextBox = ({ label = '', variant = 'outlined', size = variant === 'filled' ? 'small' : 'large', disabled = false, outLineColor = '#057EFF', value: newValue = '', maxLength, width, height, prefixComponent, required, type, placeholder, filter, onChange, inputStyle, suffixComponent, units, }) => {
+const TextBox = ({ label = '', variant = 'outlined', size = variant === 'filled' ? 'small' : 'large', disabled = false, outLineColor = '#057EFF', value: newValue = '', maxLength, width, height, prefixComponent, required, type, placeholder, filter, onChange, inputStyle, suffixComponent, units, style, }) => {
     const [value, setValue] = React.useState(newValue);
     React.useEffect(() => setValue(newValue), [newValue]);
     const minWidth = () => (maxLength || 4) * 8 + 70;
@@ -436,7 +436,7 @@ const TextBox = ({ label = '', variant = 'outlined', size = variant === 'filled'
         if (onChange)
             onChange(evt.target.value);
     };
-    return (React__default['default'].createElement(Layout, { orientation: 'column', className: styles$5.textBoxContainer, style: { width: calcWidth() } },
+    return (React__default['default'].createElement(Layout, { orientation: 'column', className: styles$5.textBoxContainer, style: Object.assign({ width: calcWidth() }, style) },
         label || required ? (React__default['default'].createElement(React__default['default'].Fragment, null,
             React__default['default'].createElement("div", { className: styles$5.textBoxLabel },
                 label,

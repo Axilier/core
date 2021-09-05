@@ -24,6 +24,7 @@ export interface TabsProps {
     width?: string;
 }
 export declare type TextBoxProps = {
+    style?: CSSProperties;
     label?: string;
     size?: 'small' | 'large';
     maxLength?: number;
