@@ -510,6 +510,23 @@ const StrengthBar = ({ currentStrength }) => (React__default['default'].createEl
             : '#E6E6E6',
     } })))));
 
+const Divider = ({ children, style }) => (React__default['default'].createElement(Layout, { orientation: 'row', style: Object.assign(Object.assign({}, style), { alignItems: 'center', width: '100%', fontFamily: "'IBM Plex Sans', sans-serif" }) },
+    React__default['default'].createElement("div", { style: {
+            backgroundColor: '#BEBEBE',
+            width: '100%',
+            height: '2px',
+        } }),
+    React__default['default'].createElement("div", { style: {
+            padding: '0 8px',
+            color: '#BEBEBE',
+            verticalAlign: 'center',
+        } }, children),
+    React__default['default'].createElement("div", { style: {
+            backgroundColor: '#BEBEBE',
+            width: '100%',
+            height: '2px',
+        } })));
+
 var css_248z$1 = ".Dropdown-module_dropdown__EZWuG { user-select: none;\n    position: relative;\n    font-family: 'IBM Plex Sans', sans-serif;\n}\n\n.Dropdown-module_label__2K8UO {\n    display: flex;\n    flex-direction: row;\n    margin-right: 5px;\n    font-size: 13px;\n    text-transform: capitalize;\n}\n\n.Dropdown-module_required__3CmFe {\n    color: #ff0000;\n    margin-left: 3px;\n}\n\n.Dropdown-module_mainBody__1ZxpO {\n    display: flex;\n    align-items: center;\n    border: 2px solid rgb(5, 126, 255);\n    border-radius: 5px;\n    padding: 0 20px;\n    justify-content: space-between;\n    transition: background-color 0.3s linear;\n}\n\n.Dropdown-module_mainBody__1ZxpO:hover {\n    cursor: pointer;\n    background-color: #f5f5f5;\n}\n\n.Dropdown-module_openMenu__1lJ6S {\n    z-index: 999;\n    position: absolute;\n    margin-top: 2px;\n    width: 100%;\n    background-color: white;\n    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);\n}\n\n.Dropdown-module_openMenu__1lJ6S .Dropdown-module_option__XprGW {\n    height: 35px;\n    padding: 0 20px;\n    display: flex;\n    align-items: center;\n}\n\n.Dropdown-module_openMenu__1lJ6S .Dropdown-module_option__XprGW:hover {\n    background-color: #f5f5f5;\n    cursor: pointer;\n}\n";
 var styles$1 = {"dropdown":"Dropdown-module_dropdown__EZWuG","label":"Dropdown-module_label__2K8UO","required":"Dropdown-module_required__3CmFe","mainBody":"Dropdown-module_mainBody__1ZxpO","openMenu":"Dropdown-module_openMenu__1lJ6S","option":"Dropdown-module_option__XprGW"};
 styleInject(css_248z$1);
@@ -644,6 +661,7 @@ var useToggle = (initialState) => {
 exports.Button = Button;
 exports.Copyright = Copyright;
 exports.Cross = Cross;
+exports.Divider = Divider;
 exports.Dropdown = Dropdown;
 exports.Google = Google;
 exports.Key = Key;
