@@ -6,6 +6,7 @@ export { default as List } from './components/List/List';
 export { default as MfaInput } from './components/MfaInput';
 export { default as ListItem } from './components/List/ListItem';
 export { default as ListGroup } from './components/List/ListGroup';
+export { default as TextBox } from './components/TextBox';
 export { default as Radio } from './components/Radio';
 export { default as Menu } from './components/Menu';
 export { default as StrengthBar } from './components/StrengthBar';
