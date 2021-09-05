@@ -22,6 +22,7 @@ const TextBox = ({
     inputStyle,
     suffixComponent,
     units,
+    style,
 }: TextBoxProps): JSX.Element => {
     const [value, setValue] = useState(newValue);
 
@@ -60,7 +61,7 @@ const TextBox = ({
         <Layout
             orientation={'column'}
             className={styles.textBoxContainer}
-            style={{ width: calcWidth() }}
+            style={{ width: calcWidth(), ...style }}
         >
             {label || required ? (
                 <>

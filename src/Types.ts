@@ -28,6 +28,7 @@ export interface TabsProps {
 }
 
 export type TextBoxProps = {
+    style?: CSSProperties;
     label?: string; // DOC the label that is before the input, background does not extend to cover it
     size?: 'small' | 'large';
     maxLength?: number;
