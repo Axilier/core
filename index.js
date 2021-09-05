@@ -56,9 +56,9 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$8 = ".Button-module_buttonContainer__9w-Pk {\n    position: relative;\n    z-index: 5;\n    width: fit-content;\n    border-radius: 5px;\n}\n\n.Button-module_button__2jq1t {\n    user-select: none;\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    transition: color 0.5s, background-color 0.5s, border 0.5s;\n    cursor: pointer;\n    font-size: 18px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    border-radius: 5px;\n}\n\n.Button-module_buttonIcon__2pm5e {\n    padding: 4px;\n    border-radius: 7px;\n    display: flex;\n    margin-right: 5px;\n}\n\n.Button-module_filter__1pv_e {\n    z-index: 10;\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    background-color: black;\n    opacity: 0.5;\n    top: 0;\n    left: 0;\n}\n";
-var styles$8 = {"buttonContainer":"Button-module_buttonContainer__9w-Pk","button":"Button-module_button__2jq1t","buttonIcon":"Button-module_buttonIcon__2pm5e","filter":"Button-module_filter__1pv_e"};
-styleInject(css_248z$8);
+var css_248z$9 = ".Button-module_buttonContainer__9w-Pk {\n    position: relative;\n    z-index: 5;\n    width: fit-content;\n    border-radius: 5px;\n}\n\n.Button-module_button__2jq1t {\n    user-select: none;\n    text-transform: capitalize;\n    font-family: 'IBM Plex Sans', sans-serif;\n    transition: color 0.5s, background-color 0.5s, border 0.5s;\n    cursor: pointer;\n    font-size: 18px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    border-radius: 5px;\n}\n\n.Button-module_buttonIcon__2pm5e {\n    padding: 4px;\n    border-radius: 7px;\n    display: flex;\n    margin-right: 5px;\n}\n\n.Button-module_filter__1pv_e {\n    z-index: 10;\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    background-color: black;\n    opacity: 0.5;\n    top: 0;\n    left: 0;\n}\n";
+var styles$9 = {"buttonContainer":"Button-module_buttonContainer__9w-Pk","button":"Button-module_button__2jq1t","buttonIcon":"Button-module_buttonIcon__2pm5e","filter":"Button-module_filter__1pv_e"};
+styleInject(css_248z$9);
 
 const Button = ({ btnType = 'button', variant = 'contained', btnColor = 'primary', btnStyles = {}, btnIconBackgroundColor = 'white', disabled = false, btnIcon, children, onClick, style, className, id, }) => {
     const [hovered, setHovered] = React.useState(false);
@@ -113,15 +113,15 @@ const Button = ({ btnType = 'button', variant = 'contained', btnColor = 'primary
         }
     };
     const padding = () => children && children.toString().length > 14 ? '10px' : '5px';
-    return (React__default['default'].createElement("div", { className: `${styles$8.buttonContainer} ${className}`, style: style },
+    return (React__default['default'].createElement("div", { className: `${styles$9.buttonContainer} ${className}`, style: style },
         React__default['default'].createElement("button", { id: id || 'button', 
             // eslint-disable-next-line react/button-has-type
-            type: btnType || 'button', onMouseEnter: () => setHovered(true), onMouseLeave: () => setHovered(false), className: styles$8.button, onClick: onClick, style: Object.assign({ backgroundColor: backgroundColour(), color: textColor(), border: border(), padding: variant === 'text' ? 'unset' : `${padding()} 20px` }, btnStyles) },
-            btnIcon ? (React__default['default'].createElement("div", { id: 'icon-container', className: styles$8.buttonIcon, style: {
+            type: btnType || 'button', onMouseEnter: () => setHovered(true), onMouseLeave: () => setHovered(false), className: styles$9.button, onClick: onClick, style: Object.assign({ backgroundColor: backgroundColour(), color: textColor(), border: border(), padding: variant === 'text' ? 'unset' : `${padding()} 20px` }, btnStyles) },
+            btnIcon ? (React__default['default'].createElement("div", { id: 'icon-container', className: styles$9.buttonIcon, style: {
                     backgroundColor: btnIconBackgroundColor || 'white',
                 } }, btnIcon)) : null,
             children),
-        disabled ? React__default['default'].createElement("span", { id: 'filter', className: styles$8.filter }) : null));
+        disabled ? React__default['default'].createElement("span", { id: 'filter', className: styles$9.filter }) : null));
 };
 
 /*! *****************************************************************************
@@ -169,18 +169,18 @@ const Layout = (_a) => {
     return (React__default['default'].createElement("div", Object.assign({}, elementProps, { ref: elemRef, style: Object.assign(Object.assign({}, styles()), style) }), children));
 };
 
-var css_248z$7 = ".TabMenu-module_tabMenu__2DRM4 {\n    position: relative;\n    width: 100%;\n    height: 40px;\n    display: flex;\n    font-size: 15px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    flex: 1 1 0;\n}\n\n.TabMenu-module_tab__ZRll6 {\n    position: relative;\n    user-select: none;\n    z-index: 1;\n    height: 40px;\n    cursor: pointer;\n}\n\n.TabMenu-module_tabHorizontal__1AP08 {\n    flex-grow: 1;\n    flex-shrink: 1;\n    flex-basis: 0;\n}\n\n.TabMenu-module_tabIndicator__3IvmJ {\n    position: absolute;\n    z-index: 10;\n    transition: left 0.2s ease-in-out, top 0.2s ease-in-out;\n}\n\n.TabMenu-module_horizontalShadow__3wOjp {\n    width: 100%;\n    height: 2px;\n}\n\n.TabMenu-module_verticalShadow__1cgU2 {\n    height: 100%;\n    width: 2px;\n    left: 0;\n}\n\n.TabMenu-module_tabSelectedShadow__1eEx3 {\n    position: absolute;\n    bottom: 0;\n    background-color: #e0e0e0;\n    transition: left 0.2s ease-in-out, top 0.2s ease-in-out;\n}\n\n.TabMenu-module_tabSelectedBackground__1BHeU {\n    position: absolute;\n    z-index: 0;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n";
-var styles$7 = {"tabMenu":"TabMenu-module_tabMenu__2DRM4","tab":"TabMenu-module_tab__ZRll6","tabHorizontal":"TabMenu-module_tabHorizontal__1AP08","tabIndicator":"TabMenu-module_tabIndicator__3IvmJ","horizontalShadow":"TabMenu-module_horizontalShadow__3wOjp","verticalShadow":"TabMenu-module_verticalShadow__1cgU2","tabSelectedShadow":"TabMenu-module_tabSelectedShadow__1eEx3","tabSelectedBackground":"TabMenu-module_tabSelectedBackground__1BHeU"};
-styleInject(css_248z$7);
+var css_248z$8 = ".TabMenu-module_tabMenu__2DRM4 {\n    position: relative;\n    width: 100%;\n    height: 40px;\n    display: flex;\n    font-size: 15px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    flex: 1 1 0;\n}\n\n.TabMenu-module_tab__ZRll6 {\n    position: relative;\n    user-select: none;\n    z-index: 1;\n    height: 40px;\n    cursor: pointer;\n}\n\n.TabMenu-module_tabHorizontal__1AP08 {\n    flex-grow: 1;\n    flex-shrink: 1;\n    flex-basis: 0;\n}\n\n.TabMenu-module_tabIndicator__3IvmJ {\n    position: absolute;\n    z-index: 10;\n    transition: left 0.2s ease-in-out, top 0.2s ease-in-out;\n}\n\n.TabMenu-module_horizontalShadow__3wOjp {\n    width: 100%;\n    height: 2px;\n}\n\n.TabMenu-module_verticalShadow__1cgU2 {\n    height: 100%;\n    width: 2px;\n    left: 0;\n}\n\n.TabMenu-module_tabSelectedShadow__1eEx3 {\n    position: absolute;\n    bottom: 0;\n    background-color: #e0e0e0;\n    transition: left 0.2s ease-in-out, top 0.2s ease-in-out;\n}\n\n.TabMenu-module_tabSelectedBackground__1BHeU {\n    position: absolute;\n    z-index: 0;\n    transition: left .2s ease-in-out, top .2s ease-in-out;\n}\n";
+var styles$8 = {"tabMenu":"TabMenu-module_tabMenu__2DRM4","tab":"TabMenu-module_tab__ZRll6","tabHorizontal":"TabMenu-module_tabHorizontal__1AP08","tabIndicator":"TabMenu-module_tabIndicator__3IvmJ","horizontalShadow":"TabMenu-module_horizontalShadow__3wOjp","verticalShadow":"TabMenu-module_verticalShadow__1cgU2","tabSelectedShadow":"TabMenu-module_tabSelectedShadow__1eEx3","tabSelectedBackground":"TabMenu-module_tabSelectedBackground__1BHeU"};
+styleInject(css_248z$8);
 
-const Tab = ({ orientation = 'row', showNotSelectedShadow = true, children, onClick, }) => (React__default['default'].createElement(Layout, { center: true, orientation: orientation, className: `${styles$7.tab} ${orientation === 'row' ? styles$7.tabHorizontal : ''}`, style: { paddingLeft: orientation === 'row' ? 'unset' : '20px' }, onClick: () => {
+const Tab = ({ orientation = 'row', showNotSelectedShadow = true, children, onClick, }) => (React__default['default'].createElement(Layout, { center: true, orientation: orientation, className: `${styles$8.tab} ${orientation === 'row' ? styles$8.tabHorizontal : ''}`, style: { paddingLeft: orientation === 'row' ? 'unset' : '20px' }, onClick: () => {
         if (onClick)
             onClick();
     } },
     children,
-    React__default['default'].createElement("div", { className: `${styles$7.tabSelectedShadow} ${orientation === 'row'
-            ? styles$7.horizontalShadow
-            : styles$7.verticalShadow}`, style: {
+    React__default['default'].createElement("div", { className: `${styles$8.tabSelectedShadow} ${orientation === 'row'
+            ? styles$8.horizontalShadow
+            : styles$8.verticalShadow}`, style: {
             display: showNotSelectedShadow ? 'block' : 'none',
         } })));
 
@@ -204,7 +204,7 @@ const Tabs = ({ showNotSelectedShadow = true, tabNotSelectedColor = '', tabSelec
             }
         });
     }, [childrenArray]);
-    return (React__default['default'].createElement(Layout, { orientation: orientation, elemRef: menu, className: styles$7.tabMenu, style: {
+    return (React__default['default'].createElement(Layout, { orientation: orientation, elemRef: menu, className: styles$8.tabMenu, style: {
             width: width || '100%',
             color: tabFontColor,
             backgroundColor: tabNotSelectedColor || 'transparent',
@@ -217,7 +217,7 @@ const Tabs = ({ showNotSelectedShadow = true, tabNotSelectedColor = '', tabSelec
                         onChange(index);
                 } }, child.props.children));
         }),
-        React__default['default'].createElement("div", { key: 'indicator', id: 'indicator', className: styles$7.tabIndicator, style: {
+        React__default['default'].createElement("div", { key: 'indicator', id: 'indicator', className: styles$8.tabIndicator, style: {
                 backgroundColor: tabIndicatorColor || '#057AFF',
                 width: orientation === 'row'
                     ? `calc( 100% / ${childrenArray.length})`
@@ -232,7 +232,7 @@ const Tabs = ({ showNotSelectedShadow = true, tabNotSelectedColor = '', tabSelec
                     ? selectedTab * selectedIndicatorWidth
                     : 0,
             } }),
-        React__default['default'].createElement("div", { key: 'selectedTab', id: 'selectedTab', className: styles$7.tabSelectedBackground, style: {
+        React__default['default'].createElement("div", { key: 'selectedTab', id: 'selectedTab', className: styles$8.tabSelectedBackground, style: {
                 height: orientation === 'row' ? '100%' : '40px',
                 width: orientation === 'row' ? selectedIndicatorWidth : '100%',
                 top: orientation === 'row' ? 0 : selectedTab * 40,
@@ -264,9 +264,9 @@ const List = ({ children, width = '100%', listControls, }) => {
     return (React__default['default'].createElement(Layout, { style: { width }, orientation: 'column' }, newChildren));
 };
 
-var css_248z$6 = ".MfaInput-module_mfaInput__2R2AI {\n    margin: auto;\n    width: 240px;\n    justify-content: space-between;\n}\n\n.MfaInput-module_mfaInput__2R2AI > input {\n    box-sizing: border-box;\n    height: 30px;\n    width: 30px;\n    text-align: center;\n    border: solid 1px #055eff;\n    border-radius: 5px;\n    background-color: #fdfdfd;\n}\n";
-var styles$6 = {"mfaInput":"MfaInput-module_mfaInput__2R2AI"};
-styleInject(css_248z$6);
+var css_248z$7 = ".MfaInput-module_mfaInput__2R2AI {\n    margin: auto;\n    width: 240px;\n    justify-content: space-between;\n}\n\n.MfaInput-module_mfaInput__2R2AI > input {\n    box-sizing: border-box;\n    height: 30px;\n    width: 30px;\n    text-align: center;\n    border: solid 1px #055eff;\n    border-radius: 5px;\n    background-color: #fdfdfd;\n}\n";
+var styles$7 = {"mfaInput":"MfaInput-module_mfaInput__2R2AI"};
+styleInject(css_248z$7);
 
 const MfaInput = ({ id, value, nextFocusElementId, onChange, }) => {
     const [code, setCode] = React.useState(value ? value.split('') : []);
@@ -332,14 +332,14 @@ const MfaInput = ({ id, value, nextFocusElementId, onChange, }) => {
             }
         }
     };
-    return (React__default['default'].createElement(Layout, { className: styles$6.mfaInput, orientation: 'row' }, Array.from(Array(6)).map((element, index) => (React__default['default'].createElement("input", { ref: inputs[index], onKeyDown: e => onKeyDown(e, index), onPaste: event => onPaste(event), value: code[index] || '', maxLength: 1, id: `${id}-mfa-input-${index}`, 
+    return (React__default['default'].createElement(Layout, { className: styles$7.mfaInput, orientation: 'row' }, Array.from(Array(6)).map((element, index) => (React__default['default'].createElement("input", { ref: inputs[index], onKeyDown: e => onKeyDown(e, index), onPaste: event => onPaste(event), value: code[index] || '', maxLength: 1, id: `${id}-mfa-input-${index}`, 
         /* eslint-disable-next-line react/no-array-index-key */
         key: `${id}-mfa-input-${index}`, onChange: () => null })))));
 };
 
-var css_248z$5 = ".List-module_listGroup__1MUKV {\n    overflow-y: hidden;\n    transition: height linear 0.1s;\n}\n\n.List-module_listItem__2fPcU {\n    user-select: none;\n    height: 40px;\n    align-items: center;\n    padding: 0 30px;\n    font-size: 15px;\n    line-height: 40px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    justify-content: space-between;\n}\n\n.List-module_listItem__2fPcU:hover {\n    cursor: pointer;\n}\n\n.List-module_listItemChildren__giVq7 {\n    display: flex;\n    line-height: 40px;\n    align-items: center;\n    height: 40px;\n}\n\n.List-module_listItem__2fPcU * {\n    margin: 0 10px;\n}\n\n.List-module_endFragment__2e6n3 {\n    display: flex;\n    align-items: center;\n}\n";
-var styles$5 = {"listGroup":"List-module_listGroup__1MUKV","listItem":"List-module_listItem__2fPcU","listItemChildren":"List-module_listItemChildren__giVq7","endFragment":"List-module_endFragment__2e6n3"};
-styleInject(css_248z$5);
+var css_248z$6 = ".List-module_listGroup__1MUKV {\n    overflow-y: hidden;\n    transition: height linear 0.1s;\n}\n\n.List-module_listItem__2fPcU {\n    user-select: none;\n    height: 40px;\n    align-items: center;\n    padding: 0 30px;\n    font-size: 15px;\n    line-height: 40px;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    justify-content: space-between;\n}\n\n.List-module_listItem__2fPcU:hover {\n    cursor: pointer;\n}\n\n.List-module_listItemChildren__giVq7 {\n    display: flex;\n    line-height: 40px;\n    align-items: center;\n    height: 40px;\n}\n\n.List-module_listItem__2fPcU * {\n    margin: 0 10px;\n}\n\n.List-module_endFragment__2e6n3 {\n    display: flex;\n    align-items: center;\n}\n";
+var styles$6 = {"listGroup":"List-module_listGroup__1MUKV","listItem":"List-module_listItem__2fPcU","listItemChildren":"List-module_listItemChildren__giVq7","endFragment":"List-module_endFragment__2e6n3"};
+styleInject(css_248z$6);
 
 const ListItem = ({ child = false, children, controls, dropdown, selected, onClick, }) => {
     const [hovered, setHovered] = React.useState(false);
@@ -353,9 +353,9 @@ const ListItem = ({ child = false, children, controls, dropdown, selected, onCli
                 : hovered
                     ? '#F4F4F4'
                     : '#F9F9F9',
-        }, className: styles$5.listItem },
-        React__default['default'].createElement("div", { className: styles$5.listItemChildren }, children),
-        React__default['default'].createElement("div", { className: styles$5.endFragment },
+        }, className: styles$6.listItem },
+        React__default['default'].createElement("div", { className: styles$6.listItemChildren }, children),
+        React__default['default'].createElement("div", { className: styles$6.endFragment },
             controls ? React__default['default'].createElement(React__default['default'].Fragment, null,
                 " ",
                 controls,
@@ -392,10 +392,73 @@ const ListGroup = ({ listItem, children, groupControls, }) => {
                 if (listItem.props.onClick)
                     listItem.props.onClick();
             }, controls: groupControls, dropdown: groupOpen })),
-        React__default['default'].createElement("div", { className: styles$5.listGroup, style: {
+        React__default['default'].createElement("div", { className: styles$6.listGroup, style: {
                 height: groupOpen ? `${items.length * 40}px` : '0px',
             } },
             React__default['default'].createElement(List, null, items))));
+};
+
+var css_248z$5 = ".TextBox-module_textBoxContainer__2ZTEV {\n    user-select: none;\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    font-size: 13px;\n    flex-wrap: wrap;\n    text-transform: capitalize;\n}\n\n.TextBox-module_textBoxLabel__33lnE {\n    margin: 0;\n    font-size: 13px;\n}\n\n.TextBox-module_requiredIcon__25JqO {\n    display: inline-block;\n    color: #ff0000;\n    margin-left: 3px;\n}\n\n.TextBox-module_icon__3Wd1V {\n    margin-left: 7px;\n    height: 20px;\n    width: 20px;\n}\n\n.TextBox-module_textBox__DqL25 {\n    align-items: center;\n    width: 100%;\n}\n\n.TextBox-module_textBoxInput__3gia0 {\n    border: none;\n    font-size: 13px;\n    padding: 0 10px;\n    width: 100%;\n}\n\n.TextBox-module_textBoxInput__3gia0:focus {\n    outline: none;\n}\n\n.TextBox-module_textBoxUnits__1BmOO {\n    display: flex;\n    padding-right: 10px;\n    height: 100%;\n    vertical-align: center;\n    align-items: center;\n}\n\n.TextBox-module_suffix__3DPoD {\n    margin-right: 10px;\n    height: 20px;\n    width: 20px;\n}\n";
+var styles$5 = {"textBoxContainer":"TextBox-module_textBoxContainer__2ZTEV","textBoxLabel":"TextBox-module_textBoxLabel__33lnE","requiredIcon":"TextBox-module_requiredIcon__25JqO","icon":"TextBox-module_icon__3Wd1V","textBox":"TextBox-module_textBox__DqL25","textBoxInput":"TextBox-module_textBoxInput__3gia0","textBoxUnits":"TextBox-module_textBoxUnits__1BmOO","suffix":"TextBox-module_suffix__3DPoD"};
+styleInject(css_248z$5);
+
+const TextBox = ({ label = '', variant = 'outlined', size = variant === 'filled' ? 'small' : 'large', disabled = false, outLineColor = '#057EFF', value: newValue = '', maxLength, width, height, prefixComponent, required, type, placeholder, filter, onChange, inputStyle, suffixComponent, units, }) => {
+    const [value, setValue] = React.useState(newValue);
+    React.useEffect(() => setValue(newValue), [newValue]);
+    const minWidth = () => (maxLength || 4) * 8 + 70;
+    const calcWidth = () => {
+        if (width)
+            return `${Math.max(minWidth(), width)}px`;
+        switch (size) {
+            case 'small':
+                return `${minWidth()}px`;
+            case 'large':
+            default:
+                return `${Math.max(minWidth(), 320)}px`;
+        }
+    };
+    const calcHeight = () => {
+        if (height)
+            return `${height}px`;
+        switch (size) {
+            case 'small':
+                return '34px';
+            case 'large':
+            default:
+                return '44px';
+        }
+    };
+    const handleChange = (evt) => {
+        const passesFilter = filter ? filter(evt.target.value) : true;
+        if (!passesFilter)
+            return;
+        setValue(evt.target.value);
+        if (onChange)
+            onChange(evt.target.value);
+    };
+    return (React__default['default'].createElement(Layout, { orientation: 'column', className: styles$5.textBoxContainer, style: { width: calcWidth() } },
+        label || required ? (React__default['default'].createElement(React__default['default'].Fragment, null,
+            React__default['default'].createElement("div", { className: styles$5.textBoxLabel },
+                label,
+                required ? (React__default['default'].createElement("p", { className: `${styles$5.requiredIcon} ${styles$5.textBoxLabel}` }, "*")) : null))) : null,
+        React__default['default'].createElement(Layout, { className: styles$5.textBox, orientation: 'row', style: {
+                color: disabled ? '#8C8C8C' : '#000000',
+                borderRadius: variant === 'outlined' ? '5px' : '0',
+                height: calcHeight(),
+                border: variant === 'outlined'
+                    ? `solid 2px ${outLineColor}`
+                    : 'none',
+            } },
+            prefixComponent ? (React__default['default'].createElement("div", { className: styles$5.icon, style: {
+                    marginLeft: '7px',
+                } }, prefixComponent)) : null,
+            React__default['default'].createElement("input", { className: styles$5.textBoxInput, type: type, placeholder: placeholder, style: Object.assign({ height: calcHeight(), lineHeight: calcHeight(), cursor: disabled ? 'not-allowed' : 'text', backgroundColor: variant === 'filled' ? '#F3F3F3' : 'transparent' }, inputStyle), value: value, maxLength: maxLength || -1, onChange: handleChange }),
+            units ? (React__default['default'].createElement("div", { className: `${styles$5.textBoxUnits} unit-comp`, style: {
+                    backgroundColor: variant === 'filled'
+                        ? '#F3F3F3'
+                        : 'transparent',
+                } }, units)) : null,
+            suffixComponent ? (React__default['default'].createElement("div", { className: `suffix-comp ${styles$5.suffix}` }, suffixComponent)) : null)));
 };
 
 var css_248z$4 = ".Radio-module_contactRadio__jA9zc {\n    font-family: 'IBM Plex Sans', 'Source Sans Pro', sans-serif;\n    display: flex;\n    flex-direction: row;\n    margin-top: 5px;\n}\n\n.Radio-module_radioContainer__1hU_w {\n    display: block;\n    position: relative;\n    padding-left: 20px;\n    margin-bottom: 12px;\n    margin-right: 5px;\n    cursor: pointer;\n    user-select: none;\n}\n\n/* Hide the browser's default radio button */\n.Radio-module_radioContainer__1hU_w input {\n    position: absolute;\n    opacity: 0;\n    cursor: pointer;\n}\n\n/* Create a custom radio button */\n.Radio-module_radioCheckmark__1-xRv {\n    position: absolute;\n    top: 50%;\n    left: 2px;\n    transform: translateY(-50%);\n    height: 16px;\n    width: 16px;\n    background-color: #eee;\n    border-radius: 50%;\n}\n\n/* On mouse-over, add a grey background color */\n.Radio-module_radioContainer__1hU_w:hover input ~ .Radio-module_checkmark__3mKZc {\n    background-color: #e4e4e4;\n}\n\n/* Create the indicator (the dot/circle - hidden when not checked) */\n.Radio-module_radioCheckmark__1-xRv:after {\n    content: '';\n    position: absolute;\n    display: none;\n}\n\n/* Show the indicator (dot/circle) when checked */\n.Radio-module_radioContainer__1hU_w input:checked ~ .Radio-module_radioCheckmark__1-xRv:after {\n    display: block;\n}\n\n/* Style the indicator (dot/circle) */\n.Radio-module_radioContainer__1hU_w .Radio-module_radioCheckmark__1-xRv:after {\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 7px;\n    height: 7px;\n    border-radius: 50%;\n    background: #057eff;\n}\n";
@@ -595,6 +658,7 @@ exports.Radio = Radio;
 exports.StrengthBar = StrengthBar;
 exports.Tab = Tab;
 exports.Tabs = Tabs;
+exports.TextBox = TextBox;
 exports.useClickOutside = useClickOutside;
 exports.useStateWithCallback = useStateWithCallback;
 exports.useStepper = useStepper;
