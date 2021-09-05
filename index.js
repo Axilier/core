@@ -173,7 +173,7 @@ var css_248z$8 = ".TabMenu-module_tabMenu__2DRM4 {\n    position: relative;\n   
 var styles$8 = {"tabMenu":"TabMenu-module_tabMenu__2DRM4","tab":"TabMenu-module_tab__ZRll6","tabHorizontal":"TabMenu-module_tabHorizontal__1AP08","tabIndicator":"TabMenu-module_tabIndicator__3IvmJ","horizontalShadow":"TabMenu-module_horizontalShadow__3wOjp","verticalShadow":"TabMenu-module_verticalShadow__1cgU2","tabSelectedShadow":"TabMenu-module_tabSelectedShadow__1eEx3","tabSelectedBackground":"TabMenu-module_tabSelectedBackground__1BHeU"};
 styleInject(css_248z$8);
 
-const Tab = ({ orientation = 'row', showNotSelectedShadow = true, children, onClick, }) => (React__default['default'].createElement(Layout, { center: true, orientation: orientation, className: `${styles$8.tab} ${orientation === 'row' ? styles$8.tabHorizontal : ''}`, style: { paddingLeft: orientation === 'row' ? 'unset' : '20px' }, onClick: () => {
+const Tab = ({ orientation = 'row', showNotSelectedShadow = true, children, onClick, }) => (React__default['default'].createElement(Layout, { center: true, orientation: 'row', className: `${styles$8.tab} ${orientation === 'row' ? styles$8.tabHorizontal : ''}`, style: { paddingLeft: orientation === 'row' ? 'unset' : '20px' }, onClick: () => {
         if (onClick)
             onClick();
     } },
@@ -205,6 +205,7 @@ const Tabs = ({ showNotSelectedShadow = true, tabNotSelectedColor = '', tabSelec
         });
     }, [childrenArray]);
     return (React__default['default'].createElement(Layout, { orientation: orientation, elemRef: menu, className: styles$8.tabMenu, style: {
+            maxHeight: `${40 * childrenArray.length}px`,
             width: width || '100%',
             color: tabFontColor,
             backgroundColor: tabNotSelectedColor || 'transparent',
