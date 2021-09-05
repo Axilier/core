@@ -8,7 +8,7 @@ exports[`when the \`orientation\` is column should render correctly 1`] = `
     center={true}
     className="tab "
     onClick={[Function]}
-    orientation="column"
+    orientation="row"
     style={
       Object {
         "paddingLeft": "20px",
@@ -22,7 +22,7 @@ exports[`when the \`orientation\` is column should render correctly 1`] = `
         Object {
           "alignItems": "center",
           "display": "flex",
-          "flexDirection": "column",
+          "flexDirection": "row",
           "justifyContent": "center",
           "paddingLeft": "20px",
         }

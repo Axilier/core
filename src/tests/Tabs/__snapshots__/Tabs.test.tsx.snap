@@ -10,7 +10,7 @@ exports[`when I render the component should render as expected 1`] = `
       Object {
         "current": <div
           class="tabMenu"
-          style="display: flex; flex-direction: row; width: 100%; color: black; background-color: transparent;"
+          style="display: flex; flex-direction: row; max-height: 120px; width: 100%; color: black; background-color: transparent;"
         >
           <div
             class="tab tabHorizontal"
@@ -60,6 +60,7 @@ exports[`when I render the component should render as expected 1`] = `
       Object {
         "backgroundColor": "transparent",
         "color": "black",
+        "maxHeight": "120px",
         "width": "100%",
       }
     }
@@ -72,6 +73,7 @@ exports[`when I render the component should render as expected 1`] = `
           "color": "black",
           "display": "flex",
           "flexDirection": "row",
+          "maxHeight": "120px",
           "width": "100%",
         }
       }

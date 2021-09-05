@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Layout, Tab, Tabs } from '../index';
+import { Key, Layout, Tab, Tabs } from '../index';
 import { TabsProps } from '../Types';
 
 export default {
@@ -44,4 +44,34 @@ export const Vertical: Story<TabsProps> = (args: TabsProps) => (
 export const NonSelectedColoured = Vertical.bind({});
 NonSelectedColoured.args = {
     tabNotSelectedColor: 'lightblue',
+};
+
+export const RealTest: Story<TabsProps> = () => {
+    const [selectedTab, setSelectedTab] = useState(0);
+    return (
+        <Layout
+            orientation={'column'}
+            style={{
+                width: '200px',
+                backgroundColor: 'blue',
+                height: '500px',
+                padding: '10px',
+            }}
+        >
+            <Tabs
+                onChange={tab => {
+                    setSelectedTab(tab);
+                }}
+                tabFontColor={'white'}
+                orientation={'column'}
+                tabNotSelectedColor={'#055eff'}
+                tabSelectedColor={'#0452DE'}
+                tabIndicatorColor={'white'}
+            >
+                <Tab>All files</Tab>
+                <Tab>Connections</Tab>
+                <Tab>Support</Tab>
+            </Tabs>
+        </Layout>
+    );
 };

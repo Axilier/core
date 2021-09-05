@@ -11,7 +11,7 @@ const Tab = ({
 }: TabProps): JSX.Element => (
     <Layout
         center
-        orientation={orientation}
+        orientation={'row'}
         className={`${styles.tab} ${
             orientation === 'row' ? styles.tabHorizontal : ''
         }`}

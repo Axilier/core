@@ -51,6 +51,7 @@ const Tabs = ({
             elemRef={menu}
             className={styles.tabMenu}
             style={{
+                maxHeight: `${40 * childrenArray.length}px`,
                 width: width || '100%',
                 color: tabFontColor,
                 backgroundColor: tabNotSelectedColor || 'transparent',
