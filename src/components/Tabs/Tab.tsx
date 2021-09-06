@@ -15,7 +15,6 @@ const Tab = ({
         className={`${styles.tab} ${
             orientation === 'row' ? styles.tabHorizontal : ''
         }`}
-        style={{ paddingLeft: orientation === 'row' ? 'unset' : '20px' }}
         onClick={() => {
             if (onClick) onClick();
         }}

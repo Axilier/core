@@ -47,11 +47,6 @@ describe('when the `orientation` is row', () => {
     it('should render correctly', () => {
         expect(tabRow).toMatchSnapshot();
     });
-    it('should have the expected styles', () => {
-        expect(tabRow.childAt(0).props().style).toEqual({
-            paddingLeft: 'unset',
-        });
-    });
     it('should have the tabHorizontal className', () => {
         expect(tabRow.childAt(0).props().className).toEqual(
             'tab tabHorizontal',
@@ -61,11 +56,6 @@ describe('when the `orientation` is row', () => {
 describe('when the `orientation` is column', () => {
     it('should render correctly', () => {
         expect(tabColumn).toMatchSnapshot();
-    });
-    it('should have the expected styles', () => {
-        expect(tabColumn.childAt(0).props().style).toEqual({
-            paddingLeft: '20px',
-        });
     });
     it('should only have the tab className', () => {
         expect(tabColumn.childAt(0).props().className).toEqual('tab ');

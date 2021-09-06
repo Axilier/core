@@ -89,11 +89,6 @@ exports[`when I render the component should render as expected 1`] = `
           className="tab tabHorizontal"
           onClick={[Function]}
           orientation="row"
-          style={
-            Object {
-              "paddingLeft": "unset",
-            }
-          }
         >
           <div
             className="tab tabHorizontal"
@@ -104,7 +99,6 @@ exports[`when I render the component should render as expected 1`] = `
                 "display": "flex",
                 "flexDirection": "row",
                 "justifyContent": "center",
-                "paddingLeft": "unset",
               }
             }
           >
@@ -131,11 +125,6 @@ exports[`when I render the component should render as expected 1`] = `
           className="tab tabHorizontal"
           onClick={[Function]}
           orientation="row"
-          style={
-            Object {
-              "paddingLeft": "unset",
-            }
-          }
         >
           <div
             className="tab tabHorizontal"
@@ -146,7 +135,6 @@ exports[`when I render the component should render as expected 1`] = `
                 "display": "flex",
                 "flexDirection": "row",
                 "justifyContent": "center",
-                "paddingLeft": "unset",
               }
             }
           >
@@ -173,11 +161,6 @@ exports[`when I render the component should render as expected 1`] = `
           className="tab tabHorizontal"
           onClick={[Function]}
           orientation="row"
-          style={
-            Object {
-              "paddingLeft": "unset",
-            }
-          }
         >
           <div
             className="tab tabHorizontal"
@@ -188,7 +171,6 @@ exports[`when I render the component should render as expected 1`] = `
                 "display": "flex",
                 "flexDirection": "row",
                 "justifyContent": "center",
-                "paddingLeft": "unset",
               }
             }
           >

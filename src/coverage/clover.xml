@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1630724172886" clover="3.2.0">
-  <project timestamp="1630724172886" name="All files">
-    <metrics statements="114" coveredstatements="114" conditionals="102" coveredconditionals="102" methods="55" coveredmethods="55" elements="271" coveredelements="271" complexity="0" loc="114" ncloc="114" packages="5" files="12" classes="12"/>
+<coverage generated="1630897457776" clover="3.2.0">
+  <project timestamp="1630897457776" name="All files">
+    <metrics statements="349" coveredstatements="349" conditionals="327" coveredconditionals="322" methods="128" coveredmethods="126" elements="804" coveredelements="797" complexity="0" loc="349" ncloc="349" packages="8" files="28" classes="28"/>
     <package name="src">
-      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="22" coveredmethods="22"/>
+      <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="24" coveredmethods="22"/>
       <file name="index.tsx" path="F:\Projects\core\src\index.tsx">
-        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="22" coveredmethods="22"/>
+        <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="24" coveredmethods="22"/>
         <line num="1" count="23" type="stmt"/>
         <line num="2" count="24" type="stmt"/>
         <line num="3" count="24" type="stmt"/>
@@ -14,19 +14,80 @@
         <line num="6" count="27" type="stmt"/>
         <line num="7" count="32" type="stmt"/>
         <line num="8" count="26" type="stmt"/>
-        <line num="9" count="23" type="stmt"/>
+        <line num="9" count="22" type="stmt"/>
         <line num="10" count="23" type="stmt"/>
         <line num="11" count="23" type="stmt"/>
-        <line num="12" count="25" type="stmt"/>
-        <line num="13" count="24" type="stmt"/>
-        <line num="14" count="24" type="stmt"/>
-        <line num="15" count="23" type="stmt"/>
-        <line num="16" count="26" type="stmt"/>
-        <line num="17" count="25" type="stmt"/>
+        <line num="12" count="23" type="stmt"/>
+        <line num="13" count="22" type="stmt"/>
+        <line num="14" count="25" type="stmt"/>
+        <line num="15" count="24" type="stmt"/>
+        <line num="16" count="24" type="stmt"/>
+        <line num="17" count="23" type="stmt"/>
+        <line num="18" count="26" type="stmt"/>
+        <line num="19" count="25" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="30" coveredstatements="30" conditionals="54" coveredconditionals="54" methods="7" coveredmethods="7"/>
+      <metrics statements="158" coveredstatements="158" conditionals="168" coveredconditionals="164" methods="36" coveredmethods="36"/>
+      <file name="Button.tsx" path="F:\Projects\core\src\components\Button.tsx">
+        <metrics statements="33" coveredstatements="33" conditionals="53" coveredconditionals="53" methods="8" coveredmethods="8"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="5" count="22" type="stmt"/>
+        <line num="19" count="41" type="stmt"/>
+        <line num="20" count="41" type="stmt"/>
+        <line num="21" count="51" type="stmt"/>
+        <line num="23" count="33" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="27" count="17" type="stmt"/>
+        <line num="30" count="41" type="stmt"/>
+        <line num="31" count="41" type="stmt"/>
+        <line num="33" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="39" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="41" type="stmt"/>
+        <line num="43" count="41" type="stmt"/>
+        <line num="45" count="23" type="stmt"/>
+        <line num="49" count="6" type="stmt"/>
+        <line num="51" count="6" type="stmt"/>
+        <line num="53" count="6" type="stmt"/>
+        <line num="58" count="41" type="stmt"/>
+        <line num="59" count="41" type="stmt"/>
+        <line num="61" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="6" type="stmt"/>
+        <line num="67" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="41" type="stmt"/>
+        <line num="71" count="35" type="cond" truecount="4" falsecount="0"/>
+        <line num="73" count="41" type="stmt"/>
+        <line num="79" count="8" type="stmt"/>
+        <line num="80" count="8" type="stmt"/>
+        <line num="109" count="22" type="stmt"/>
+      </file>
+      <file name="Divider.tsx" path="F:\Projects\core\src\components\Divider.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="23" type="stmt"/>
+        <line num="3" count="23" type="stmt"/>
+        <line num="5" count="23" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="41" count="23" type="stmt"/>
+      </file>
+      <file name="Layout.tsx" path="F:\Projects\core\src\components\Layout.tsx">
+        <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="1" count="24" type="stmt"/>
+        <line num="4" count="24" type="stmt"/>
+        <line num="9" count="199" type="stmt"/>
+        <line num="10" count="198" type="stmt"/>
+        <line num="16" count="198" type="stmt"/>
+        <line num="17" count="198" type="stmt"/>
+        <line num="23" count="198" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="145" type="stmt"/>
+        <line num="25" count="145" type="stmt"/>
+        <line num="27" count="198" type="stmt"/>
+        <line num="29" count="198" type="stmt"/>
+        <line num="43" count="24" type="stmt"/>
+      </file>
       <file name="Menu.tsx" path="F:\Projects\core\src\components\Menu.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="22" type="stmt"/>
@@ -36,36 +97,172 @@
         <line num="7" count="2" type="stmt"/>
         <line num="18" count="22" type="stmt"/>
       </file>
+      <file name="MfaInput.tsx" path="F:\Projects\core\src\components\MfaInput.tsx">
+        <metrics statements="56" coveredstatements="56" conditionals="49" coveredconditionals="45" methods="12" coveredmethods="12"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="9" count="22" type="stmt"/>
+        <line num="10" count="22" type="stmt"/>
+        <line num="13" count="22" type="stmt"/>
+        <line num="19" count="21" type="stmt"/>
+        <line num="22" count="21" type="stmt"/>
+        <line num="23" count="21" type="stmt"/>
+        <line num="24" count="126" type="stmt"/>
+        <line num="27" count="21" type="stmt"/>
+        <line num="28" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="21" type="stmt"/>
+        <line num="33" count="9" type="stmt"/>
+        <line num="34" count="9" type="stmt"/>
+        <line num="35" count="9" type="stmt"/>
+        <line num="36" count="9" type="stmt"/>
+        <line num="39" count="21" type="stmt"/>
+        <line num="40" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="21" type="stmt"/>
+        <line num="43" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="4" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="46" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="4" type="stmt"/>
+        <line num="49" count="4" type="stmt"/>
+        <line num="50" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="51" count="3" type="stmt"/>
+        <line num="52" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="60" count="21" type="stmt"/>
+        <line num="61" count="12" type="stmt"/>
+        <line num="64" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="70" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="73" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="76" count="8" type="stmt"/>
+        <line num="77" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="78" count="7" type="stmt"/>
+        <line num="79" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="80" count="4" type="cond" truecount="3" falsecount="1"/>
+        <line num="81" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="85" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="94" count="21" type="stmt"/>
+        <line num="97" count="126" type="stmt"/>
+        <line num="99" count="12" type="stmt"/>
+        <line num="100" count="5" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="113" count="22" type="stmt"/>
+      </file>
+      <file name="Radio.tsx" path="F:\Projects\core\src\components\Radio.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="5" count="22" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="35" count="22" type="stmt"/>
+      </file>
+      <file name="StrengthBar.tsx" path="F:\Projects\core\src\components\StrengthBar.tsx">
+        <metrics statements="12" coveredstatements="12" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="5" count="22" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="8" count="24" type="stmt"/>
+        <line num="16" count="14" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="36" count="22" type="stmt"/>
+      </file>
       <file name="TextBox.tsx" path="F:\Projects\core\src\components\TextBox.tsx">
         <metrics statements="24" coveredstatements="24" conditionals="52" coveredconditionals="52" methods="6" coveredmethods="6"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="26" count="32" type="stmt"/>
-        <line num="28" count="32" type="stmt"/>
-        <line num="30" count="32" type="cond" truecount="2" falsecount="0"/>
-        <line num="32" count="32" type="stmt"/>
-        <line num="33" count="32" type="cond" truecount="2" falsecount="0"/>
-        <line num="34" count="31" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="39" count="27" type="stmt"/>
-        <line num="42" count="32" type="stmt"/>
-        <line num="43" count="96" type="cond" truecount="2" falsecount="0"/>
-        <line num="44" count="93" type="stmt"/>
-        <line num="46" count="12" type="stmt"/>
-        <line num="49" count="81" type="stmt"/>
-        <line num="52" count="32" type="stmt"/>
-        <line num="53" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="1" count="23" type="stmt"/>
+        <line num="2" count="23" type="stmt"/>
+        <line num="3" count="23" type="stmt"/>
+        <line num="6" count="23" type="stmt"/>
+        <line num="27" count="32" type="stmt"/>
+        <line num="29" count="32" type="stmt"/>
+        <line num="31" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="32" type="stmt"/>
+        <line num="34" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="31" type="stmt"/>
+        <line num="37" count="4" type="stmt"/>
+        <line num="40" count="27" type="stmt"/>
+        <line num="43" count="32" type="stmt"/>
+        <line num="44" count="96" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="93" type="stmt"/>
+        <line num="47" count="12" type="stmt"/>
+        <line num="50" count="81" type="stmt"/>
+        <line num="53" count="32" type="stmt"/>
         <line num="54" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="55" count="3" type="stmt"/>
-        <line num="56" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="59" count="32" type="stmt"/>
-        <line num="141" count="1" type="stmt"/>
+        <line num="55" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="57" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="60" count="32" type="stmt"/>
+        <line num="142" count="23" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Dropdown">
+      <metrics statements="37" coveredstatements="37" conditionals="22" coveredconditionals="22" methods="15" coveredmethods="15"/>
+      <file name="Dropdown.tsx" path="F:\Projects\core\src\components\Dropdown\Dropdown.tsx">
+        <metrics statements="29" coveredstatements="29" conditionals="20" coveredconditionals="20" methods="11" coveredmethods="11"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="4" count="22" type="stmt"/>
+        <line num="6" count="22" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="12" type="stmt"/>
+        <line num="39" count="11" type="stmt"/>
+        <line num="40" count="11" type="stmt"/>
+        <line num="41" count="10" type="stmt"/>
+        <line num="45" count="12" type="stmt"/>
+        <line num="59" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="64" count="4" type="stmt"/>
+        <line num="94" count="23" type="stmt"/>
+        <line num="97" count="2" type="stmt"/>
+        <line num="98" count="2" type="stmt"/>
+        <line num="99" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="108" count="22" type="stmt"/>
+      </file>
+      <file name="Option.tsx" path="F:\Projects\core\src\components\Dropdown\Option.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="5" count="22" type="stmt"/>
+        <line num="6" count="24" type="stmt"/>
+        <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="22" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="F:\Projects\core\src\components\Dropdown\index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="24" type="stmt"/>
+        <line num="2" count="25" type="stmt"/>
       </file>
     </package>
     <package name="src.components.List">
-      <metrics statements="37" coveredstatements="37" conditionals="27" coveredconditionals="27" methods="14" coveredmethods="14"/>
+      <metrics statements="47" coveredstatements="47" conditionals="42" coveredconditionals="42" methods="18" coveredmethods="18"/>
       <file name="List.tsx" path="F:\Projects\core\src\components\List\List.tsx">
         <metrics statements="16" coveredstatements="16" conditionals="15" coveredconditionals="15" methods="6" coveredmethods="6"/>
         <line num="1" count="22" type="stmt"/>
@@ -109,9 +306,59 @@
         <line num="48" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="65" count="22" type="stmt"/>
       </file>
+      <file name="ListItem.tsx" path="F:\Projects\core\src\components\List\ListItem.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="15" coveredconditionals="15" methods="4" coveredmethods="4"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="4" count="22" type="stmt"/>
+        <line num="6" count="22" type="stmt"/>
+        <line num="14" count="26" type="stmt"/>
+        <line num="16" count="26" type="stmt"/>
+        <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="63" count="22" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Tabs">
+      <metrics statements="28" coveredstatements="28" conditionals="63" coveredconditionals="62" methods="9" coveredmethods="9"/>
+      <file name="Tab.tsx" path="F:\Projects\core\src\components\Tabs\Tab.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="2" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="6" count="22" type="stmt"/>
+        <line num="12" count="52" type="stmt"/>
+        <line num="19" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="22" type="stmt"/>
+      </file>
+      <file name="Tabs.tsx" path="F:\Projects\core\src\components\Tabs\Tabs.tsx">
+        <metrics statements="21" coveredstatements="21" conditionals="53" coveredconditionals="52" methods="7" coveredmethods="7"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="2" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="4" count="22" type="stmt"/>
+        <line num="7" count="22" type="stmt"/>
+        <line num="18" count="15" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="15" type="stmt"/>
+        <line num="23" count="15" type="stmt"/>
+        <line num="25" count="15" type="stmt"/>
+        <line num="27" count="15" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="33" count="15" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="48" count="15" type="stmt"/>
+        <line num="60" count="43" type="stmt"/>
+        <line num="68" count="4" type="stmt"/>
+        <line num="69" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="119" count="22" type="stmt"/>
+      </file>
     </package>
     <package name="src.components.icons">
-      <metrics statements="25" coveredstatements="25" conditionals="21" coveredconditionals="21" methods="10" coveredmethods="10"/>
+      <metrics statements="25" coveredstatements="25" conditionals="20" coveredconditionals="20" methods="10" coveredmethods="10"/>
       <file name="Copyright.tsx" path="F:\Projects\core\src\components\icons\Copyright.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="1" count="23" type="stmt"/>
@@ -141,7 +388,7 @@
         <line num="10" count="2" type="stmt"/>
       </file>
       <file name="Lock.tsx" path="F:\Projects\core\src\components\icons\Lock.tsx">
-        <metrics statements="4" coveredstatements="4" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
+        <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
         <line num="1" count="23" type="stmt"/>
         <line num="3" count="23" type="stmt"/>
         <line num="5" count="23" type="stmt"/>
@@ -154,6 +401,51 @@
         <line num="3" count="28" type="stmt"/>
         <line num="4" count="24" type="stmt"/>
         <line num="5" count="24" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.hooks">
+      <metrics statements="30" coveredstatements="30" conditionals="12" coveredconditionals="12" methods="14" coveredmethods="14"/>
+      <file name="useClickOutside.ts" path="F:\Projects\core\src\hooks\useClickOutside.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="6"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+      </file>
+      <file name="useStateWithCallback.ts" path="F:\Projects\core\src\hooks\useStateWithCallback.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+      <file name="useStepper.ts" path="F:\Projects\core\src\hooks\useStepper.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+      </file>
+      <file name="useToggle.ts" path="F:\Projects\core\src\hooks\useToggle.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="22" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.tests">

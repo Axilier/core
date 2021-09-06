@@ -9,11 +9,6 @@ exports[`when the \`orientation\` is column should render correctly 1`] = `
     className="tab "
     onClick={[Function]}
     orientation="row"
-    style={
-      Object {
-        "paddingLeft": "20px",
-      }
-    }
   >
     <div
       className="tab "
@@ -24,7 +19,6 @@ exports[`when the \`orientation\` is column should render correctly 1`] = `
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingLeft": "20px",
         }
       }
     >
@@ -49,11 +43,6 @@ exports[`when the \`orientation\` is not defined should render correctly 1`] = `
     className="tab tabHorizontal"
     onClick={[Function]}
     orientation="row"
-    style={
-      Object {
-        "paddingLeft": "unset",
-      }
-    }
   >
     <div
       className="tab tabHorizontal"
@@ -64,7 +53,6 @@ exports[`when the \`orientation\` is not defined should render correctly 1`] = `
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingLeft": "unset",
         }
       }
     >
@@ -104,11 +92,6 @@ exports[`when the \`orientation\` is row should render correctly 1`] = `
     className="tab tabHorizontal"
     onClick={[Function]}
     orientation="row"
-    style={
-      Object {
-        "paddingLeft": "unset",
-      }
-    }
   >
     <div
       className="tab tabHorizontal"
@@ -119,7 +102,6 @@ exports[`when the \`orientation\` is row should render correctly 1`] = `
           "display": "flex",
           "flexDirection": "row",
           "justifyContent": "center",
-          "paddingLeft": "unset",
         }
       }
     >
