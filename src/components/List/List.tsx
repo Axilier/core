@@ -1,6 +1,8 @@
 import React, { cloneElement, useEffect, useMemo } from 'react';
 import { ListProps } from '../../Types';
 import Layout from '../Layout';
+import ListItem from './ListItem';
+import ListGroup from './ListGroup';
 
 const List = ({
     children,
@@ -15,8 +17,8 @@ const List = ({
     useEffect(() => {
         childrenArray.forEach(child => {
             if (
-                child.type.name !== 'ListItem' &&
-                child.type.name !== 'ListGroup'
+                child.type !== ListItem &&
+                child.type !== ListGroup
             ) {
                 throw new Error('Children must be of type ListItem');
             }
@@ -26,7 +28,7 @@ const List = ({
     const newChildren = useMemo(
         () =>
             childrenArray.map(child => {
-                if (child.type.name === 'ListGroup') {
+                if (child.type !== ListGroup) {
                     return cloneElement(child, {
                         ...child.props,
                         groupControls:
