@@ -52,7 +52,7 @@ const TextBox = ({
     };
     const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
         const passesFilter = filter ? filter(evt.target.value) : true;
-        if (!passesFilter) return;
+        if (!passesFilter || disabled) return;
         setValue(evt.target.value);
         if (onChange) onChange(evt.target.value);
     };
