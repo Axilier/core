@@ -431,7 +431,7 @@ const TextBox = ({ label = '', variant = 'outlined', size = variant === 'filled'
     };
     const handleChange = (evt) => {
         const passesFilter = filter ? filter(evt.target.value) : true;
-        if (!passesFilter)
+        if (!passesFilter || disabled)
             return;
         setValue(evt.target.value);
         if (onChange)
